@@ -1,0 +1,352 @@
+(defimpl PETrigonometry javasim.synth.hw.PETrigonometryIntrinsic)
+(defimpl PESimple javasim.synth.hw.PESimpleIntrinsic)
+(defimpl PESimple64 javasim.synth.hw.PESimple64Intrinsic)
+(defimpl PEColor javasim.synth.hw.PEColor)
+(defimpl PEMpeg javasim.synth.hw.PEMpegIntrinsic)
+(defimpl PEMpeg2 javasim.synth.hw.PEMpegIntrinsic2)
+(defimpl iadd32 javasim.synth.hw.ALUbinop32_iadd)
+(defimpl isub32 javasim.synth.hw.ALUbinop32_isub)
+(defimpl imul32 javasim.synth.hw.ALUbinop32_imul)
+(defimpl idiv32 javasim.synth.hw.ALUbinop32_idiv)
+(defimpl irem32 javasim.synth.hw.ALUbinop32_irem)
+(defimpl ishl32 javasim.synth.hw.ALUbinop32_ishl)
+(defimpl ishr32 javasim.synth.hw.ALUbinop32_ishr)
+(defimpl iushr32 javasim.synth.hw.ALUbinop32_iushr)
+(defimpl iand32 javasim.synth.hw.ALUbinop32_iand)
+(defimpl ior32 javasim.synth.hw.ALUbinop32_ior)
+(defimpl ixor32 javasim.synth.hw.ALUbinop32_ixor)
+
+(defimpl fadd32 javasim.synth.hw.ALUbinop32_fadd)
+(defimpl fsub32 javasim.synth.hw.ALUbinop32_fsub)
+(defimpl fmul32 javasim.synth.hw.ALUbinop32_fmul)
+(defimpl fdiv32 javasim.synth.hw.ALUbinop32_fdiv)
+(defimpl frem32 javasim.synth.hw.ALUbinop32_frem)
+
+(defimpl iinc32 javasim.synth.hw.ALUunop32_iinc)
+(defimpl ineg32 javasim.synth.hw.ALUunop32_ineg)
+(defimpl fneg32 javasim.synth.hw.ALUunop32_fneg)
+
+(defimpl memacc32 javasim.synth.hw.Memacc32)
+(defimpl cmp32 javasim.synth.hw.Cmp32)
+(defimpl nop32 javasim.synth.hw.Nop32)
+(defimpl conv32 javasim.synth.hw.Convert32_32)
+
+(defimpl ladd64 javasim.synth.hw.ALUbinop64_ladd)
+(defimpl lsub64 javasim.synth.hw.ALUbinop64_lsub)
+(defimpl lmul64 javasim.synth.hw.ALUbinop64_lmul)
+(defimpl ldiv64 javasim.synth.hw.ALUbinop64_ldiv)
+(defimpl lrem64 javasim.synth.hw.ALUbinop64_lrem)
+(defimpl lshl64 javasim.synth.hw.ALUbinop64_lshl)
+(defimpl lshr64 javasim.synth.hw.ALUbinop64_lshr)
+(defimpl lushr64 javasim.synth.hw.ALUbinop64_lushr)
+(defimpl land64 javasim.synth.hw.ALUbinop64_land)
+(defimpl lor64 javasim.synth.hw.ALUbinop64_lor)
+(defimpl lxor64 javasim.synth.hw.ALUbinop64_lxor)
+                                              
+(defimpl dadd64 javasim.synth.hw.ALUbinop64_dadd)
+(defimpl dsub64 javasim.synth.hw.ALUbinop64_dsub)
+(defimpl dmul64 javasim.synth.hw.ALUbinop64_dmul)
+(defimpl ddiv64 javasim.synth.hw.ALUbinop64_ddiv)
+(defimpl drem64 javasim.synth.hw.ALUbinop64_drem)
+
+(defimpl lneg64 javasim.synth.hw.ALUunop64_lneg)
+(defimpl dneg64 javasim.synth.hw.ALUunop64_dneg)
+
+(defimpl memacc32 javasim.synth.hw.Memacc32)
+(defimpl cmp32 javasim.synth.hw.Cmp32)
+(defimpl nop32 javasim.synth.hw.Nop32)
+(defimpl conv32 javasim.synth.hw.Convert32_32)
+
+(defimpl ladd64 javasim.synth.hw.ALUbinop64_ladd)
+(defimpl lsub64 javasim.synth.hw.ALUbinop64_lsub)
+(defimpl lmul64 javasim.synth.hw.ALUbinop64_lmul)
+(defimpl ldiv64 javasim.synth.hw.ALUbinop64_ldiv)
+(defimpl lrem64 javasim.synth.hw.ALUbinop64_lrem)
+(defimpl lshl64 javasim.synth.hw.ALUbinop64_lshl)
+(defimpl lshr64 javasim.synth.hw.ALUbinop64_lshr)
+(defimpl lushr64 javasim.synth.hw.ALUbinop64_lushr)
+(defimpl land64 javasim.synth.hw.ALUbinop64_land)
+(defimpl lor64 javasim.synth.hw.ALUbinop64_lor)
+(defimpl lxor64 javasim.synth.hw.ALUbinop64_lxor)
+                                              
+(defimpl dadd64 javasim.synth.hw.ALUbinop64_dadd)
+(defimpl dsub64 javasim.synth.hw.ALUbinop64_dsub)
+(defimpl dmul64 javasim.synth.hw.ALUbinop64_dmul)
+
+(defimpl memacc64 javasim.synth.hw.Memacc64)
+(defimpl conv3264 javasim.synth.hw.Convert32_64)
+(defimpl conv6432 javasim.synth.hw.Convert64_32)
+(defimpl conv6464 javasim.synth.hw.Convert64_64)
+(defimpl cmp64 javasim.synth.hw.Cmp64)
+
+(defop iadd iadd32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop isub isub32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop imul imul32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop idiv idiv32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop irem irem32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop ishl ishl32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop ishr ishr32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop iushr iushr32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop iand iand32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop ior ior32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop ixor ixor32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop fadd fadd32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop fsub fsub32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop fmul fmul32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop fdiv fdiv32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop frem frem32
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+
+(defop iinc iinc32
+  ((port read in 32)
+   (port write out 32)))
+
+(defop ineg ineg32
+  ((port read in 32)
+   (port write out 32)))
+
+(defop fneg fneg32
+  ((port read in 32)
+   (port write out 32)))
+   
+(defop trigonometry PETrigonometry
+  ((port read in 64)
+   (port write out 64)))
+   
+(defop simple PESimple
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))
+   
+(defop simple64 PESimple64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop color PEColor
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port read3 in 32)
+   (port write out 32)))   
+
+(defop mpegStereo PEMpeg
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port write out 32)))   
+   
+   (defop mpegButterfly PEMpeg2
+  ((port read1 in 32)
+   (port read2 in 32)
+   (port read3 in 32)
+   (port write out 32)))   
+   
+
+(defop mem memacc32
+  ((port addr in 32)
+   (port din in 32)
+   (port dout out 32)))
+
+(defop cmp cmp32
+  ((port op1 in 32)
+   (port op2 in 32)
+   (port result out 32)))
+
+(defop conv33 conv32
+  ((port op in 32)
+   (port result out 32)))
+
+(defop nop nop32
+  ((port op in 32)
+   (port result out 32)))
+
+(defop ladd ladd64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lsub lsub64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lmul lmul64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop ldiv ldiv64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lrem lrem64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lshl lshl64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lshr lshr64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lushr lushr64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop land land64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lor lor64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lxor lxor64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop dadd dadd64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop dsub dsub64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop dmul dmul64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop ddiv ddiv64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop drem drem64
+  ((port read1 in 64)
+   (port read2 in 64)
+   (port write out 64)))
+
+(defop lneg lneg64
+  ((port read in 64)
+   (port write out 64)))
+
+(defop dneg dneg64
+  ((port read in 64)
+   (port write out 64)))
+
+(defop memw memacc64
+  ((port addr in 64)
+   (port din in 64)
+   (port dout out 64)))
+
+(defop cmpw cmp64
+  ((port op1 in 64)
+   (port op2 in 64)
+   (port result out 32)))
+
+(defop conv36 conv3264
+  ((port op in 32)
+   (port result out 64)))
+
+(defop conv63 conv6432
+  ((port op in 64)
+   (port result out 32)))
+
+(defop conv66 conv6464
+  ((port op in 64)
+   (port result out 64)))
+
+(defgrp alubinop32 (iadd isub imul idiv irem ishl ishr iushr iand ior ixor fadd fsub fmul fdiv frem))
+(defgrp alubinop64 (ladd lsub lmul ldiv lrem lshl lshr lushr land lor lxor dadd dsub dmul ddiv drem))
+
+(defgrp aluunop32 (iinc ineg fneg))
+(defgrp aluunop64 (lneg dneg))
+
+(defgrp all32 (alubinop32 aluunop32 cmp nop conv33))
+(defgrp allm32 (alubinop32 aluunop32 mem cmp nop conv33))
+(defgrp all64 (alubinop64 aluunop64 conv36 conv63 conv66 cmpw))
+(defgrp allm64 (alubinop64  aluunop64 memw conv36 conv63 conv66 cmpw))
+
+(defpe pe1 (all32 all64 allm32 allm64 trigonometry))
+(defpe pe2 (all32 all64 allm32 allm64 mpegStereo mpegButterfly))
+(defpe pe3 (all32 all64 allm32 allm64))
+(defpe pe4 (all32 all64 allm32 allm64))
+
+
+(set mem-read-ports 4)
+(set mem-write-ports 4)

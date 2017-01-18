@@ -1,0 +1,6 @@
+SYNTHESIS=false
+SCHEDULEMODE=2
+SYNTHESISBARRIER=0.0
+STATUS_OUTPUT_TICKS=false
+
+TOKEN_MACHINE=javasim.components.PatternFoldingJavaTokenMachine

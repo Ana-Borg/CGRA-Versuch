@@ -1,0 +1,21 @@
+#Energyconfigurationfile for class : javasim.components.ParallelBus
+#Tue Dec 30 11:57:25 CET 2014
+active_15_slaves=0.60
+active_10_slaves=0.50
+active_13_slaves=0.56
+notactive=0.1
+active_5_slaves=0.40
+active_8_slaves=0.46
+active_3_slaves=0.36
+active_6_slaves=0.42
+active_16_slaves=0.62
+active_11_slaves=0.52
+active_14_slaves=0.58
+active_17_slaves=0.64
+active_12_slaves=0.54
+staticenergy=0.01
+active_1_slave=0.32
+active_9_slaves=0.48
+active_4_slaves=0.38
+active_7_slaves=0.44
+active_2_slaves=0.34

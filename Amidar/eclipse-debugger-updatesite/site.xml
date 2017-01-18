@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/javasim.debugger.eclipse_1.0.0.201501190929.jar" id="javasim.debugger.eclipse" version="1.0.0.201501190929">
+      <category name="eclipse-debugger"/>
+   </feature>
+   <category-def name="eclipse-debugger" label="Amidar Eclipse Debugger"/>
+</site>

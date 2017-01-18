@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+
+<project name="jvm_sim" default="run">
+
+
+	<property name="application" value="de/amidar/T02" />
+
+	<property name="script" value="scripts/simple.scr" />
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="deploy.dir" value="deploy" />
+	<property name="javadoc.dir" value="docs" />
+
+	<!-- builds and runs the project with the given parameters -->
+	<target name="run" depends="compileall">
+		<java 
+			fork="true" 
+			jar="${deploy.dir}/jvm_sim.jar"
+			classpath="${build.dir}/api:${deploy.dir}/jvm_sim.jar">
+
+			<arg value="--config" />
+			<arg value="config" />
+			<arg value="--simulatorClasspath" />
+
+			<arg value="${deploy.dir}/jvm_sim.jar:${build.dir}/api:${build.dir}/apps" />
+			<arg value="--circuit" />
+			<arg value="javasim.application.JavaSimulatorCircuit" />
+			<arg value="--script" />
+			<arg value="${script}" />
+			<arg value="${build.dir}/apps/${application}" />
+		</java>
+	</target>
+
+	<target name="cli" depends="compileall">
+		<java 
+			fork="true" 
+			classname="javasim.application.JavaSimulatorCli" 
+			classpath="${build.dir}/sim">
+			<arg value="--script" />
+			<arg value="${script}" />
+		</java>
+	</target>
+
+	<target name="tags">
+		<!--
+	    <exec executable="global">
+		    <arg value="-u" />
+	    </exec>
+	    -->
+	</target>
+
+	<!-- builds all classfiles and builds a jar-file of the simulator -->
+	<target name="all" depends="compileall, archive, javadocs">
+		<echo>complete build successfull</echo>
+	</target>
+
+	<target name="compileall" depends="api, apps">
+		<!--<fail status="2" />-->
+	</target>
+
+	<!-- cleans up all build classfiles and distributions -->
+	<target name="clean" depends="apiinit, appsinit, siminit, archiveinit">
+		<delete dir="${build.dir}" />
+	</target>
+
+<!-- *********************************************************************** -->
+<!-- ** Targets for the creation of classfiles out of the project-sources ** -->
+<!-- *********************************************************************** -->
+
+	<!-- *********************************************************************** -->
+	<!-- ** Targets for the creation of classfiles out of the project-sources ** -->
+	<!-- *********************************************************************** -->
+
+	<target name="apiinit">
+		<mkdir dir="${build.dir}/api" />
+	</target>
+
+	<!-- creates the classfiles for the java API -->
+	<target name="api" depends="apiinit">
+		<javac includeAntRuntime="false" srcdir="${src.dir}/api" destdir="${build.dir}/api" source="1.5" target="1.5" debug="true" debuglevel="lines,vars,source" />
+		<echo>api compilation complete</echo>
+	</target>
+
+	<!-- cleans up the classfiles for the java API -->
+	<target name="apiclean" depends="apiinit">
+		<delete dir="${build.dir}/api" />
+		<echo>cleaned up api</echo>
+	</target>
+
+	<target name="appsinit">
+		<mkdir dir="${build.dir}/apps" />
+	</target>
+
+	<!-- creates the classfiles for the java API -->
+	<target name="apps" depends="appsinit, api">
+		<javac includeAntRuntime="false" srcdir="${src.dir}/apps" destdir="${build.dir}/apps" source="1.5" target="1.5" classpath="${build.dir}/api" debug="true" debuglevel="lines,vars,source" />
+		<echo>application compilation complete</echo>
+	</target>
+
+	<!-- cleans up the classfiles for the java API -->
+	<target name="appsclean" depends="appsinit">
+		<delete dir="${build.dir}/apps" />
+		<echo>cleaned up applications</echo>
+	</target>
+
+	<target name="siminit">
+		<mkdir dir="${build.dir}/sim" />
+		<!--
+		<exec executable="global">
+			<arg value="-u"/>
+		</exec>
+		-->
+	</target>
+
+	<!-- creates the classfiles for the amidar simulator -->
+	<target name="sim" depends="siminit, api">
+		<javac includeAntRuntime="false" srcdir="eclipse-debugger/src/common" destdir="${build.dir}/sim" source="1.8" target="1.8" classpath="${build.dir}/api" debug="true" debuglevel="lines,vars,source" />
+		<echo>debug dependencies compilation complete</echo>
+
+		<javac includeAntRuntime="false" srcdir="${src.dir}/sim" destdir="${build.dir}/sim" source="1.8" target="1.8" classpath="${build.dir}/api" debug="true" debuglevel="lines,vars,source" />
+
+		<echo>simulator compilation complete</echo>
+	</target>
+
+	<target name="sim-pedantic" depends="siminit">
+		<javac includeAntRuntime="false" srcdir="${src.dir}/sim" destdir="${build.dir}/sim" source="1.5" target="1.5" classpath="${build.dir}/api" debug="true" debuglevel="lines,vars,source">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+
+	<!-- cleans up the classfiles for the amidar simulator -->
+	<target name="simclean" depends="siminit">
+		<delete dir="${build.dir}/sim" />
+		<echo>cleaned up sim</echo>
+	</target>
+
+	<!-- *********************************************************************** -->
+	<!-- ** Targets for the creation of a jar-archive of the amidar simulator ** -->
+	<!-- *********************************************************************** -->
+
+	<target name="archiveinit">
+		<mkdir dir="${deploy.dir}" />
+	</target>
+
+	<!-- creates a jar-archive of the amidar simulator sources -->
+	<target name="archive" depends="api, sim, archiveinit">
+		<jar destfile="${deploy.dir}/jvm_sim.jar" basedir="${build.dir}/sim">
+			<manifest>
+				<attribute name="Main-Class" value="javasim.application.JavaSimulatorCli" />
+				<attribute name="Class-Path" value="../${build.dir}/api/" />
+			</manifest>
+		</jar>
+		<echo>sim creation complete</echo>
+	</target>
+
+	<target name="archiveclean" depends="archiveinit">
+		<delete dir="${deploy.dir}" />
+		<echo>cleaned up jar-distribution</echo>
+	</target>
+
+	<!-- *********************************************************************** -->
+	<!-- ********* Targets for the creation of javadoc for the project ********* -->
+	<!-- *********************************************************************** -->
+
+	<!-- creates the javadocs for the whole project -->
+	<target name="javadocs" depends="apidocs, simdocs">
+		<echo>completed creation of javadocs</echo>
+	</target>
+
+	<target name="apidocsinit">
+		<mkdir dir="docs/api" />
+	</target>
+
+	<!-- creates the javadocs for the java api -->
+	<target name="apidocs" depends="apidocsinit">
+		<javadoc packagenames="java.*" 
+			sourcepath="${src.dir}/api" 
+			defaultexcludes="yes" 
+			destdir="${javadoc.dir}/api" 
+			author="true" 
+			version="true" 
+			use="true" 
+			windowtitle="API" />
+		<echo>created javadocs for api</echo>
+	</target>
+
+	<!-- cleans up the javadocs for the java api -->
+	<target name="apidocsclean">
+		<delete dir="${javadoc.dir}/api" />
+		<echo>cleaned up javadocs for api</echo>
+	</target>
+
+	<target name="simdocsinit">
+		<mkdir dir="${javadoc.dir}/sim" />
+	</target>
+
+	<!-- creates the javadocs for the amidar simulator -->
+	<target name="simdocs" depends="simdocsinit">
+		<javadoc packagenames="javasim.*" 
+			sourcepath="${src.dir}/sim" 
+			excludepackagenames="javasim.test.*"
+			defaultexcludes="yes" 
+			destdir="${javadoc.dir}/sim" 
+			author="true" 
+			version="true" 
+			use="true" 
+			windowtitle="AMIDAR Simulator" />
+		<echo> created javadocs for sim</echo>
+	</target>
+
+	<!-- cleans up the javadocs for the amidar simulator -->
+	<target name="simdocsclean">
+		<delete dir="${javadoc.dir}/sim" />
+		<echo>cleaned up javadocs for sim</echo>
+	</target>
+
+	<!-- cleans up all javadocs -->
+	<target name="docsclean" depends="apidocsclean, simdocsclean">
+		<delete dir="${javadoc.dir}" />
+	</target>
+
+	<target name="dox">
+		<exec executable="doxygen">
+			<arg value="Doxyfile" />
+		</exec>
+	</target>
+
+	<target name="doxclean">
+		<delete dir="${doxydoc.dir}" />
+	</target>
+	
+	<target name="test" depends="api, apps">
+		<exec dir="correctnessTest" executable="./correctnessTest.sh"/>	  
+	</target>
+	
+	<target name="speedup" depends="api, apps">
+		<exec dir="speedup" executable="./speedupTest.sh"/>      
+	</target>
+	
+	<target name="graphs">
+			<exec dir="." executable="./graph.sh"/>      
+	</target>
+	
+	<target name="graphsclean">
+		<delete dir="log" />
+		<mkdir dir="log" />
+	</target>
+	
+</project>

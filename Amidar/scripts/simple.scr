@@ -1,0 +1,43 @@
+# i/o options
+io deactivate appinfo
+io activate runtimestats
+
+
+io deactivate simdbg
+io deactivate simio
+
+io deactivate tokenmachine
+io deactivate fetching
+io deactivate tokenbuffer
+io deactivate tokens
+io deactivate packets
+io deactivate interpreter
+io deactivate folding
+io deactivate foldingstats
+io deactivate states
+
+io deactivate synthtime
+io deactivate loops
+io deactivate PEutilisation
+
+io deactivate memaccess
+io deactivate communication
+io deactivate tokenqueue
+io deactivate fustates
+io deactivate sfucount
+io deactivate sfuschedules
+
+ config res cgra_instances/homogeneous_4pe.cgra 1
+ config set UNROLL 5
+ config set INLINE true
+ config set CSE true
+ config set SYNTHLOG true
+ config set MAX_UNROLL_LENGTH 3000
+ load
+ run
+ report
+ reset
+ config set SYNTHESIS true
+ load
+ run
+ report

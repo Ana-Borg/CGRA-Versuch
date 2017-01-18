@@ -1,0 +1,10 @@
+#Gobal settings for energy model
+#Tue Dec 30 12:04:16 CET 2014
+active=true
+dynamic_consumption=true
+static_consumption=true
+module_focus=false
+module_to_focus_on=javasim.components.NewSFU
+Write_out=none
+safety_lock_write=true
+plot=false

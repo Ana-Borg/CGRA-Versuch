@@ -1,0 +1,12 @@
+*.class
+*~
+log/*
+build/*
+bin/*
+*.jar
+speedup/*
+correctnessTest/*
+*.orig
+
+*.swp
+/build/

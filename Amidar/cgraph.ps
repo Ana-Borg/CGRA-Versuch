@@ -1,0 +1,339 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: AMIDAR CGRA configurator
+%%Title: CGRA config graph
+%%Pages: (atend)
+%%BoundingBox: (atend)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CGRA config graph header
+% defines functions to draw lines, boxes, etc.
+
+%%%%%%%%%%%%%
+% helpers
+
+/smallfont	{ /Times findfont  8 scalefont setfont } def
+/normalfont	{ /Times findfont 11 scalefont setfont } def
+
+/colorNosrc	{ 0.4 0 0 setrgbcolor	} def
+/colorLoop	{ 0.5 0.5 0.8 setrgbcolor	} def
+/colorBlack	{ 0 setgray	} def
+/colorWhite	{ 1 setgray	} def
+/colorCtrl	{ 0.5 setgray	} def
+/colorPort	{ colorBlack	} def
+
+/widthPortLine	{ 0.5 setlinewidth	} def
+/widthCtrlLine	{ 0.5 setlinewidth	} def
+/widthLoopLine	{ 2 setlinewidth	} def
+
+
+% Draw a large connection point at passed x/y
+/conPointLarge { % x y
+	newpath 2.5 0 360 arc fill
+} def
+
+% Draw a normal connection point at passed x/y
+/conPointNormal { % x y
+	newpath 1.5 0 360 arc fill
+} def
+
+% Draw a small connection point at passed x/y
+/conPointSmall { % x y
+	newpath 1 0 360 arc fill
+} def
+
+% Print the passed string centered at the current point
+/centerText { % text
+	dup		% text text
+	stringwidth	% text width 0
+	pop		% text width
+	-2 div		% text width/-2
+	0 rmoveto	% text
+	show
+} def
+
+%%%%%%%%%%%%%%%%
+% lines and stuff
+
+% Draw vertical line in timesteps for loop intervals
+/loopspan { % x y1 y2
+	colorLoop
+	newpath
+	2 index exch moveto
+	lineto
+	widthLoopLine
+	stroke
+} def
+
+% Draw a line from loop span line to associated controller
+/loopCtrl { % xLoop xCtrl y
+	colorLoop
+	2 index 1 index	% xLoop xCtrl y xLoop y
+	conPointLarge	% xLoop xCtrl y
+	2 copy
+	conPointNormal
+
+	newpath
+	exch 1 index	% xLoop y xCtrl y
+	moveto		% xLoop y
+	lineto
+	widthCtrlLine
+	stroke
+} def
+
+
+% Draw a port source: x1/y1 -> x1/y1-down -> x2/y2
+% x1/y1 is coordinate at instruction, x2/y2 target coordinate
+/portSource { % desc x1 y1 x2 y2 down
+	colorPort
+	widthPortLine
+
+	newpath
+	3 1 roll	% desc x1 y1 down x2 y2
+	moveto		% desc x1 y1 down
+	1 index exch	% desc x1 y1 y1 down
+	sub		% desc x1 y1 y1-down
+	2 index exch	% desc x1 y1 x1 y1-down
+	lineto		% desc x1 y1
+	2 copy		% desc x1 y1 x1 y1
+	lineto		% desc x1 y1
+	stroke
+
+	moveto		% desc
+	0 3 rmoveto
+	smallfont
+	centerText
+} def
+
+% Draw a port sink: x1/y1 -> x2/y2
+% x1/y1 is coordinate at port source, x2/y2 coordinate at target instruction
+/portSink { % desc x1 y1 x2 y2
+	colorPort
+
+	4 2 roll	% desc x2 y2 x1 y1
+	2 copy		% desc x2 y2 x1 y1 x1 y1
+	conPointSmall	% desc x2 y2 x1 y1
+
+	widthPortLine
+	newpath
+	moveto		% desc x2 y2
+	2 copy		% desc x2 y2 x2 y2
+	lineto		% desc x2 y2
+	stroke
+
+	2 copy		% desc x2 y2 x2 y2
+	conPointNormal	% desc x2 y2
+
+	moveto		% desc
+	0 -8 rmoveto
+	smallfont
+	centerText
+} def
+
+% Draw a port with no source in graph
+/portNosrc { % desc x y 
+	colorPort
+
+	2 copy
+	conPointNormal
+
+	colorNosrc
+	smallfont
+	moveto
+	0 -8 rmoveto
+	centerText
+} def
+
+% Draw a port with constant value
+/portConst { % const x y
+	normalfont
+
+	2 copy		% const x y x y
+	4 index stringwidth pop 3 add	% const x y x y width
+	newpath
+	dup -2 div	% const x y x y width width/2
+	4 2 roll	% const x y width width/2 x y
+	moveto		% const x y width width/2
+	0 rmoveto	% const x y width
+	0 rlineto	% const x y
+	colorWhite
+	2 setlinewidth
+	stroke
+
+	colorBlack
+	moveto 0 -7 rmoveto
+	centerText
+} def
+
+% Draw a via channel
+/viaChannel { %x1 y1 y2
+	widthPortLine
+	colorPort
+	newpath
+	2 index exch moveto
+	lineto
+	stroke
+} def
+
+% Draw a ctrl port source: x1/y1 -> x1/btm -> lft/btm
+% x1/y1 is coordinate at port source, btm/lft coordinate at target ctrl channel line
+/ctrlSource { % desc x1 y1 btm lft
+	widthCtrlLine
+	colorCtrl
+
+	newpath
+	1 index		% desc x1 y1 btm lft btm
+	moveto		% desc x1 y1 btm
+	2 index exch	% desc x1 y1 x1 btm
+	lineto		% desc x1 y1
+	2 copy		% desc x1 y1 x1 y1
+	lineto		% desc x1 y1
+	stroke
+
+	moveto
+	1 3 rmoveto
+	colorBlack
+	smallfont
+	centerText
+} def
+
+% Draw a ctrl port sink: x1/y1 -> x1-(y1-btm)/btm -> lft/btm
+% x1/y1 is coordinate at port sink, btm/lft coordinate target ctrl channel line
+/ctrlSink { % x1 y1 btm lft
+	widthCtrlLine
+	colorCtrl
+
+	2 copy exch	% x1 y1 btm lft lft btm
+	conPointSmall	% x1 y1 btm lft
+	
+	newpath
+	1 index		% x1 y1 btm lft btm
+	moveto		% x1 y1 btm
+
+	1 copy		% x1 y1 btm btm
+	2 index exch	% x1 y1 btm y1 btm
+	sub		% x1 y1 btm y1-btm
+	3 index exch	% x1 y1 btm x1 y1-btm
+	sub		% x1 y1 btm x1-(y1-btm)
+	exch		% x1 y1 x1-(y1-btm) btm
+	lineto		% x1 y1
+
+	lineto
+	stroke
+} def
+
+% Draw a ctrl channel
+/ctrlChannel { %x y1 y2
+	widthCtrlLine
+	colorCtrl
+	newpath
+	2 index exch moveto
+	lineto
+	stroke
+} def
+
+% Draw a instruction box. Draws a dashed line down for the duration of the instruction
+% x/y is bottom middle of box
+% y2 is time end of instruction if more than 1 tick for execution
+/instruction { % text x y y2
+	colorBlack
+	1 setlinewidth
+
+	% line down
+	newpath
+	2 index exch	% text x y x y2
+	moveto		% text x y
+	2 copy		% text x y x y
+	lineto		% text x y
+	[3 3] 0 setdash
+	stroke
+	[] 0 setdash
+
+	% rectangle
+	newpath
+	2 copy		% text x y x y
+	moveto		% text x y
+	-50 0 rmoveto
+	100 0 rlineto
+	0 30 rlineto
+	-100 0 rlineto
+	closepath
+	stroke
+
+	% text
+	newpath
+	moveto		% text
+	0 12 rmoveto
+	normalfont
+	centerText
+} def
+
+% Draw a mux box
+% x/y is bottom middle of box
+/mux { % text x y
+	colorBlack
+
+	% Draw mux outline
+	2 copy
+	newpath
+	moveto
+	-40 0 rmoveto
+	80 0 rlineto
+	10 30 rlineto
+	-100 0 rlineto
+	closepath
+	1 setlinewidth
+	stroke
+
+	% Draw input true/false - overlaps port names
+%	smallfont
+%	2 copy
+%	newpath
+%	moveto
+%	0 22 rmoveto
+%	-20 0 rmoveto
+%	(false)
+%	centerText
+%	2 copy
+%	newpath
+%	moveto
+%	0 22 rmoveto
+%	20 0 rmoveto
+%	(true) 
+%	centerText
+
+	% Draw text
+	newpath
+	moveto
+	0 12 rmoveto
+	normalfont
+	centerText
+} def
+
+% Draw a label box for timesteps/PEs
+% x/y is bottom middle of box
+/label { % text x y
+	colorBlack
+	normalfont
+
+	% rectangle
+	newpath
+	2 copy		% text x y x y
+	moveto		% text x y
+	-15 0 rmoveto
+	30 0 rlineto
+	1 index 15 add 1 index 10 add 10 -90 90 arc
+	-30 0 rlineto
+	1 index 15 sub 1 index 10 add 10 90 270 arc
+	closepath
+	1 setlinewidth
+	stroke
+
+	% text
+	moveto
+	0 6 rmoveto
+	centerText
+} def
+
+%%%%%%%%%%%%%%%%%
+%% main
+
