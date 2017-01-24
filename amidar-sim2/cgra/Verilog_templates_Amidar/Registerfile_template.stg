@@ -1,0 +1,50 @@
+Registerfile(date,regfile_size,regfile_addr_width,regfile_word_width,ID,cache ) ::= <<
+
+/*
+Author: Dennis L. Wolf
+Date: {date}
+Version: 2.0 (changed to String Template Interface - reduced to one template)
+Version History: 1.2 Code Review and Cleanup
+		 1.1 debugged and simulated
+		 1.0 layout & concept
+*/
+
+
+`include "definitions.vh" 
+
+`default_nettype wire
+
+module Registerfile_{ID}(
+  input  wire   			CLK_I,
+//  input  wire   			RST_N_I,
+  input  wire   			EN_I,
+  input  wire [{regfile_addr_width}-1:0]	RD_PORT_DIRECT_ADDR_I,
+  output wire [{regfile_word_width}-1:0] 	RD_PORT_DIRECT_O,
+  input  wire [{regfile_addr_width}-1:0]	RD_PORT_MUX_ADDR_I,
+  output wire [{regfile_word_width}-1:0] 	RD_PORT_MUX_O,
+  input  wire   			WR_PORT_EN_I,
+  input  wire [{regfile_addr_width}-1:0]  WR_PORT_ADDR_I,
+  input  wire [{regfile_word_width}-1:0] 	WR_PORT_DATA_I {if(cache)},
+  input  wire [{regfile_addr_width}-1:0]	RD_PORT_CACHE_ADDR_I,
+  output wire [{regfile_word_width}-1:0]	RD_PORT_CACHE_O  {endif});
+
+
+
+
+// Registerfile
+reg signed [{regfile_word_width}-1:0] memory [{regfile_size}-1:0];
+
+// clocked gates
+always@(posedge CLK_I) begin
+if (WR_PORT_EN_I && EN_I) begin
+  memory[WR_PORT_ADDR_I] <=  WR_PORT_DATA_I; 
+ end
+end 
+
+//combinatorial logic
+assign RD_PORT_DIRECT_O = memory[RD_PORT_DIRECT_ADDR_I];
+assign RD_PORT_MUX_O = memory[RD_PORT_MUX_ADDR_I]; {if(cache)}
+assign RD_PORT_CACHE_O = memory[RD_PORT_CACHE_ADDR_I]; {endif}
+
+endmodule
+>>

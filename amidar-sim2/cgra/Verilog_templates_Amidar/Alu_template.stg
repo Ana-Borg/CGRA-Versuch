@@ -1,0 +1,142 @@
+Alu(ID,date,cache,ops,wires,bib,resultconnection,inputwidtha,inputwidthb,outputwidth,opcodewidth,controlflow,multicycle)
+::= <<
+
+/*
+Author: Dennis L. Wolf
+Date: {date}
+Version: 1.3 (Changed to String Template Interface and ultrasynth)
+Version History: 1.2 Code Review and Cleanup
+		 1.1 debugged and simulated
+		 1.0 layout & concept
+*/
+// `timescale 1 ns / 1 ps
+
+`include "definitions.vh" // import definitions of parameters and types
+
+`default_nettype wire
+
+module Alu{ID} #( parameter OPCODE_WIDTH = 0)(
+  {if(multicycle)}input CLK_I,
+  input wire RST_N_I,
+  input wire EN_I,{else} {if(cache)}
+  input wire EN_I,{endif}{endif} 
+  input wire signed [{inputwidtha}-1:0] OPERAND_A,
+  input wire signed [{inputwidthb}-1:0] OPERAND_B,
+  output reg signed  [{outputwidth}-1:0] RESULT_O,
+  input wire [OPCODE_WIDTH-1:0] OPCODE_I{if(cache)},
+  input wire CBOX_I,
+  input wire  CONDITIONAL_I,
+  output reg CACHE_VALID_O,   
+  output reg CACHE_WRITE_O{endif}{if(controlflow)},
+  output reg STATUS_O
+  {endif}
+  );
+
+// parameters for all available opcodes
+{ops}
+
+{wires}
+
+{bib}
+
+always@(*) begin
+  case (OPCODE_I)
+   {resultconnection}
+   default: begin
+{if(controlflow)}
+	STATUS_O = 0;
+{endif}
+	RESULT_O = OPERAND_B;
+{if(cache)}
+ 	CACHE_VALID_O = 0;
+	CACHE_WRITE_O = 0;
+{endif}
+	end
+  endcase
+end
+
+// All modules used to realize the available operations. one module for each operation. 
+
+
+
+
+endmodule
+
+>>
+
+
+OP(op,cache,controlflow,multicycle,inputwidtha,inputwidthb,resultwidth,status,cachevalid,cachewrite)
+::= <<
+
+//{if(controlflow)}
+//wire status_{op};
+
+{op} module_{op} ( {if(inputwidtha)}
+.OP_A_I(OPERAND_A[{inputwidtha}-1: 0]), {endif} {if(inputwidthb)}
+.OP_B_I(OPERAND_B[{inputwidthb}-1: 0]), {endif}
+.STATUS_O(status_{op})
+);
+{endif}
+{if(cache)}
+//wire cachevalid_{op};
+//wire cachewrite_{op};
+
+{op} module_{op}(
+.EN_I(EN_I),
+.CACHE_VALID_O(cachevalid_{op}),
+.CACHE_WRITE_O(cachewrite_{op}),
+.CBOX_I(CBOX_I),
+.CONDITIONAL_I(CONDITIONAL_I)
+);
+{endif}
+{if(!cache && !controlflow)}
+{if(multicycle)}
+wire enable_{op};
+assign enable_{op} = ((OPCODE_I == {op}) && EN_I) ? 1'b1 : 1'b0;
+{endif}
+wire [{resultwidth}-1:0] result_{op};
+
+{op} module_{op} (
+{if(multicycle)}
+.CLK_I(CLK_I),
+.RST_N_I(RST_N_I),
+.EN_I(enable_{op}), {endif}{if(inputwidtha)}
+.OP_A_I(OPERAND_A[{inputwidtha}-1: 0]), {endif} {if(inputwidthb)}
+.OP_B_I(OPERAND_B[{inputwidthb}-1: 0]), {endif}
+.RESULT_O(result_{op})
+);
+{endif}
+
+>>
+
+
+
+
+
+
+
+
+
+
+
+
+wiring(controlflow, controlflowglobal, cache, cacheglobal, op)
+::= <<
+{op}: begin 
+   {if(cacheglobal)}
+   {if(cache)}
+   CACHE_VALID_O = cachevalid_{op};
+   CACHE_WRITE_O = cachewrite_{op}; {else}
+   CACHE_VALID_O = 1'b0;
+   CACHE_WRITE_O = 1'b0; {endif} {endif}   
+{if(controlflowglobal)}{if(controlflow)}
+   STATUS_O = status_{op};{else}
+   STATUS_O = 1'b0; {endif} {endif}
+   {if(controlflow || cache)}
+   RESULT_O = 0; {else}
+   RESULT_O = result_{op};{endif}
+
+end
+
+
+>>

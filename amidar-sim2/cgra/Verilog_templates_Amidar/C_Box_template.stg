@@ -1,0 +1,175 @@
+CBox(date, memorywidth, status_inputs, mux_status, out_h , out_l , bypassb_and , bypassa_and , bypassb_or , bypassa_or , raddrb1H , raddrb1L , raddrb2H , raddrb2L ,
+ raddraH , raddraL , waddrBH , waddrBL , waddrAH , waddrAL , muxH , muxL , write_enable, ccntwidth, contextsize, contextmemorywidth, bypass_inputmux)
+::= <<
+
+/*
+Author: Dennis L. Wolf
+Date: {date}
+Version: 2.0 (changed to String templates)
+Version History: 1.1 debugged and simulated
+		 1.0 layout & concept
+*/
+
+`default_nettype wire
+
+
+module CBox (
+input wire 			CLK_I,
+input wire			RST_N_I,   // TODO - test if this is really neccesssary ...
+input wire			EN_I,
+{status_inputs}
+input wire 			CONTEXT_WR_EN_I,
+input wire [{ccntwidth}-1:0]	CONTEXT_WR_ADDR_I,
+input wire [{contextmemorywidth}-1:0]	CONTEXT_DATA_I,
+input wire [{ccntwidth}-1:0]	CCNT_I,
+output wire			PREDICATION_O,
+output reg			BRANCH_SELECTION_O);
+
+
+// memory
+
+reg [{memorywidth}-1:0] memory; // TODO - BRAM?
+
+ (* ram_style = "block" *) reg [{contextmemorywidth}-1:0] contextmemory [{contextsize}-1:0];
+reg [{contextmemorywidth}-1:0] contextmemoryout;
+// mask for context
+
+wire[{out_h}:{out_l}] w_mux_out;
+assign w_mux_out = contextmemoryout[{out_h}:{out_l}];
+
+wire w_bypass_and_b;
+assign w_bypass_and_b = contextmemoryout[{bypassb_and}];
+
+wire w_bypass_and_a;
+assign w_bypass_and_a = contextmemoryout[{bypassa_and}];
+
+wire w_bypass_or_b;
+assign w_bypass_or_b = contextmemoryout[{bypassb_or}];
+
+wire w_bypass_or_a;
+assign w_bypass_or_a = contextmemoryout[{bypassa_or}];
+
+wire[{raddrb1H}-{raddrb1L}+1:0] w_rd_addr_b1;
+assign w_rd_addr_b1 = contextmemoryout[{raddrb1H}:{raddrb1L}];
+
+wire[{raddrb2H}-{raddrb2L}+1:0] w_rd_addr_b2;
+assign w_rd_addr_b2 = contextmemoryout[{raddrb2H}:{raddrb2L}];
+
+wire[{raddraH}-{raddraL}+1:0] w_rd_addr_a;
+assign w_rd_addr_a = contextmemoryout[{raddraH}:{raddraL}];
+
+wire[{waddrBH}-{waddrBL}+1:0] w_wr_addr_b;
+assign w_wr_addr_b = contextmemoryout[{waddrBH}:{waddrBL}];
+
+wire[{waddrAH}-{waddrAL}+1:0] w_wr_addr_a;
+assign w_wr_addr_a = contextmemoryout[{waddrAH}:{waddrAL}];
+
+{if(muxH)}
+wire[{muxH}-{muxL}+1:0] w_mux_inputs;
+assign w_mux_inputs = contextmemoryout[{muxH}:{muxL}];
+{endif}
+
+wire w_wr_en;
+assign w_wr_en = contextmemoryout[{write_enable}];
+
+
+// contextmanagment
+always@(posedge CLK_I) begin
+  if(/*EN_I && */CONTEXT_WR_EN_I) begin
+     contextmemory[CONTEXT_WR_ADDR_I] <= CONTEXT_DATA_I;
+  end
+  contextmemoryout <= contextmemory[CCNT_I];
+end
+
+
+{if(muxH)}
+reg w_status;
+always@(*) begin
+(* full_case *)
+case(w_mux_inputs)
+{mux_status}
+ endcase
+end
+{else}
+assign w_status = {bypass_inputmux}
+{endif}
+
+reg w_reg_in_a,w_reg_in_b;
+reg w_reg_a, w_reg_b1, w_reg_b2;
+assign PREDICATION_O = w_reg_b1;
+
+always@* begin
+	if(w_bypass_or_a && w_bypass_and_a)
+		w_reg_in_a = w_status;
+	else if(w_bypass_or_a && !w_bypass_and_a)
+		w_reg_in_a = w_status && w_reg_a;
+	else if(! w_bypass_or_a && w_bypass_and_a)
+		w_reg_in_a = w_status || w_reg_b1;
+	else 
+		w_reg_in_a = w_status && w_reg_a || w_reg_b1;
+
+end
+
+always@* begin
+	if(w_bypass_or_b && w_bypass_and_b)
+		w_reg_in_b = !w_status;
+	else if(w_bypass_or_b && !w_bypass_and_b)
+		w_reg_in_b = !w_status && w_reg_a;
+	else if(! w_bypass_or_b && w_bypass_and_b)
+		w_reg_in_b = !w_status || w_reg_b2;
+	else 
+		w_reg_in_b = !w_status && w_reg_a || w_reg_b2;
+
+end
+integer i;
+/*
+always@(posedge CLK_I) begin
+ if(!RST_N_I) begin	// RESET 
+   for (i = 0; i < {memorywidth}; i=i+1) begin
+     memory[i] <= 0;
+    end
+  end // END RESET
+   else begin
+    if(~EN_I) begin // DISABLE
+     for (i = 0; i < {memorywidth}; i=i+1) begin
+       memory[i] <= memory[i];
+      end
+     end // END DISABLE
+      else begin // BEHAVIOR
+  for (i = 0; i < {memorywidth}; i=i+1) begin
+    memory[i]<= ((i == w_wr_addr_a) && w_wr_en == 1'b1) ? w_reg_in_a : 
+		((i == w_wr_addr_b) && w_wr_en == 1'b1) ? w_reg_in_b : memory[i];
+   end
+  end // END BEHAVIOR
+ end // closes else after RST
+end // close always */
+
+
+always@(posedge CLK_I) begin
+ if(!RST_N_I) begin	// RESET 
+   for (i = 0; i < {memorywidth}; i=i+1) begin
+     memory[i] <= 0;
+    end
+  end // END RESET
+      else if(w_wr_en && EN_I) begin // BEHAVIOR
+    memory[w_wr_addr_a] <= w_reg_in_a;
+    memory[w_wr_addr_b] <= w_reg_in_b;
+  end // END BEHAVIOR
+end // close always
+
+always@(*) begin
+  w_reg_a = memory[w_rd_addr_a];
+  w_reg_b1 = memory[w_rd_addr_b1];
+  w_reg_b2 = memory[w_rd_addr_b2];   
+(* full_case *)
+case(w_mux_out)
+ 0	: BRANCH_SELECTION_O = w_reg_in_a; 
+ 1	: BRANCH_SELECTION_O = w_reg_in_b; 
+ 2	: BRANCH_SELECTION_O = w_reg_a; 
+ 3	: BRANCH_SELECTION_O = w_reg_b1; 
+ endcase
+end
+
+endmodule
+  
+>>

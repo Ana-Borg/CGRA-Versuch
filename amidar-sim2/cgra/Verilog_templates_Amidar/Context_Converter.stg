@@ -1,0 +1,87 @@
+Context_Converter
+(date,ID,ccntwidth,contextWidth,nrPes,memaccess,viawidth,en,cond_dma,cond_wr,wr_en,rdmuxH,rdmuxL,rddoH,rddoL,rdCacheH,rdCacheL,wrH,wrL,muxAH,muxAL,muxBH,muxBL,muxRegH,muxRegL,opH,opL,multipleInputs,maxMuxWidth
+) ::= <<
+
+/*
+Author: Dennis L. Wolf
+Date: {date}
+Version: 1.0 (String Template Interface - layout & concept)
+*/
+
+
+`include "definitions.vh" 
+
+`default_nettype wire
+
+module Context_Converter_§ID§(
+  input wire [74-1:0] OPERAND_ADDR_I,
+  input wire [§contextWidth§-1:0] CONTEXT_DATA_I,
+  input wire CLEAN_HIGHEST_SLOT_I,
+  input wire WR_ADDR_IS_COUNTER, // ??
+  input wire WRITE_CONTEXT_FSM_I,
+  input wire IS_SEND_CONTEXT_I,
+  input wire [§ccntwidth§-1:0] CCNT_I,
+  input wire [§ccntwidth§-1:0] COUNTER_I,
+  output wire [§ccntwidth§-1:0] WRITE_ADDR_O,
+  output wire CONVERTED_WRITE_EN_O,
+  output wire [§contextWidth§-1:0] CONVERTED_CONTEXT_DATA_O
+);
+
+wire [§contextWidth§-1:0] w_context_mapped_data_rec, w_context_mapped_data_send;
+
+
+ assign CONVERTED_CONTEXT_DATA_O = (CLEAN_HIGHEST_SLOT_I == 1'b1) ? {§contextWidth§{1'b0}} : 
+				   (WR_ADDR_IS_COUNTER) ? CONTEXT_DATA_I[§contextWidth§-1:0] : 
+				   (IS_SEND_CONTEXT_I) ? w_context_mapped_data_send: 
+				   (OPERAND_ADDR_I[§ID§]) ? w_context_mapped_data_rec: {§contextWidth§{1'b0}};
+
+ assign CONVERTED_WRITE_EN_O = (CLEAN_HIGHEST_SLOT_I || (WR_ADDR_IS_COUNTER && (OPERAND_ADDR_I[§ID§] == 1'b1)) || (OPERAND_ADDR_I[§ID§] == 1'b1) || (IS_SEND_CONTEXT_I && WRITE_CONTEXT_FSM_I)) ? WRITE_CONTEXT_FSM_I : 1'b0;
+
+ assign WRITE_ADDR_O = /*(CLEAN_HIGHEST_SLOT_I == 1'b1) ? {§ccntwidth§{1'b1}}:*/  (WR_ADDR_IS_COUNTER == 1'b1) ? COUNTER_I : CCNT_I;
+
+
+
+assign w_context_mapped_data_rec[§en§]= 1'b1;
+§if(memaccess)§
+assign w_context_mapped_data_rec[§cond_dma§]= 0;
+§endif§
+assign w_context_mapped_data_rec[§cond_wr§]= 0;
+assign w_context_mapped_data_rec[§wr_en§]= 1;
+assign w_context_mapped_data_rec[§rdmuxH§:§rdmuxL§]= 0;
+assign w_context_mapped_data_rec[§rddoH§:§rddoL§]= 0;
+§if(memaccess)§
+assign w_context_mapped_data_rec[§rdCacheH§:§rdCacheL§]= 0;
+§endif§
+assign w_context_mapped_data_rec[§wrH§:§wrL§]= OPERAND_ADDR_I[§nrPes§+§wrH§-§wrL§+2:§nrPes§+2]; // one hot coding - TODO change max PES to nrofPes -> needs change in createctxt in framework !
+§if(multipleInputs)§
+assign w_context_mapped_data_rec[§muxAH§:§muxAL§]= 0;
+assign w_context_mapped_data_rec[§muxBH§:§muxBL§]= 0;
+§endif§
+assign w_context_mapped_data_rec[§muxRegH§:§muxRegL§]= 1;
+assign w_context_mapped_data_rec[§opH§:§opL§]= 0;
+
+
+
+
+assign w_context_mapped_data_send[§en§]= 1'b1;
+§if(memaccess)§
+assign w_context_mapped_data_send[§cond_dma§]= 0;
+§endif§
+assign w_context_mapped_data_send[§cond_wr§]= 0;
+assign w_context_mapped_data_send[§wr_en§]= 0;
+assign w_context_mapped_data_send[§rdmuxH§:§rdmuxL§] = OPERAND_ADDR_I[§maxMuxWidth§+§viawidth§+§rdmuxH§-§rdmuxL§:§maxMuxWidth§+§viawidth§];  
+assign w_context_mapped_data_send[§rddoH§:§rddoL§] =   OPERAND_ADDR_I[§maxMuxWidth§+§viawidth§+§rdmuxH§-§rdmuxL§:§maxMuxWidth§+§viawidth§]; 
+§if(memaccess)§
+assign w_context_mapped_data_send[§rdCacheH§:§rdCacheL§]= 0;
+§endif§
+assign w_context_mapped_data_send[§wrH§:§wrL§]= 0;
+§if(multipleInputs)§
+assign w_context_mapped_data_send[§muxAH§:§muxAL§]= 0;
+assign w_context_mapped_data_send[§muxBH§:§muxBL§]= OPERAND_ADDR_I[§muxBH§-§muxBL§+1+§viawidth§-1:§viawidth§];
+§endif§
+assign w_context_mapped_data_send[§muxRegH§:§muxRegL§]= 0;
+assign w_context_mapped_data_send[§opH§:§opL§]= 0;
+
+
+endmodule
+>>

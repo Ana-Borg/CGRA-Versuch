@@ -1,0 +1,204 @@
+PE(date,ID,interconnect_inputs,cache,en,cond_dma,cond_wr,wr_en,rdmuxH,rdmuxL,rddoH,rddoL, regaddrwidth, rdCacheH,rdCacheL,wrH,wrL,muxwidth,muxAH,muxAL,muxBH,muxBL,muxRegwidth,muxRegH,muxRegL,opcodewidth,opH,opL,muxA,muxB,regfilesize,regfileaddrwidth,aluinit,
+inputwidtha,inputwidthb,outputwidth,controlflow,multicycle,contextsize,contextaddrwidth,liveout,livein,pathToContext) ::= <<
+/*
+Author: Dennis L. Wolf
+Date: {date}
+Version: 2.0 (Changed to String Template Interface)
+Version History: 1.2 Code Review and Cleanup
+		 1.1 debugged and tested
+		 1.0 Concept
+*/
+
+`include "definitions.vh" // import definitions of parameters and types
+
+`default_nettype wire
+
+module PE_{ID}
+  ( 
+  input wire CLK_I, {if(multicycle)}
+  input wire RST_N_I, {endif}
+  input wire EN_I,
+  input wire [{contextaddrwidth}-1:0] CCNT_I,
+  input wire [{contextaddrwidth}-1:0]  CONTEXT_WR_ADDR_I,
+  input wire [{en}:0] CONTEXT_DATA_I,
+  input wire CONTEXT_EN_I,
+  input wire CONTEXT_WR_EN_I,
+  {interconnect_inputs}
+  {if(cache)}
+  input wire [{outputwidth}-1:0] CACHE_DATA_I,
+  output wire [`CACHE_ADDR_WIDTH-1:0] CACHE_ADDR_O, 
+  output wire CACHE_WR_O,
+  output wire CACHE_VALID_O,
+  output wire [`CACHE_ADDR_WIDTH-1:0] CACHE_OFFSET_O,
+  {endif}
+  input wire [`DATA_WIDTH-1:0] AMIDAR_I,
+  input wire  PREDICATION_I,
+  output wire [{outputwidth}-1:0] DIRECT_O {if(liveout || cache)},
+  output wire [`DATA_WIDTH-1:0] DATA_O {endif} {if(controlflow)},
+  output wire ALU_STATUS_O{endif});
+
+  {if(cache)}
+  parameter   	INDMA = 2;  {endif}
+  parameter	IN = 1, ALU = 0;
+
+// direct assignments
+wire [{outputwidth}-1:0] w_reg_mux;
+
+reg [{inputwidtha}-1:0] w_alu_in_A;
+reg [{inputwidthb}-1:0] w_alu_in_B; 
+wire [{outputwidth}-1:0] w_alu_Out;
+
+{if(liveout || cache)}
+assign DATA_O = w_alu_in_B[{inputwidthb}-1:0];
+{endif}
+
+// INTERNAL SIGNALS:
+
+ (* ram_style = "block" *) reg [{en}:0] contextmemory [{contextsize}-1:0];
+reg [{en}:0] contextmemoryout;
+
+wire w_enable_context;
+assign w_enable_context = contextmemoryout[{en}];
+
+ {if(cache)}
+wire w_conditional_dma;
+assign w_conditional_dma = contextmemoryout[{cond_dma}];
+ {endif}
+wire w_conditional_write;
+assign w_conditional_write = contextmemoryout[{cond_wr}];
+
+wire w_write_enable;
+assign w_write_enable = contextmemoryout[{wr_en}];
+
+wire [{regaddrwidth}-1:0] w_mux_addr;
+assign w_mux_addr = contextmemoryout[{rdmuxH}:{rdmuxL}];
+
+wire [{regaddrwidth}-1:0] w_directout_addr;
+assign w_directout_addr = contextmemoryout[{rddoH}:{rddoL}];
+
+ {if(cache)}
+wire[{regaddrwidth}-1:0] w_cache_addr;
+assign w_cache_addr = contextmemoryout[{rdCacheH}:{rdCacheL}];
+ {endif}
+
+wire [{regaddrwidth}-1:0] w_write_addr;
+assign w_write_addr = contextmemoryout[{wrH}:{wrL}];
+
+ {if(interconnect_inputs)}
+wire[{muxwidth}-1:0] w_muxA;
+assign w_muxA = contextmemoryout[{muxAH}:{muxAL}];
+
+wire[{muxwidth}-1:0] w_muxB;
+assign w_muxB = contextmemoryout[{muxBH}:{muxBL}];
+{endif}
+
+// what if cache and input use same port? 
+wire [{muxRegwidth}-1:0] w_MuxR;
+assign w_MuxR = contextmemoryout[{muxRegH}:{muxRegL}];
+
+wire [{opcodewidth}-1:0] w_opcode;
+assign w_opcode = contextmemoryout[{opH}:{opL}];
+
+{if(interconnect_inputs)}
+// Both multiplexors to which connects the Data input of the registerfile
+always@(*)begin
+(* full_case *)
+ case(w_muxA)
+{muxA}
+ endcase
+(* full_case *)
+ case(w_muxB)
+{muxB}
+ endcase
+end
+{else}
+always@* begin
+   w_alu_in_A = w_reg_mux;
+   w_alu_in_B = w_reg_mux;
+end
+{endif}
+
+// enable generation
+ wire w_enable_local;
+ and(w_enable_local,EN_I,w_enable_context);
+
+// Multiplexor in front of registerfile
+reg [{outputwidth}-1:0] w_reg_in;
+
+
+// contextmanagment
+always@(posedge CLK_I) begin
+  if(CONTEXT_EN_I) begin
+    contextmemoryout <= contextmemory[CCNT_I];
+    if(CONTEXT_WR_EN_I) begin
+      contextmemory[CONTEXT_WR_ADDR_I] <= CONTEXT_DATA_I;
+     end
+   end
+end
+
+always@(*) begin
+{if(cache || livein)}
+(* full_case *)
+ case(w_MuxR)
+   ALU	: w_reg_in = w_alu_Out;
+  {if(livein)}
+   IN	: w_reg_in = AMIDAR_I;
+  {endif}
+  {if(cache)}
+   INDMA: w_reg_in = CACHE_DATA_I; 
+  {endif}
+  endcase
+{else}
+  w_reg_in = w_alu_Out;
+{endif}
+end
+
+wire  w_write_enable_regfile;  
+assign w_write_enable_regfile = (w_conditional_write) ? (PREDICATION_I && w_write_enable) : w_write_enable;
+
+// INSTANCES:
+
+{aluinit} #(.OPCODE_WIDTH({opcodewidth}))
+  alu_{ID} (
+ {if(multicycle)}
+  .CLK_I        (CLK_I),
+  .RST_N_I      (RST_N_I),
+  .EN_I		(w_enable_local),{else}{if(cache)}
+  .EN_I		(w_enable_local),{endif}{endif} 
+  .OPERAND_A    (w_alu_in_A),
+  .OPERAND_B    (w_alu_in_B),
+  .OPCODE_I     (w_opcode),
+  {if(cache)}
+   .CBOX_I 	(PREDICATION_I),
+   .CONDITIONAL_I(w_conditional_dma),
+   .CACHE_VALID_O(CACHE_VALID_O),
+   .CACHE_WRITE_O(CACHE_WR_O), 
+  {endif}
+  .RESULT_O  	(w_alu_Out){if(controlflow)},
+  .STATUS_O 	(ALU_STATUS_O)
+  {endif}
+  );
+
+wire[{outputwidth}-1:0] w_direct_o;
+assign DIRECT_O = w_direct_o;
+{if(cache)}
+assign CACHE_OFFSET_O = w_direct_o;
+{endif}
+
+Registerfile_{ID} regfile_{ID}(
+  .CLK_I(CLK_I),
+//  .RST_N_I(RST_N_I),
+  .EN_I(w_enable_local),
+  .RD_PORT_DIRECT_ADDR_I(w_directout_addr),
+  .RD_PORT_DIRECT_O(w_direct_o),
+  .RD_PORT_MUX_ADDR_I(w_mux_addr),
+  .RD_PORT_MUX_O(w_reg_mux),
+  .WR_PORT_EN_I(w_write_enable_regfile),
+  .WR_PORT_ADDR_I(w_write_addr),
+  .WR_PORT_DATA_I(w_reg_in) {if(cache)},
+  .RD_PORT_CACHE_ADDR_I(w_cache_addr),
+  .RD_PORT_CACHE_O(CACHE_ADDR_O){endif}
+  );
+
+endmodule
+>>
