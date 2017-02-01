@@ -43,6 +43,8 @@ public class AcuisitionTest {
 				float imag = Float.parseFloat(values[1]);
 				enoughValues = acq.enterSample(real, imag);
 			}
+			
+			//acq.test();
 
 			brData.close();
 			

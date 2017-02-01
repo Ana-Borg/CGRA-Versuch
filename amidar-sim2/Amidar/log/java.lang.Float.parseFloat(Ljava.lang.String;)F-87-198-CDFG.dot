@@ -37,13 +37,13 @@ digraph depgraph {
 "96:LOAD:2" -> "113:STORE:2"[color=gray];
 "100:FDIV" -> "113:STORE:2"[color=gray];
 "96:LOAD:2" -> "100:FDIV"[label=0];
-"97:CONST:680(indirect)" -> "100:FDIV"[label=1];
+"97:CONST:682(indirect)" -> "100:FDIV"[label=1];
 "112:FADD" -> "127:FDIV"[label=0];
-"97:CONST:680(indirect)" -> "127:FDIV"[label=1];
+"97:CONST:682(indirect)" -> "127:FDIV"[label=1];
 "139:FADD" -> "154:FDIV"[label=0];
-"97:CONST:680(indirect)" -> "154:FDIV"[label=1];
+"97:CONST:682(indirect)" -> "154:FDIV"[label=1];
 "166:FADD" -> "181:FDIV"[label=0];
-"97:CONST:680(indirect)" -> "181:FDIV"[label=1];
+"97:CONST:682(indirect)" -> "181:FDIV"[label=1];
 "100:FDIV" -> "112:FADD"[label=0];
 "111:I2F" -> "112:FADD"[label=1];
 "104:IADD" -> "131:IADD"[label=0];
