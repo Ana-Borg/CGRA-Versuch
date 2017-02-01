@@ -1,0 +1,81 @@
+package gps.acquisition;
+
+
+public class Acquisition {
+	
+	int N = 400;
+	int nSample = 0;
+	float[] realSample = new float[N];
+	float[] imagSample = new float[N];
+	
+	int nCode = 0;	
+	float[] realCode = new float[N];
+	float[] imagCode = new float[N];
+	
+	int Dopplerverschiebung;
+	int Codeverschiebung;
+	
+	int sampleFrequenz = 400000;
+	int stepFrequenz = 1000;
+	int maxFrequenz = 5000;
+	int minFrequenz = -5000;
+	float grenzwert = (float) 0.015;
+	
+	public boolean enterSample(float real, float imag){
+	
+		if(nSample < N) {
+			realSample[nSample] = real;
+			imagSample[nSample] = imag;
+			nSample++;
+		}
+		else return true;
+		
+		return false;
+	}
+	
+	public boolean enterCode(float real, float imag){
+	
+		if(nCode < N) {
+			realCode[nCode] = real;
+			imagCode[nCode] = imag;
+			nCode++;
+		}
+		else return true;
+		
+		return false;
+	}
+	
+	public boolean startAcquisition(){
+		
+		int n;
+		float Pin = calculateInputSignalEstimation();
+		
+		for(n = minFrequenz; n <= maxFrequenz; n += stepFrequenz){
+			
+		}
+		
+		
+		
+		return false;
+	}
+	
+	public int getDopplerverschiebung(){
+		return Dopplerverschiebung;
+	}
+	
+	public int getCodeVerschiebung(){
+		return Codeverschiebung;
+	}
+	
+	private float calculateInputSignalEstimation(){
+		int n = 0;
+		float Pin = 0;
+		
+		for(n = 0; n < N; n++){
+			Pin += realSample[n]*realSample[n] + imagSample[n]*imagSample[n];
+		}
+		Pin = Pin/N;
+		return Pin;
+	}
+
+}

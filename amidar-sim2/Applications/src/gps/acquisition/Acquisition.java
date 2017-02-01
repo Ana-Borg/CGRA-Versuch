@@ -3,7 +3,7 @@ package gps.acquisition;
 
 public class Acquisition {
 	
-	int N = 375;
+	int N = 400;
 	int nSample = 0;
 	float[] realSample = new float[N];
 	float[] imagSample = new float[N];
@@ -21,47 +21,36 @@ public class Acquisition {
 	int minFrequenz = -5000;
 	float grenzwert = (float) 0.015;
 	
-	public boolean test(){
-		if(nSample == 400) return true;
-		return false;
-	}
-	
 	public boolean enterSample(float real, float imag){
-	
-		if(nSample < N) {
-			realSample[nSample] = real;
-			imagSample[nSample] = imag;
-			nSample++;
-		}
-		else return true;
 		
-		return false;
+		realSample[nSample] = real;
+		imagSample[nSample] = imag;
+		nSample++;
+		
+		if(nSample < N - 1) return false;
+		else return true;
 	}
 	
 	public boolean enterCode(float real, float imag){
 	
-		if(nCode < N) {
-			realCode[nCode] = real;
-			imagCode[nCode] = imag;
-			nCode++;
-		}
-		else return true;
+		realCode[nCode] = real;
+		imagCode[nCode] = imag;
+		nCode++;
 		
-		return false;
+		if(nCode < N - 1) return false;
+		else return true;
 	}
 	
 	public boolean startAcquisition(){
 		
-		/*int n = 0;
-		float Pin = 0;
+		int n;
+		float Pin = calculateInputSignalEstimation();
 		
 		for(n = minFrequenz; n <= maxFrequenz; n += stepFrequenz){
 			
 		}
 		
-		for(n = 0; n < N; n++){
-			Pin += realSample[n]*realSample[n] + imagSample[n]*imagSample[n];
-		}*/
+		
 		
 		return false;
 	}
@@ -74,6 +63,15 @@ public class Acquisition {
 		return Codeverschiebung;
 	}
 	
-	
+	private float calculateInputSignalEstimation(){
+		int n = 0;
+		float Pin = 0;
+		
+		for(n = 0; n < N; n++){
+			Pin += realSample[n]*realSample[n] + imagSample[n]*imagSample[n];
+		}
+		Pin = Pin/N;
+		return Pin;
+	}
 
 }
