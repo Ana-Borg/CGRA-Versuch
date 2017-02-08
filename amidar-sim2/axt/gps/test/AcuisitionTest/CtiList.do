@@ -189,21 +189,22 @@ radix define ClassTableIndices {
 	187 "[Z" -color {Yellow}, //n 
 	188 "[C" -color {Yellow}, //n 
 	189 "[F" -color {Yellow}, //n 
-	190 "[D" -color {Yellow}, //n 
-	191 "[B" -color {Yellow}, //n 
-	192 "[S" -color {Yellow}, //n 
-	193 "[I" -color {Yellow}, //n 
-	194 "[J" -color {Yellow}, //n 
-	195 "[Ljava/lang/Integer" -color {Yellow}, //n 
-	196 "[Lgnu/regexp/REMatch" -color {Yellow}, //n 
-	197 "[Lde/amidar/HashMapIdentity$HashEntryIdentity" -color {Yellow}, //n 
-	198 "[Ljava/util/HashMap$HashEntry" -color {Yellow}, //n 
-	199 "[Ljava/lang/Object" -color {Yellow}, //n 
-	200 "[Ljava/lang/String" -color {Yellow}, //n 
-	201 "[Ljava/lang/Character$UnicodeBlock" -color {Yellow}, //n 
-	202 "[Lde/amidar/HashMapInt$HashEntryInt" -color {Yellow}, //n 
-	203 "[Ljava/lang/StackTraceElement" -color {Yellow}, //n 
-	204 "[Ljava/lang/Class" -color {Yellow}, //n 
+	190 "[[F" -color {Yellow}, //n 
+	191 "[D" -color {Yellow}, //n 
+	192 "[B" -color {Yellow}, //n 
+	193 "[S" -color {Yellow}, //n 
+	194 "[I" -color {Yellow}, //n 
+	195 "[J" -color {Yellow}, //n 
+	196 "[Ljava/lang/Integer" -color {Yellow}, //n 
+	197 "[Lgnu/regexp/REMatch" -color {Yellow}, //n 
+	198 "[Lde/amidar/HashMapIdentity$HashEntryIdentity" -color {Yellow}, //n 
+	199 "[Ljava/util/HashMap$HashEntry" -color {Yellow}, //n 
+	200 "[Ljava/lang/Object" -color {Yellow}, //n 
+	201 "[Ljava/lang/String" -color {Yellow}, //n 
+	202 "[Ljava/lang/Character$UnicodeBlock" -color {Yellow}, //n 
+	203 "[Lde/amidar/HashMapInt$HashEntryInt" -color {Yellow}, //n 
+	204 "[Ljava/lang/StackTraceElement" -color {Yellow}, //n 
+	205 "[Ljava/lang/Class" -color {Yellow}, //n 
 	-default unsigned
 	-defaultcolor {Red}
 }

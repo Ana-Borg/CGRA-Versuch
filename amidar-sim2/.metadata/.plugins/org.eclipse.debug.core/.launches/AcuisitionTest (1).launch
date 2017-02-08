@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="javasim.debugger.eclipse.launch.launchConfigurationType">
+<stringAttribute key="javasim.debugger.eclipse.amidarJavaClass" value="gps.test.AcuisitionTest"/>
+<stringAttribute key="javasim.debugger.eclipse.antLaunchConfigurationMemento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Amidar build.xml&quot;/&gt;&#10;"/>
+<stringAttribute key="javasim.debugger.eclipse.antLaunchConfigurationName" value="Amidar build.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="javasim.debugger.eclipse.launch.classpathProvider"/>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="javasim.application.JavaSimulatorCli"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--config config --circuit javasim.application.JavaSimulatorCircuit --script scripts/simple.scr --simulatorClasspath build/api:build/apps"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Applications"/>
+</launchConfiguration>

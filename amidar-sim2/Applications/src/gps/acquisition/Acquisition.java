@@ -1,13 +1,16 @@
 package gps.acquisition;
+import java.lang.Math;
 
 
 public class Acquisition {
 	
+	float pi = (float) 3.14159;
+
 	int N = 400;
 	int nSample = 0;
 	float[] realSample = new float[N];
 	float[] imagSample = new float[N];
-	
+
 	int nCode = 0;	
 	float[] realCode = new float[N];
 	float[] imagCode = new float[N];
@@ -15,11 +18,11 @@ public class Acquisition {
 	int Dopplerverschiebung;
 	int Codeverschiebung;
 	
-	int sampleFrequenz = 400000;
-	int stepFrequenz = 1000;
-	int maxFrequenz = 5000;
-	int minFrequenz = -5000;
-	float grenzwert = (float) 0.015;
+	int sampleFrequenz = 400000;		//fs
+	int stepFrequenz = 1000;			//fstep
+	int maxFrequenz = 5000;				//fmax
+	int minFrequenz = -5000; 			//fmin
+	float grenzwert = (float) 0.015;	//gama
 	
 	public boolean enterSample(float real, float imag){
 		
@@ -41,26 +44,48 @@ public class Acquisition {
 		else return true;
 	}
 	
-	public boolean startAcquisition(){
-		
-		int n;
-		float Pin = calculateInputSignalEstimation();
-		
-		for(n = minFrequenz; n <= maxFrequenz; n += stepFrequenz){
-			
-		}
-		
-		
-		
-		return false;
-	}
-	
 	public int getDopplerverschiebung(){
 		return Dopplerverschiebung;
 	}
 	
 	public int getCodeVerschiebung(){
 		return Codeverschiebung;
+	}
+	
+	// Acquisition function and its auxiliary functions
+	public boolean startAcquisition(){
+	
+		int menge = calculateMengeFrequenzen();
+		
+		float[][] realMatrix = new float[N][menge];
+		float[][] imagMatrix = new float[N][menge];
+		
+		float realEuler, imagEuler, Pin;
+		int n, fd, m = 0;
+		
+		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+			for(n = 0; n < N; n++){
+				realEuler = calculateRealEulerFactors(fd, n);
+				imagEuler = calculateImagEulerFactors(fd, n);
+				
+				realMatrix[n][m] = realSample[n]*realEuler - imagSample[n]*imagEuler;
+				imagMatrix[n][m] = imagSample[n]*realEuler - realSample[n]*imagEuler;
+			}
+			m++;
+		}
+		
+		
+		Pin = calculateInputSignalEstimation();
+		
+		return false;
+	}
+	
+	private int calculateMengeFrequenzen(){
+		int m = 0, fd;
+		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+			m++;
+		}
+		return m;
 	}
 	
 	private float calculateInputSignalEstimation(){
@@ -72,6 +97,22 @@ public class Acquisition {
 		}
 		Pin = Pin/N;
 		return Pin;
+	}
+	
+	private float calculateRealEulerFactors(int fd, int nSample){
+		
+		double arg = (fd*nSample*2*pi)/sampleFrequenz;
+		float realEuler = (float) Math.cos(arg);
+		
+		return realEuler;
+	}
+	
+	private float calculateImagEulerFactors(int fd, int nSample){
+		
+		double arg = (fd*nSample*2*pi)/sampleFrequenz;
+		float imagEuler = (float) Math.sin(arg);
+		
+		return imagEuler;
 	}
 
 }

@@ -2417,26 +2417,27 @@ ClassName: gps/acquisition/Acquisition CTI: 111
 
 Number static fields: 0
 Offset to bitmap: 184
-BitMap in hex: 3600
+BitMap in hex: 1B00
 Finalizer empty: true
 BitMap useless: false
 ____________________________________________
 | Numeration| FieldName          | Type     |
 |===========================================|
-| #0        | N                  | Primitive|
-| #1        | nSample            | Primitive|
-| #2        | realSample         | Reference|
-| #3        | imagSample         | Reference|
-| #4        | nCode              | Primitive|
-| #5        | realCode           | Reference|
-| #6        | imagCode           | Reference|
-| #7        | Dopplerverschiebung| Primitive|
-| #8        | Codeverschiebung   | Primitive|
-| #9        | sampleFrequenz     | Primitive|
-| #10       | stepFrequenz       | Primitive|
-| #11       | maxFrequenz        | Primitive|
-| #12       | minFrequenz        | Primitive|
-| #13       | grenzwert          | Primitive|
+| #0        | pi                 | Primitive|
+| #1        | N                  | Primitive|
+| #2        | nSample            | Primitive|
+| #3        | realSample         | Reference|
+| #4        | imagSample         | Reference|
+| #5        | nCode              | Primitive|
+| #6        | realCode           | Reference|
+| #7        | imagCode           | Reference|
+| #8        | Dopplerverschiebung| Primitive|
+| #9        | Codeverschiebung   | Primitive|
+| #10       | sampleFrequenz     | Primitive|
+| #11       | stepFrequenz       | Primitive|
+| #12       | maxFrequenz        | Primitive|
+| #13       | minFrequenz        | Primitive|
+| #14       | grenzwert          | Primitive|
 
 
 ClassName: gnu/regexp/RETokenStart CTI: 112
@@ -3272,11 +3273,11 @@ _______________________________________________
 | [Z                            | 187| y       |
 | [C                            | 188| y       |
 | [F                            | 189| y       |
-| [D                            | 190| y       |
-| [B                            | 191| y       |
-| [S                            | 192| y       |
-| [I                            | 193| y       |
-| [J                            | 194| y       |
+| [D                            | 191| y       |
+| [B                            | 192| y       |
+| [S                            | 193| y       |
+| [I                            | 194| y       |
+| [J                            | 195| y       |
 | java/lang/ref/SoftReference   | 167| n       |
 | java/lang/ref/WeakReference   | 167| n       |
 | java/lang/ref/PhantomReference| 167| n       |
@@ -3294,9 +3295,9 @@ SpecialCTIs
 00A700A7
 00A70000
 00BB00BC
-00BD00BE
-00BF00C0
-00C100C2
+00BD00BF
+00C000C1
+00C200C3
 
 CTI to Bitmaps Offset
 C0008060
@@ -3431,7 +3432,7 @@ C0E0C080
 A0C0E0C0
 E0C080E0
 BC0EA0F8
-3600D0D8
+1B00D0D8
 0800E080
 C0F8E0C0
 FCE0C9C0

@@ -87,7 +87,7 @@ public class AcuisitionTest {
 		boolean passed = res == acquisition && acq.getCodeVerschiebung()== codeVersch && acq.getDopplerverschiebung() == freq;
 		System.out.println((passed?"PASSED":"FAILED") + " Test Nr. " + Nr);
 		if(!passed){
-			System.out.println("Epected " + acquisition + " acquistion");
+			System.out.println("Expected " + acquisition + " acquistion");
 			System.out.println("    " + codeVersch);
 			System.out.println("    " + freq);
 			
