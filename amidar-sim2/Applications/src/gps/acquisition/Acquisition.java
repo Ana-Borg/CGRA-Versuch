@@ -4,7 +4,7 @@ import java.lang.Math;
 
 public class Acquisition {
 	
-	float pi = (float) 3.14159;
+	float pi = (float) 3.14159265359;
 
 	int N = 400;
 	int nSample = 0;
@@ -54,18 +54,21 @@ public class Acquisition {
 	
 	// Acquisition function and its auxiliary functions
 	public boolean startAcquisition(){
-		float Pin;
+		float Pin, maxValue;
+		float glrt; // gama maiusculo
 		
 		int menge = calculateMengeFrequenzen();
 		
-		float[][] realXfd = new float[menge][N]; // Matrix Xfd (lines => frequencies; columns => samples)
+		float[][] realXfd = new float[menge][N]; // Matrix Xfd (rows => frequencies; columns => samples)
 		float[][] imagXfd = new float[menge][N]; //
 		
 		float[] realDftCode = new float[N];
 		float[] imagDftCode = new float[N];
 		
-		float[][] realMatrix = new float[menge][N]; // Final matrix (lines => frequencies; columns => samples)
+		float[][] realMatrix = new float[menge][N]; // Final matrix not inverted (rows => frequencies; columns => samples)
 		float[][] imagMatrix = new float[menge][N]; //
+		
+		float[][] invMatrix = new float[menge][N]; // Final matrix inverted (rows => frequencies; columns => samples)
 		
 		calculateXfd(realXfd, imagXfd); // Matrix Xfd
 		
@@ -74,17 +77,19 @@ public class Acquisition {
 		
 		calculateArgumentOfIdft(realXfd, imagXfd, realDftCode, imagDftCode, realMatrix, imagMatrix); // Array DFT(Xfd)*complexConj(DFT(C))
 																									 // for each fd
+		calculateIdft(realMatrix, imagMatrix, invMatrix);
 		
-		
-		
+		maxValue = findMaxValue(invMatrix);
 		Pin = calculateInputSignalEstimation();
+		glrt = 2*N*maxValue/Pin;
 		
-		return false;
+		if(glrt > grenzwert) return true;
+		else return false;
 	}
 	
 	private int calculateMengeFrequenzen(){
-		int m = 0, fd;
-		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+		int m = 0;
+		for(int fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
 			m++;
 		}
 		return m;
@@ -103,12 +108,12 @@ public class Acquisition {
 	
 	/****************  functions for calculation of matrix Xfd  *********************/
 	private void calculateXfd(float[][] realXfd, float[][] imagXfd){
-		int n, fd, m = 0;
+		int m = 0;
 		
-		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
-			for(n = 0; n < N; n++){
-				float cosx = calculateCosx(fd*n, sampleFrequenz); // e^(-j*2pi*fd*n/fs) = cos(-2pi*fd*n/fs) + jsen(-2pi*fd*n*fs)
-				float sinx = calculateSinx(fd*n, sampleFrequenz); //
+		for(int fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+			for(int n = 0; n < N; n++){
+				float cosx = calculateCosx(-fd*n, sampleFrequenz); // e^(-j*2pi*fd*n/fs) = cos(-2pi*fd*n/fs) + jsen(-2pi*fd*n*fs)
+				float sinx = calculateSinx(-fd*n, sampleFrequenz); //
 				
 				realXfd[m][n] = realSample[n]*cosx - imagSample[n]*sinx;
 				imagXfd[m][n] = realSample[n]*sinx + imagSample[n]*cosx;
@@ -119,7 +124,7 @@ public class Acquisition {
 	
 	private float calculateCosx(int mult, int div){
 		
-		float arg = -(2*pi*mult)/div;
+		float arg = (2*pi*mult)/div;
 		float realEuler = (float) Math.cos(arg);
 		
 		return realEuler;
@@ -127,7 +132,7 @@ public class Acquisition {
 	
 	private float calculateSinx(int mult, int div){
 		
-		double arg = -(2*pi*mult)/div;
+		float arg = (2*pi*mult)/div;
 		float imagEuler = (float) Math.sin(arg);
 		
 		return imagEuler;
@@ -140,8 +145,8 @@ public class Acquisition {
 			float sumReal = 0;
 			float sumImag = 0;
 			for(int t = 0; t < n; t++){  // For each input element
-				float cosx = calculateCosx(t*k, n);
-				float sinx = calculateSinx(t*k, n);
+				float cosx = calculateCosx(-t*k, n);
+				float sinx = calculateSinx(-t*k, n);
 				sumReal += realInput[t]*cosx - imagInput[t]*sinx;
 				sumImag += realInput[t]*sinx + imagInput[t]*cosx;
 			}
@@ -163,7 +168,7 @@ public class Acquisition {
 		int menge = calculateMengeFrequenzen();
 		for(int m = 0; m < menge; m++){ // For each fd
 			calculateDft(realXfd[m], imagXfd[m], realOutput[m], imagOutput[m]);  // Array DFT(Xfd) for particular fd
-			
+				
 			for(int n = 0; n < N; n++){
 				float realElementXfd = realOutput[m][n];
 				float imagElementXfd = imagOutput[m][n];
@@ -172,6 +177,52 @@ public class Acquisition {
 				imagOutput[m][n] = realElementXfd*imagDftCode[n] + imagElementXfd*realDftCode[n]; // for particular fd
 			}
 		}
+	}
+	
+	private void calculateIdft(float[][] realInput, float[][] imagInput, float[][] matrixOutput){
+		int menge = calculateMengeFrequenzen();
+		
+		for(int m = 0; m < menge; m++){ // For each fd
+			int n = realInput[m].length;
+			
+			for(int k = 0; k < n; k++){ // For each output of IDFT
+				float sumReal = 0;
+				float sumImag = 0;
+				
+				for(int t = 0; t < n; t++){ // For each input of IDFT
+					float cosx = calculateCosx(k*t, n);
+					float sinx = calculateSinx(k*t, n);
+					sumReal += realInput[m][t]*cosx - imagInput[m][t]*sinx;
+					sumImag += realInput[m][t]*sinx + imagInput[m][t]*cosx;
+				}
+				sumReal = sumReal/n;
+				sumImag = sumImag/n;
+				
+				matrixOutput[m][k] = sumReal*sumReal + sumImag*sumImag; // |R(f,τ)|ˆ2
+			}
+		}
+	}
+	
+	private float findMaxValue(float[][] matrix){
+		float maxValue = 0;
+		int c = matrix[0].length;
+		int r = matrix.length;
+		int findedRow = 0, findedCol = 0;
+		
+		for(int i = 0; i < r; i++){
+			for(int j = 0; j < c; j++){
+				if(maxValue < matrix[i][j]){
+					maxValue = matrix[i][j];
+					findedRow = i;
+					findedCol = j;
+				}
+			}
+		}
+		
+		int menge = calculateMengeFrequenzen();
+		Dopplerverschiebung = (maxFrequenz-minFrequenz)*findedRow/(menge-1) + minFrequenz;
+		Codeverschiebung = findedCol;
+		return maxValue;
 	}
 
 }

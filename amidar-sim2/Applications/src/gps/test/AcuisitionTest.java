@@ -14,7 +14,7 @@ public class AcuisitionTest {
 
 		Acquisition acq = new Acquisition();
 		
-		int testNr = 4;
+		int testNr = 1;
 		
 		String Nr = Integer.toString(testNr);
 		if(Nr.length() == 1){
