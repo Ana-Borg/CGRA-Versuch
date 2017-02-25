@@ -109,7 +109,7 @@ public enum I {
 	LALOAD (0x2f, ArrayLdInstr.class, 1, true),
 	FALOAD (0x30, ArrayLdInstr.class, 1, false),
 	DALOAD (0x31, ArrayLdInstr.class, 1, true),
-	AALOAD (0x32, ArrayLdInstr.class, 1, false),
+	AALOAD (0x32, ArrayLdInstr.class, 1, false,true),
 	BALOAD (0x33, ArrayLdInstr.class, 1, false),
 	CALOAD (0x34, ArrayLdInstr.class, 1, false),
 	SALOAD (0x35, ArrayLdInstr.class, 1, false),

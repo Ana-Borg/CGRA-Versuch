@@ -322,6 +322,10 @@ public class DataGraph {
 	 * Folds away the unnecessary store instructions. They are unnecessary when they are no loop (or branch) entry or exit
 	 */
 	public void foldLVMemInstructions(SynthData data){
+		
+		if(data.getAllLVStores().isEmpty()){
+			return;
+		}
 
 		// Get the virtual stack of the whole kernel
 		VStack vstack = data.stop().vstack();

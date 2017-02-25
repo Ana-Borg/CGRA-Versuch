@@ -538,6 +538,7 @@ public class HardGen {
 						Integer jumpTarget = forwardJumps.get(jump);
 						if((jumpTarget+jump>=correspondingEnd-3) && (jump < correspondingEnd-3)){ //this jump jumps over the inserted GOTO
 							jumpTarget = jumpTarget+lastIncrease;
+
 							code[jump+1] = (short)(((jumpTarget) & 0xff00)>>8);
 							code[jump+2] = (short)((jumpTarget) & 0xff);
 							newforwardJumps.put(jump, jumpTarget);
@@ -682,6 +683,9 @@ public class HardGen {
 					Integer jumpTarget = forwardJumps.get(jump);
 					if((jumpTarget+jump>i) && (jump < i)){ //this jump jumps over invokation
 						jumpTarget = jumpTarget+lastIncrease;
+						if(jumpTarget > 32768){
+							throw new SequenceNotSynthesizeableException("The code sequence is getting too big - no more methods can be inlined");
+						}
 						code[jump+1] = (short)(((jumpTarget) & 0xff00)>>8);
 						code[jump+2] = (short)((jumpTarget) & 0xff);
 						newforwardJumps.put(jump, jumpTarget);

@@ -1,5 +1,8 @@
 package javasim.synth.model.instruction;
 
+import java.nio.channels.ByteChannel;
+
+import dataContainer.ByteCode;
 import javasim.synth.SequenceNotSynthesizeableException;
 import javasim.synth.SynthData;
 import javasim.synth.model.I;
@@ -25,10 +28,20 @@ public class ReturnInstr extends Instruction {
 		
 		int returnID = data.getFreeLVID();
 		
+		
+		I loadType = I.ILOAD;
+		I storeType = I.ISTORE;
+		
+		byte bc = (byte)(data.code(addr()).intValue());
+		if(bc == ByteCode.ARETURN){
+			loadType = I.ALOAD;
+			storeType = I.ASTORE;
+		}
+		
 		if(i() != I.RETURN && data.getReturns(this).size()>1){
 			// Every possible return value is stored in a pseudo local variable
 			Datum op = vstack().pop();
-			Instruction sinst = I.ISTORE.create(addr());
+			Instruction sinst = storeType.create(addr());
 			sinst.branchpoint(branchpoint());
 			sinst.decision(decision());
 			LWriteDatum store = new LWriteDatum(returnID, sinst);
@@ -46,7 +59,7 @@ public class ReturnInstr extends Instruction {
 
 			// In the end the pseudo local variable is loaded and pushed on the stack
 			if(finalReturn){
-				Instruction linst = I.ILOAD.create(addr());
+				Instruction linst = loadType.create(addr());
 				linst.branchpoint(branchpoint().branchpoint());
 				linst.decision(branchpoint().decision());
 

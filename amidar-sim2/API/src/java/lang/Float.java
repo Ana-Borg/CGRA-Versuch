@@ -134,6 +134,12 @@ public final class Float extends Number implements Comparable {
 	}
 
 	public static float parseFloat (String str) {
+		String[] ee = str.split("e");
+		if(ee.length >1){
+			return parseFloat(ee[0])*(float)Math.pow(10, Integer.parseInt(ee[1]));
+		}
+		
+		
 		float whole = 0, frac = 0;
 		byte[] digits = str.getBytes();
 		float sign = 1;

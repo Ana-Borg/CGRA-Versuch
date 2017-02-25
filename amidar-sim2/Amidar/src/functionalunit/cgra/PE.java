@@ -305,6 +305,8 @@ public class PE {
 	}
 
 
+	
+	Amidar.OP  lastOP = null;
 //	public Amidar.OP tmp;
 
 
@@ -314,6 +316,13 @@ public class PE {
 		if(contextmask.enable(context)){
 			// check for validity
 			Amidar.OP currentop = codes[contextmask.operation(context)];
+			
+			if(currentop != lastOP){
+				processcounter = 0;
+			}
+			lastOP = currentop;
+			
+			
 //			tmp = currentop;
 			if(!model.getAvailableOperators().containsKey(currentop))
 				throw new AmidarSimulatorException("Not allowed operation on PE " + model.getID() + " : " + currentop);
