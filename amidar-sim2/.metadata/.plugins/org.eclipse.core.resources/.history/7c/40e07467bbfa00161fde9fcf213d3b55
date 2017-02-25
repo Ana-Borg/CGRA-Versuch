@@ -1,0 +1,141 @@
+package gps.acquisition;
+import java.lang.Math;
+
+
+public class Acquisition {
+	
+	float pi = (float) 3.14159;
+
+	int N = 400;
+	int nSample = 0;
+	float[] realSample = new float[N];
+	float[] imagSample = new float[N];
+
+	int nCode = 0;	
+	float[] realCode = new float[N];
+	float[] imagCode = new float[N];
+	
+	int Dopplerverschiebung;
+	int Codeverschiebung;
+	
+	int sampleFrequenz = 400000;		//fs
+	int stepFrequenz = 1000;			//fstep
+	int maxFrequenz = 5000;				//fmax
+	int minFrequenz = -5000; 			//fmin
+	float grenzwert = (float) 0.015;	//gama
+	
+	public boolean enterSample(float real, float imag){
+		
+		realSample[nSample] = real;
+		imagSample[nSample] = imag;
+		nSample++;
+		
+		if(nSample < N - 1) return false;
+		else return true;
+	}
+	
+	public boolean enterCode(float real, float imag){
+	
+		realCode[nCode] = real;
+		imagCode[nCode] = imag;
+		nCode++;
+		
+		if(nCode < N - 1) return false;
+		else return true;
+	}
+	
+	public int getDopplerverschiebung(){
+		return Dopplerverschiebung;
+	}
+	
+	public int getCodeVerschiebung(){
+		return Codeverschiebung;
+	}
+	
+	// Acquisition function and its auxiliary functions
+	public boolean startAcquisition(){
+		float Pin;
+		
+		int menge = calculateMengeFrequenzen();
+		
+		float[][] realXfd = new float[N][menge];
+		float[][] imagXfd = new float[N][menge];
+		
+		calculateXfd(realXfd, imagXfd);
+		
+		
+		Pin = calculateInputSignalEstimation();
+		
+		return false;
+	}
+	
+	private int calculateMengeFrequenzen(){
+		int m = 0, fd;
+		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+			m++;
+		}
+		return m;
+	}
+	
+	private float calculateInputSignalEstimation(){
+		int n = 0;
+		float Pin = 0;
+		
+		for(n = 0; n < N; n++){
+			Pin += realSample[n]*realSample[n] + imagSample[n]*imagSample[n];
+		}
+		Pin = Pin/N;
+		return Pin;
+	}
+	
+	/****************  functions for calculation of matrix Xfd  *********************/
+	private void calculateXfd(float[][] realXfd, float[][] imagXfd){
+		float realEuler, imagEuler;
+		int n, fd, m = 0;
+		
+		for(fd = minFrequenz; fd <= maxFrequenz; fd += stepFrequenz){
+			for(n = 0; n < N; n++){
+				float cosx = calculateCosx(fd*n, sampleFrequenz); // e^(-j*2pi*fd*n/fs) = cos(-2pi*fd*n/fs) + jsen(-2pi*fd*n*fs)
+				float sinx = calculateSinx(fd*n, sampleFrequenz); //
+				
+				realXfd[n][m] = realSample[n]*cosx - imagSample[n]*sinx;
+				imagXfd[n][m] = realSample[n]*sinx + imagSample[n]*cosx;
+			}
+			m++;
+		}
+	}
+	
+	private float calculateCosx(int mult, int div){
+		
+		float arg = -(2*pi*mult)/div;
+		float realEuler = (float) Math.cos(arg);
+		
+		return realEuler;
+	}
+	
+	private float calculateSinx(int mult, int div){
+		
+		double arg = -(2*pi*mult)/div;
+		float imagEuler = (float) Math.sin(arg);
+		
+		return imagEuler;
+	}
+	/****************  END functions for calculation of matrix Xfd  *******************/
+	
+	private void calculateDft(float[] inputReal, float[] inputImag, float[] outputReal, float[] outputImag) {
+		int n = inputReal.length;
+		for(int k = 0; k < n; k++) {
+			float sumReal = 0;
+			float sumImag = 0;
+			for(int t = 0; t < n; t++) {  // For each input element
+				float cosx = calculateCosx(t*k, n);
+				float sinx = calculateSinx(t*k, n);
+				sumReal += inputReal[t]*cosx - inputImag[t]*sinx;
+				sumImag += inputReal[t]*sinx + inputImag[t]*cosx;
+			}
+			outputReal[k] = sumReal;
+			outputImag[k] = sumImag;
+		}
+	}
+
+}

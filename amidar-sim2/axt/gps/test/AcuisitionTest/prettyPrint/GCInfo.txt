@@ -2416,19 +2416,34 @@ ______________________________________
 ClassName: gps/acquisition/Acquisition CTI: 111
 
 Number static fields: 0
-Offset to bitmap: 0
-BitMap in hex: 
+Offset to bitmap: 184
+BitMap in hex: 1B00
 Finalizer empty: true
-BitMap useless: true
-_____________________________
-| Numeration| FieldName| Type|
-|============================|
+BitMap useless: false
+____________________________________________
+| Numeration| FieldName          | Type     |
+|===========================================|
+| #0        | pi                 | Primitive|
+| #1        | N                  | Primitive|
+| #2        | nSample            | Primitive|
+| #3        | realSample         | Reference|
+| #4        | imagSample         | Reference|
+| #5        | nCode              | Primitive|
+| #6        | realCode           | Reference|
+| #7        | imagCode           | Reference|
+| #8        | Dopplerverschiebung| Primitive|
+| #9        | Codeverschiebung   | Primitive|
+| #10       | sampleFrequenz     | Primitive|
+| #11       | stepFrequenz       | Primitive|
+| #12       | maxFrequenz        | Primitive|
+| #13       | minFrequenz        | Primitive|
+| #14       | grenzwert          | Primitive|
 
 
 ClassName: gnu/regexp/RETokenStart CTI: 112
 
 Number static fields: 2
-Offset to bitmap: 184
+Offset to bitmap: 186
 BitMap in hex: D0
 Finalizer empty: true
 BitMap useless: false
@@ -2456,7 +2471,7 @@ _____________________________
 ClassName: gnu/regexp/RE CTI: 114
 
 Number static fields: 10
-Offset to bitmap: 185
+Offset to bitmap: 187
 BitMap in hex: D8
 Finalizer empty: true
 BitMap useless: false
@@ -2475,7 +2490,7 @@ ______________________________________
 ClassName: de/amidar/scheduler/SchedulerThread CTI: 115
 
 Number static fields: 0
-Offset to bitmap: 186
+Offset to bitmap: 188
 BitMap in hex: 0800
 Finalizer empty: true
 BitMap useless: false
@@ -2496,7 +2511,7 @@ _________________________________________
 ClassName: java/lang/NumberFormatException CTI: 116
 
 Number static fields: 2
-Offset to bitmap: 188
+Offset to bitmap: 190
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2511,7 +2526,7 @@ ______________________________________
 ClassName: java/util/BitSet CTI: 117
 
 Number static fields: 3
-Offset to bitmap: 189
+Offset to bitmap: 191
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -2524,7 +2539,7 @@ __________________________________
 ClassName: java/util/Collections$EmptyMap CTI: 118
 
 Number static fields: 2
-Offset to bitmap: 190
+Offset to bitmap: 192
 BitMap in hex: C0
 Finalizer empty: true
 BitMap useless: false
@@ -2550,7 +2565,7 @@ _____________________________
 ClassName: java/util/Collections$SynchronizedMap CTI: 120
 
 Number static fields: 2
-Offset to bitmap: 191
+Offset to bitmap: 193
 BitMap in hex: F8
 Finalizer empty: true
 BitMap useless: false
@@ -2567,7 +2582,7 @@ __________________________________
 ClassName: java/lang/RuntimeException CTI: 121
 
 Number static fields: 2
-Offset to bitmap: 192
+Offset to bitmap: 194
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2582,7 +2597,7 @@ ______________________________________
 ClassName: java/util/Collections$SynchronizedSet CTI: 122
 
 Number static fields: 2
-Offset to bitmap: 193
+Offset to bitmap: 195
 BitMap in hex: C0
 Finalizer empty: true
 BitMap useless: false
@@ -2596,7 +2611,7 @@ __________________________________
 ClassName: java/util/Collections$SynchronizedSortedMap CTI: 123
 
 Number static fields: 2
-Offset to bitmap: 194
+Offset to bitmap: 196
 BitMap in hex: FC
 Finalizer empty: true
 BitMap useless: false
@@ -2614,7 +2629,7 @@ __________________________________
 ClassName: java/lang/IllegalAccessError CTI: 124
 
 Number static fields: 2
-Offset to bitmap: 195
+Offset to bitmap: 197
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2654,7 +2669,7 @@ _____________________________
 ClassName: java/util/HashMap CTI: 127
 
 Number static fields: 4
-Offset to bitmap: 196
+Offset to bitmap: 198
 BitMap in hex: C9
 Finalizer empty: true
 BitMap useless: false
@@ -2674,7 +2689,7 @@ ___________________________________
 ClassName: java/util/Collections$UnmodifiableSortedSet CTI: 128
 
 Number static fields: 2
-Offset to bitmap: 197
+Offset to bitmap: 199
 BitMap in hex: C0
 Finalizer empty: true
 BitMap useless: false
@@ -2688,7 +2703,7 @@ __________________________________
 ClassName: java/lang/InterruptedException CTI: 129
 
 Number static fields: 2
-Offset to bitmap: 198
+Offset to bitmap: 200
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2715,7 +2730,7 @@ _____________________________
 ClassName: java/io/FileInputStream CTI: 131
 
 Number static fields: 0
-Offset to bitmap: 199
+Offset to bitmap: 201
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -2728,7 +2743,7 @@ __________________________________
 ClassName: de/amidar/HashMapInt$HashIterator CTI: 132
 
 Number static fields: 0
-Offset to bitmap: 200
+Offset to bitmap: 202
 BitMap in hex: 1C
 Finalizer empty: true
 BitMap useless: false
@@ -2759,7 +2774,7 @@ __________________________________
 ClassName: java/util/Collections$SynchronizedRandomAccessList CTI: 134
 
 Number static fields: 2
-Offset to bitmap: 201
+Offset to bitmap: 203
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2774,7 +2789,7 @@ __________________________________
 ClassName: java/util/Collections$UnmodifiableSortedMap CTI: 135
 
 Number static fields: 2
-Offset to bitmap: 202
+Offset to bitmap: 204
 BitMap in hex: F8
 Finalizer empty: true
 BitMap useless: false
@@ -2791,7 +2806,7 @@ __________________________________
 ClassName: java/lang/StringBuffer CTI: 136
 
 Number static fields: 3
-Offset to bitmap: 203
+Offset to bitmap: 205
 BitMap in hex: 40
 Finalizer empty: true
 BitMap useless: false
@@ -2806,7 +2821,7 @@ __________________________________
 ClassName: gnu/regexp/RETokenOneOf CTI: 137
 
 Number static fields: 2
-Offset to bitmap: 204
+Offset to bitmap: 206
 BitMap in hex: D0
 Finalizer empty: true
 BitMap useless: false
@@ -2823,7 +2838,7 @@ __________________________________
 ClassName: de/amidar/HashMapIdentity$HashIterator CTI: 138
 
 Number static fields: 0
-Offset to bitmap: 205
+Offset to bitmap: 207
 BitMap in hex: 1C
 Finalizer empty: true
 BitMap useless: false
@@ -2866,7 +2881,7 @@ _____________________________
 ClassName: java/util/Collections$SynchronizedListIterator CTI: 141
 
 Number static fields: 0
-Offset to bitmap: 206
+Offset to bitmap: 208
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -2881,7 +2896,7 @@ __________________________________
 ClassName: java/lang/String CTI: 142
 
 Number static fields: 5
-Offset to bitmap: 207
+Offset to bitmap: 209
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -2922,7 +2937,7 @@ _____________________________
 ClassName: java/io/PrintWriter CTI: 145
 
 Number static fields: 1
-Offset to bitmap: 208
+Offset to bitmap: 210
 BitMap in hex: 90
 Finalizer empty: true
 BitMap useless: false
@@ -2938,7 +2953,7 @@ __________________________________
 ClassName: java/lang/ClassNotFoundException CTI: 146
 
 Number static fields: 2
-Offset to bitmap: 209
+Offset to bitmap: 211
 BitMap in hex: F0
 Finalizer empty: true
 BitMap useless: false
@@ -2954,7 +2969,7 @@ ______________________________________
 ClassName: java/util/Collections$UnmodifiableMap CTI: 147
 
 Number static fields: 2
-Offset to bitmap: 210
+Offset to bitmap: 212
 BitMap in hex: F0
 Finalizer empty: true
 BitMap useless: false
@@ -2970,7 +2985,7 @@ __________________________________
 ClassName: java/io/FilterInputStream CTI: 148
 
 Number static fields: 0
-Offset to bitmap: 211
+Offset to bitmap: 213
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -2983,7 +2998,7 @@ __________________________________
 ClassName: java/util/AbstractList$SubList$1 CTI: 149
 
 Number static fields: 0
-Offset to bitmap: 212
+Offset to bitmap: 214
 BitMap in hex: 90
 Finalizer empty: true
 BitMap useless: false
@@ -2999,7 +3014,7 @@ __________________________________
 ClassName: java/util/Collections$UnmodifiableSet CTI: 150
 
 Number static fields: 2
-Offset to bitmap: 213
+Offset to bitmap: 215
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -3012,7 +3027,7 @@ __________________________________
 ClassName: java/util/AbstractMap$2$1 CTI: 151
 
 Number static fields: 0
-Offset to bitmap: 214
+Offset to bitmap: 216
 BitMap in hex: C0
 Finalizer empty: true
 BitMap useless: false
@@ -3051,7 +3066,7 @@ __________________________________
 ClassName: java/util/Vector$1 CTI: 154
 
 Number static fields: 0
-Offset to bitmap: 215
+Offset to bitmap: 217
 BitMap in hex: 40
 Finalizer empty: true
 BitMap useless: false
@@ -3065,7 +3080,7 @@ __________________________________
 ClassName: java/util/Collections$UnmodifiableIterator CTI: 155
 
 Number static fields: 0
-Offset to bitmap: 216
+Offset to bitmap: 218
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -3078,7 +3093,7 @@ __________________________________
 ClassName: gnu/regexp/CharIndexedString CTI: 156
 
 Number static fields: 2
-Offset to bitmap: 217
+Offset to bitmap: 219
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -3093,7 +3108,7 @@ __________________________________
 ClassName: java/util/Collections$SingletonSet$1 CTI: 157
 
 Number static fields: 0
-Offset to bitmap: 218
+Offset to bitmap: 220
 BitMap in hex: 40
 Finalizer empty: true
 BitMap useless: false
@@ -3105,35 +3120,6 @@ __________________________________
 
 
 ClassName: java/lang/CloneNotSupportedException CTI: 158
-
-Number static fields: 2
-Offset to bitmap: 219
-BitMap in hex: E0
-Finalizer empty: true
-BitMap useless: false
-______________________________________
-| Numeration| FieldName    | Type     |
-|=====================================|
-| #0        | detailMessage| Reference|
-| #1        | cause        | Reference|
-| #2        | stackTrace   | Reference|
-
-
-ClassName: java/util/Collections$UnmodifiableRandomAccessList CTI: 159
-
-Number static fields: 2
-Offset to bitmap: 220
-BitMap in hex: C0
-Finalizer empty: true
-BitMap useless: false
-__________________________________
-| Numeration| FieldName| Type     |
-|=================================|
-| #0        | c        | Reference|
-| #1        | list     | Reference|
-
-
-ClassName: java/lang/LinkageError CTI: 160
 
 Number static fields: 2
 Offset to bitmap: 221
@@ -3148,10 +3134,39 @@ ______________________________________
 | #2        | stackTrace   | Reference|
 
 
-ClassName: gnu/regexp/RETokenChar CTI: 161
+ClassName: java/util/Collections$UnmodifiableRandomAccessList CTI: 159
 
 Number static fields: 2
 Offset to bitmap: 222
+BitMap in hex: C0
+Finalizer empty: true
+BitMap useless: false
+__________________________________
+| Numeration| FieldName| Type     |
+|=================================|
+| #0        | c        | Reference|
+| #1        | list     | Reference|
+
+
+ClassName: java/lang/LinkageError CTI: 160
+
+Number static fields: 2
+Offset to bitmap: 223
+BitMap in hex: E0
+Finalizer empty: true
+BitMap useless: false
+______________________________________
+| Numeration| FieldName    | Type     |
+|=====================================|
+| #0        | detailMessage| Reference|
+| #1        | cause        | Reference|
+| #2        | stackTrace   | Reference|
+
+
+ClassName: gnu/regexp/RETokenChar CTI: 161
+
+Number static fields: 2
+Offset to bitmap: 224
 BitMap in hex: D0
 Finalizer empty: true
 BitMap useless: false
@@ -3168,7 +3183,7 @@ __________________________________
 ClassName: java/lang/Character$Subset CTI: 162
 
 Number static fields: 0
-Offset to bitmap: 223
+Offset to bitmap: 225
 BitMap in hex: 80
 Finalizer empty: true
 BitMap useless: false
@@ -3181,7 +3196,7 @@ __________________________________
 ClassName: java/lang/Class CTI: 163
 
 Number static fields: 2
-Offset to bitmap: 224
+Offset to bitmap: 226
 BitMap in hex: C0
 Finalizer empty: true
 BitMap useless: false
@@ -3196,7 +3211,7 @@ __________________________________
 ClassName: java/util/Collections$SynchronizedSortedSet CTI: 164
 
 Number static fields: 2
-Offset to bitmap: 225
+Offset to bitmap: 227
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -3238,7 +3253,7 @@ _____________________________________________
 ClassName: java/util/Collections$SynchronizedList CTI: 166
 
 Number static fields: 2
-Offset to bitmap: 226
+Offset to bitmap: 228
 BitMap in hex: E0
 Finalizer empty: true
 BitMap useless: false
@@ -3258,31 +3273,31 @@ _______________________________________________
 | [Z                            | 187| y       |
 | [C                            | 188| y       |
 | [F                            | 189| y       |
-| [D                            | 190| y       |
-| [B                            | 191| y       |
-| [S                            | 192| y       |
-| [I                            | 193| y       |
-| [J                            | 194| y       |
+| [D                            | 191| y       |
+| [B                            | 192| y       |
+| [S                            | 193| y       |
+| [I                            | 194| y       |
+| [J                            | 195| y       |
 | java/lang/ref/SoftReference   | 167| n       |
 | java/lang/ref/WeakReference   | 167| n       |
 | java/lang/ref/PhantomReference| 167| n       |
 
 
 GCInfo Format
-Size of GCInfo format: 596 Byte
+Size of GCInfo format: 600 Byte
 
 GCInfoHeader
 
-00000254
+00000258
 00000000
 
 SpecialCTIs 
 00A700A7
 00A70000
 00BB00BC
-00BD00BE
-00BF00C0
-00C100C2
+00BD00BF
+00C000C1
+00C200C3
 
 CTI to Bitmaps Offset
 C0008060
@@ -3340,35 +3355,35 @@ C00080B1
 80B2C000
 80B380B4
 80B580B6
-80B7C000
-80B8C000
-80B980BA
-80BC80BD
-80BEC000
-80BF80C0
+80B780B8
+80BAC000
+80BB80BC
+80BE80BF
+80C0C000
 80C180C2
-80C3C000
-C00080C4
-80C580C6
-C00080C7
-80C8C000
-80C980CA
+80C380C4
+80C5C000
+C00080C6
+80C780C8
+C00080C9
+80CAC000
 80CB80CC
-80CDC000
-C00080CE
+80CD80CE
 80CFC000
 C00080D0
-80D180D2
+80D1C000
+C00080D2
 80D380D4
 80D580D6
-C000C000
 80D780D8
+C000C000
 80D980DA
 80DB80DC
 80DD80DE
 80DF80E0
-80E1C000
-80E20000
+80E180E2
+80E3C000
+80E40000
 
 BitMaps
 09E00000
@@ -3417,14 +3432,15 @@ C0E0C080
 A0C0E0C0
 E0C080E0
 BC0EA0F8
-D0D80800
-E080C0F8
-E0C0FCE0
-C9C0E080
-1CE0F840
-D01CE080
-90F0F080
-9080C040
-808040E0
-C0E0D080
-C0E0E000
+1B00D0D8
+0800E080
+C0F8E0C0
+FCE0C9C0
+E0801CE0
+F840D01C
+E08090F0
+F0809080
+C0408080
+40E0C0E0
+D080C0E0
+E0000000

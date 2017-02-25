@@ -846,7 +846,7 @@ public class CGRA extends FunctionalUnit<CgraOpcodes>  {
 //				//========== /CACHE DEV ==========
 				
 				//========== CACHE DEV ==========
-				if(BundledCacheEnable){
+				if(BundledCacheEnable && controlunit.getProgramCounter() != model.getContextMemorySize()-1){
 					if(cacheTicks[cachecnt] == 0){
 						if(OutputCacheValid[cachecnt]){
 							if(OutputCacheWrite[cachecnt]){

@@ -14,7 +14,7 @@ public class AcuisitionTest {
 
 		Acquisition acq = new Acquisition();
 		
-		int testNr = 4;
+		int testNr = 1;
 		
 		String Nr = Integer.toString(testNr);
 		if(Nr.length() == 1){
@@ -43,6 +43,8 @@ public class AcuisitionTest {
 				float imag = Float.parseFloat(values[1]);
 				enoughValues = acq.enterSample(real, imag);
 			}
+			
+			//acq.test();
 
 			brData.close();
 			
@@ -85,7 +87,7 @@ public class AcuisitionTest {
 		boolean passed = res == acquisition && acq.getCodeVerschiebung()== codeVersch && acq.getDopplerverschiebung() == freq;
 		System.out.println((passed?"PASSED":"FAILED") + " Test Nr. " + Nr);
 		if(!passed){
-			System.out.println("Epected " + acquisition + " acquistion");
+			System.out.println("Expected " + acquisition + " acquistion");
 			System.out.println("    " + codeVersch);
 			System.out.println("    " + freq);
 			
