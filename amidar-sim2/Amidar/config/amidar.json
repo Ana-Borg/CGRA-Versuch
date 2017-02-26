@@ -6,7 +6,7 @@
 	"IALU" 					: "config/FU/Ialu.json",
 	"TOKENMACHINE"			: "config/FU/TokenMachine.json",
 	"FRAMESTACK"            : "config/FU/FrameStack.json",
-	"CGRA" 					: "config/FU/CGRA/CGRA_4.json",
+	"CGRA" 					: "config/FU/CGRA/CGRA_9.json",
 	"trace_activation"		: "config/trace.json", 
 	"synthesis" 			: "config/synthesis.json"
 }
