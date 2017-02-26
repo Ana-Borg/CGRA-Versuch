@@ -3,426 +3,431 @@
 __________________________________________________________________________________________________________________________________________________________________________________
 | AMTI | RMTI| Flags| Args| MaxStack| MaxLocal| CodeLength| CodeRef| ExcTblLength| ExcTblRef| #####| ClassName                              | MethodName               | Overrides|
 |=================================================================================================================================================================================|
-| #5301| #0  | 0    | 2   | 2       | 2       | 22        | 1153   | 0           | 0        | #####| java/util/AbstractCollection           | equals                   | 0        |
-| #5302| #1  | 0    | 1   | 1       | 1       | 13        | 1175   | 0           | 0        | #####| java/util/AbstractCollection           | hashCode                 | 0        |
-| #5303| #2  | 0    | 0   | 4       | 0       | 218       | 1474   | 0           | 0        | #####| java/lang/Number                       | <clinit>                 | 0        |
-| #5304| #3  | 0    | 2   | 6       | 5       | 109       | 1832   | 0           | 0        | #####| java/lang/Integer                      | toString                 | 0        |
-| #5305| #4  | 0    | 1   | 2       | 1       | 6         | 1941   | 0           | 0        | #####| java/lang/Integer                      | toHexString              | 0        |
-| #5306| #5  | 0    | 1   | 2       | 1       | 6         | 1947   | 0           | 0        | #####| java/lang/Integer                      | toOctalString            | 0        |
-| #5307| #6  | 0    | 1   | 2       | 1       | 6         | 1953   | 0           | 0        | #####| java/lang/Integer                      | toBinaryString           | 0        |
-| #5308| #7  | 0    | 1   | 2       | 1       | 7         | 1959   | 0           | 0        | #####| java/lang/Integer                      | toString                 | 0        |
-| #5309| #8  | 0    | 2   | 3       | 2       | 7         | 1966   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
-| #5310| #9  | 0    | 1   | 3       | 1       | 8         | 1973   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
-| #5311| #10 | 0    | 2   | 5       | 2       | 14        | 1981   | 0           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
-| #5312| #11 | 0    | 1   | 5       | 1       | 15        | 1995   | 0           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
-| #5313| #12 | 0    | 1   | 5       | 3       | 88        | 2010   | 2           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
-| #5314| #13 | 0    | 1   | 2       | 1       | 6         | 2098   | 0           | 0        | #####| java/lang/Integer                      | getInteger               | 0        |
-| #5315| #14 | 0    | 2   | 3       | 3       | 23        | 2104   | 0           | 0        | #####| java/lang/Integer                      | getInteger               | 0        |
-| #5316| #15 | 0    | 2   | 2       | 3       | 35        | 2127   | 1           | 2        | #####| java/lang/Integer                      | getInteger               | 0        |
-| #5317| #16 | 0    | 1   | 5       | 1       | 15        | 2162   | 0           | 0        | #####| java/lang/Integer                      | decode                   | 0        |
-| #5318| #17 | 0    | 2   | 6       | 5       | 54        | 2177   | 0           | 0        | #####| java/lang/Integer                      | toUnsignedString         | 0        |
-| #5319| #18 | 0    | 3   | 4       | 10      | 497       | 2231   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
-| #5320| #19 | 0    | 1   | 3       | 4       | 41        | 2728   | 0           | 0        | #####| java/lang/Integer                      | stringSize               | 0        |
-| #5321| #20 | 0    | 3   | 4       | 7       | 133       | 2769   | 0           | 0        | #####| java/lang/Integer                      | getChars                 | 0        |
-| #5322| #21 | 0    | 0   | 4       | 0       | 1285      | 2902   | 0           | 0        | #####| java/lang/Integer                      | <clinit>                 | 0        |
-| #5323| #22 | 0    | 4   | 3       | 6       | 137       | 4666   | 0           | 0        | #####| java/lang/Throwable                    | stackTraceStringBuffer   | 0        |
-| #5324| #23 | 0    | 1   | 1       | 1       | 5         | 6881   | 0           | 0        | #####| java/util/AbstractMap$2                | access$100               | 0        |
-| #5325| #24 | 0    | 1   | 1       | 1       | 5         | 7989   | 0           | 0        | #####| java/util/AbstractMap$1                | access$000               | 0        |
-| #5326| #25 | 0    | 1   | 2       | 2       | 32        | 9674   | 0           | 0        | #####| gnu/regexp/RETokenPOSIX                | intValue                 | 0        |
-| #5327| #26 | 0    | 0   | 4       | 0       | 87        | 9706   | 0           | 0        | #####| gnu/regexp/RETokenPOSIX                | <clinit>                 | 0        |
-| #5328| #27 | 0    | 2   | 2       | 6       | 66        | 9798   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5329| #28 | 0    | 2   | 2       | 6       | 66        | 9864   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5330| #29 | 0    | 2   | 2       | 6       | 66        | 9930   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5331| #30 | 0    | 2   | 2       | 6       | 66        | 9996   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5332| #31 | 0    | 3   | 4       | 8       | 72        | 10062  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5333| #32 | 0    | 2   | 2       | 6       | 68        | 10134  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5334| #33 | 0    | 3   | 4       | 7       | 72        | 10202  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5335| #34 | 0    | 2   | 3       | 2       | 7         | 10274  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5336| #35 | 0    | 3   | 3       | 7       | 73        | 10281  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
-| #5337| #36 | 0    | 2   | 3       | 3       | 51        | 10354  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5338| #37 | 0    | 2   | 3       | 3       | 51        | 10405  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5339| #38 | 0    | 2   | 3       | 3       | 51        | 10456  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5340| #39 | 0    | 2   | 3       | 3       | 51        | 10507  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5341| #40 | 0    | 2   | 3       | 3       | 51        | 10558  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5342| #41 | 0    | 2   | 4       | 3       | 52        | 10609  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5343| #42 | 0    | 2   | 3       | 3       | 54        | 10661  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5344| #43 | 0    | 2   | 4       | 3       | 54        | 10715  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5345| #44 | 0    | 2   | 3       | 3       | 54        | 10769  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
-| #5346| #45 | 0    | 2   | 4       | 2       | 9         | 10823  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5347| #46 | 0    | 4   | 3       | 5       | 34        | 10832  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5348| #47 | 0    | 2   | 4       | 2       | 9         | 10866  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5349| #48 | 0    | 4   | 3       | 5       | 34        | 10875  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5350| #49 | 0    | 2   | 4       | 2       | 9         | 10909  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5351| #50 | 0    | 4   | 3       | 5       | 34        | 10918  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5352| #51 | 0    | 2   | 4       | 2       | 9         | 10952  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5353| #52 | 0    | 4   | 3       | 5       | 34        | 10961  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5354| #53 | 0    | 2   | 4       | 2       | 9         | 10995  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5355| #54 | 0    | 4   | 3       | 5       | 34        | 11004  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5356| #55 | 0    | 3   | 5       | 3       | 9         | 11038  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5357| #56 | 0    | 5   | 4       | 6       | 34        | 11047  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5358| #57 | 0    | 2   | 4       | 2       | 9         | 11081  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5359| #58 | 0    | 4   | 3       | 5       | 34        | 11090  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5360| #59 | 0    | 3   | 5       | 3       | 9         | 11124  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5361| #60 | 0    | 5   | 4       | 6       | 34        | 11133  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5362| #61 | 0    | 2   | 4       | 2       | 9         | 11167  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5363| #62 | 0    | 4   | 3       | 5       | 34        | 11176  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
-| #5364| #63 | 0    | 1   | 3       | 1       | 8         | 11210  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5365| #64 | 0    | 3   | 4       | 3       | 34        | 11218  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5366| #65 | 0    | 4   | 3       | 4       | 67        | 11252  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5367| #66 | 0    | 3   | 4       | 4       | 15        | 11319  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5368| #67 | 0    | 4   | 3       | 4       | 23        | 11334  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5369| #68 | 0    | 3   | 5       | 12      | 393       | 11357  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5370| #69 | 0    | 1   | 3       | 1       | 8         | 11750  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5371| #70 | 0    | 3   | 4       | 3       | 34        | 11758  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5372| #71 | 0    | 4   | 3       | 4       | 67        | 11792  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5373| #72 | 0    | 3   | 4       | 4       | 15        | 11859  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5374| #73 | 0    | 4   | 3       | 4       | 23        | 11874  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5375| #74 | 0    | 3   | 5       | 12      | 393       | 11897  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5376| #75 | 0    | 1   | 3       | 1       | 8         | 12290  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5377| #76 | 0    | 3   | 4       | 3       | 34        | 12298  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5378| #77 | 0    | 4   | 3       | 4       | 67        | 12332  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5379| #78 | 0    | 3   | 4       | 4       | 15        | 12399  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5380| #79 | 0    | 4   | 3       | 4       | 23        | 12414  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5381| #80 | 0    | 3   | 5       | 12      | 393       | 12437  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5382| #81 | 0    | 1   | 3       | 1       | 8         | 12830  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5383| #82 | 0    | 3   | 4       | 3       | 34        | 12838  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5384| #83 | 0    | 4   | 3       | 4       | 67        | 12872  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5385| #84 | 0    | 3   | 4       | 4       | 15        | 12939  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5386| #85 | 0    | 4   | 3       | 4       | 23        | 12954  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5387| #86 | 0    | 2   | 2       | 2       | 20        | 12977  | 0           | 0        | #####| java/util/Arrays                       | compare                  | 0        |
-| #5388| #87 | 0    | 3   | 5       | 12      | 397       | 12997  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5389| #88 | 0    | 1   | 3       | 1       | 8         | 13394  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5390| #89 | 0    | 3   | 4       | 3       | 34        | 13402  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5391| #90 | 0    | 4   | 4       | 4       | 72        | 13436  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5392| #91 | 0    | 3   | 4       | 5       | 15        | 13508  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5393| #92 | 0    | 4   | 3       | 4       | 23        | 13523  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5394| #93 | 0    | 4   | 4       | 4       | 22        | 13546  | 0           | 0        | #####| java/util/Arrays                       | compare                  | 0        |
-| #5395| #94 | 0    | 3   | 5       | 12      | 398       | 13568  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5396| #95 | 0    | 1   | 3       | 1       | 8         | 13966  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5397| #96 | 0    | 3   | 4       | 3       | 34        | 13974  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5398| #97 | 0    | 4   | 3       | 4       | 82        | 14008  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5399| #98 | 0    | 3   | 4       | 4       | 15        | 14090  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5400| #99 | 0    | 4   | 3       | 4       | 23        | 14105  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5401| #100| 0    | 3   | 5       | 12      | 400       | 14128  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5402| #101| 0    | 1   | 3       | 1       | 8         | 14528  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5403| #102| 0    | 3   | 4       | 3       | 34        | 14536  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5404| #103| 0    | 4   | 4       | 4       | 82        | 14570  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
-| #5405| #104| 0    | 3   | 4       | 5       | 15        | 14652  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
-| #5406| #105| 0    | 4   | 3       | 4       | 23        | 14667  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
-| #5407| #106| 0    | 3   | 5       | 12      | 400       | 14690  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
-| #5408| #107| 0    | 1   | 4       | 1       | 9         | 15090  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5409| #108| 0    | 2   | 4       | 2       | 9         | 15099  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5410| #109| 0    | 3   | 4       | 3       | 8         | 15108  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5411| #110| 0    | 4   | 6       | 16      | 524       | 15116  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
-| #5412| #111| 0    | 1   | 3       | 1       | 9         | 15640  | 0           | 0        | #####| java/util/Arrays                       | asList                   | 0        |
-| #5413| #112| 0    | 1   | 4       | 3       | 102       | 15649  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5414| #113| 0    | 1   | 4       | 3       | 102       | 15751  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5415| #114| 0    | 1   | 4       | 3       | 102       | 15853  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5416| #115| 0    | 1   | 4       | 3       | 102       | 15955  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5417| #116| 0    | 1   | 4       | 3       | 102       | 16057  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5418| #117| 0    | 1   | 4       | 3       | 102       | 16159  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5419| #118| 0    | 1   | 4       | 3       | 102       | 16261  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5420| #119| 0    | 1   | 4       | 3       | 102       | 16363  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5421| #120| 0    | 1   | 4       | 3       | 102       | 16465  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
-| #5422| #121| 0    | 2   | 4       | 5       | 40        | 16567  | 0           | 0        | #####| java/util/Arrays                       | copyOf                   | 0        |
-| #5423| #122| 0    | 1   | 1       | 1       | 5         | 17078  | 0           | 0        | #####| java/util/Collections$SynchronizedMap$1| access$000               | 0        |
-| #5424| #123| 0    | 2   | 2       | 2       | 23        | 17634  | 0           | 0        | #####| java/util/AbstractMap                  | equals                   | 0        |
-| #5425| #124| 0    | 1   | 1       | 1       | 13        | 17657  | 0           | 0        | #####| java/util/AbstractMap                  | hashCode                 | 0        |
-| #5426| #125| 0    | 0   | 1       | 0       | 23        | 18603  | 0           | 0        | #####| java/io/File                           | <clinit>                 | 0        |
-| #5427| #126| 0    | 2   | 3       | 2       | 6         | 18632  | 0           | 0        | #####| java/lang/Thread                       | sleep                    | 0        |
-| #5428| #127| 0    | 3   | 0       | 3       | 1         | 18638  | 0           | 0        | #####| java/lang/Thread                       | sleep                    | 0        |
-| #5429| #128| 0    | 1   | 1       | 1       | 11        | 18781  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
-| #5430| #129| 0    | 2   | 4       | 2       | 13        | 18792  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
-| #5431| #130| 0    | 1   | 2       | 1       | 14        | 18805  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
-| #5432| #131| 0    | 2   | 4       | 2       | 14        | 18819  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
-| #5433| #132| 0    | 2   | 2       | 2       | 11        | 18833  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
-| #5434| #133| 0    | 4   | 4       | 4       | 12        | 18844  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
-| #5435| #134| 0    | 2   | 2       | 2       | 38        | 18856  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
-| #5436| #135| 0    | 4   | 4       | 4       | 38        | 18894  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
-| #5437| #136| 0    | 2   | 2       | 2       | 11        | 18932  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
-| #5438| #137| 0    | 4   | 4       | 4       | 12        | 18943  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
-| #5439| #138| 0    | 2   | 2       | 2       | 37        | 18955  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
-| #5440| #139| 0    | 4   | 4       | 4       | 37        | 18992  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
-| #5441| #140| 0    | 2   | 4       | 5       | 115       | 19029  | 0           | 0        | #####| java/lang/StrictMath                   | sin                      | 0        |
-| #5442| #141| 0    | 2   | 4       | 5       | 115       | 19144  | 0           | 0        | #####| java/lang/StrictMath                   | cos                      | 0        |
-| #5443| #142| 0    | 2   | 6       | 4       | 70        | 19259  | 0           | 0        | #####| java/lang/StrictMath                   | tan                      | 0        |
-| #5444| #143| 0    | 2   | 24      | 15      | 379       | 19329  | 0           | 0        | #####| java/lang/StrictMath                   | asin                     | 0        |
-| #5445| #144| 0    | 2   | 24      | 17      | 402       | 19708  | 0           | 0        | #####| java/lang/StrictMath                   | acos                     | 0        |
-| #5446| #145| 0    | 2   | 24      | 15      | 346       | 20110  | 0           | 0        | #####| java/lang/StrictMath                   | atan                     | 0        |
-| #5447| #146| 0    | 4   | 6       | 6       | 299       | 20456  | 0           | 0        | #####| java/lang/StrictMath                   | atan2                    | 0        |
-| #5448| #147| 0    | 2   | 22      | 13      | 244       | 20755  | 0           | 0        | #####| java/lang/StrictMath                   | exp                      | 0        |
-| #5449| #148| 0    | 2   | 16      | 19      | 385       | 20999  | 0           | 0        | #####| java/lang/StrictMath                   | log                      | 0        |
-| #5450| #149| 0    | 2   | 6       | 13      | 200       | 21384  | 0           | 0        | #####| java/lang/StrictMath                   | sqrt                     | 0        |
-| #5451| #150| 0    | 4   | 26      | 47      | 1182      | 21584  | 0           | 0        | #####| java/lang/StrictMath                   | pow                      | 0        |
-| #5452| #151| 0    | 4   | 6       | 5       | 158       | 22766  | 0           | 0        | #####| java/lang/StrictMath                   | IEEEremainder            | 0        |
-| #5453| #152| 0    | 2   | 2       | 2       | 7         | 22924  | 0           | 0        | #####| java/lang/StrictMath                   | ceil                     | 0        |
-| #5454| #153| 0    | 2   | 4       | 4       | 63        | 22931  | 0           | 0        | #####| java/lang/StrictMath                   | floor                    | 0        |
-| #5455| #154| 0    | 2   | 6       | 4       | 63        | 22994  | 0           | 0        | #####| java/lang/StrictMath                   | rint                     | 0        |
-| #5456| #155| 0    | 1   | 2       | 1       | 11        | 23057  | 0           | 0        | #####| java/lang/StrictMath                   | round                    | 0        |
-| #5457| #156| 0    | 2   | 4       | 2       | 10        | 23068  | 0           | 0        | #####| java/lang/StrictMath                   | round                    | 0        |
-| #5458| #157| 0    | 0   | 2       | 0       | 54        | 23078  | 1           | 12       | #####| java/lang/StrictMath                   | random                   | 0        |
-| #5459| #158| 0    | 2   | 4       | 2       | 10        | 23132  | 0           | 0        | #####| java/lang/StrictMath                   | toRadians                | 0        |
-| #5460| #159| 0    | 2   | 4       | 2       | 10        | 23142  | 0           | 0        | #####| java/lang/StrictMath                   | toDegrees                | 0        |
-| #5461| #160| 0    | 3   | 6       | 11      | 425       | 23152  | 0           | 0        | #####| java/lang/StrictMath                   | remPiOver2               | 0        |
-| #5462| #161| 0    | 4   | 8       | 24      | 1000      | 23577  | 0           | 0        | #####| java/lang/StrictMath                   | remPiOver2               | 0        |
-| #5463| #162| 0    | 3   | 5       | 6       | 149       | 24577  | 0           | 0        | #####| java/lang/StrictMath                   | scale                    | 0        |
-| #5464| #163| 0    | 4   | 18      | 10      | 104       | 24726  | 0           | 0        | #####| java/lang/StrictMath                   | sin                      | 0        |
-| #5465| #164| 0    | 4   | 24      | 10      | 136       | 24830  | 0           | 0        | #####| java/lang/StrictMath                   | cos                      | 0        |
-| #5466| #165| 0    | 5   | 24      | 21      | 348       | 24966  | 0           | 0        | #####| java/lang/StrictMath                   | tan                      | 0        |
-| #5467| #166| 0    | 0   | 5       | 0       | 521       | 25314  | 0           | 0        | #####| java/lang/StrictMath                   | <clinit>                 | 0        |
-| #5468| #167| 0    | 2   | 4       | 3       | 111       | 28343  | 0           | 0        | #####| java/lang/Double                       | toString                 | 0        |
-| #5469| #168| 0    | 1   | 4       | 1       | 12        | 28454  | 0           | 0        | #####| java/lang/Double                       | valueOf                  | 0        |
-| #5470| #169| 0    | 1   | 2       | 1       | 8         | 28466  | 0           | 0        | #####| java/lang/Double                       | parseDouble              | 0        |
-| #5471| #170| 0    | 2   | 4       | 2       | 12        | 28474  | 0           | 0        | #####| java/lang/Double                       | isNaN                    | 0        |
-| #5472| #171| 0    | 2   | 4       | 2       | 22        | 28486  | 0           | 0        | #####| java/lang/Double                       | isInfinite               | 0        |
-| #5473| #172| 0    | 2   | 2       | 2       | 16        | 28508  | 0           | 0        | #####| java/lang/Double                       | doubleToLongBits         | 0        |
-| #5474| #173| 0    | 2   | 2       | 2       | 11        | 28524  | 0           | 0        | #####| java/lang/Double                       | doubleToRawLongBits      | 0        |
-| #5475| #174| 0    | 2   | 2       | 2       | 11        | 28535  | 0           | 0        | #####| java/lang/Double                       | longBitsToDouble         | 0        |
-| #5476| #175| 0    | 4   | 6       | 4       | 70        | 28546  | 0           | 0        | #####| java/lang/Double                       | compare                  | 0        |
-| #5477| #176| 0    | 0   | 1       | 0       | 5         | 28616  | 0           | 0        | #####| java/lang/Double                       | <clinit>                 | 0        |
-| #5478| #177| 0    | 5   | 5       | 5       | 10        | 28702  | 0           | 0        | #####| java/lang/System                       | arraycopy                | 0        |
-| #5479| #178| 0    | 5   | 2       | 5       | 10        | 28712  | 0           | 0        | #####| java/lang/System                       | arraycopyN               | 0        |
-| #5480| #179| 0    | 0   | 2       | 0       | 4         | 28722  | 0           | 0        | #####| java/lang/System                       | currentTimeMillis        | 0        |
-| #5481| #180| 0    | 1   | 2       | 1       | 8         | 28726  | 0           | 0        | #####| java/lang/System                       | exit                     | 0        |
-| #5482| #181| 0    | 0   | 0       | 0       | 1         | 28734  | 0           | 0        | #####| java/lang/System                       | gc                       | 0        |
-| #5483| #182| 0    | 1   | 2       | 1       | 8         | 28735  | 0           | 0        | #####| java/lang/System                       | getenv                   | 0        |
-| #5484| #183| 0    | 0   | 2       | 0       | 8         | 28743  | 0           | 0        | #####| java/lang/System                       | getProperties            | 0        |
-| #5485| #184| 0    | 1   | 2       | 1       | 22        | 28751  | 0           | 0        | #####| java/lang/System                       | getProperty              | 0        |
-| #5486| #185| 0    | 1   | 1       | 1       | 5         | 28773  | 0           | 0        | #####| java/lang/System                       | identityHashCode         | 0        |
-| #5487| #186| 0    | 1   | 0       | 1       | 1         | 28778  | 0           | 0        | #####| java/lang/System                       | setIn                    | 0        |
-| #5488| #187| 0    | 1   | 2       | 1       | 22        | 28779  | 0           | 0        | #####| java/lang/System                       | setOut                   | 0        |
-| #5489| #188| 0    | 1   | 2       | 1       | 22        | 28801  | 0           | 0        | #####| java/lang/System                       | setErr                   | 0        |
-| #5490| #189| 0    | 0   | 2       | 0       | 10        | 28823  | 0           | 0        | #####| java/lang/System                       | runFinalization          | 0        |
-| #5491| #190| 0    | 0   | 3       | 0       | 39        | 28833  | 0           | 0        | #####| java/lang/System                       | <clinit>                 | 0        |
-| #5492| #191| 0    | 1   | 2       | 1       | 6         | 29540  | 0           | 0        | #####| de/amidar/BitOperations                | Uint8ToInt32             | 0        |
-| #5493| #192| 0    | 1   | 2       | 1       | 6         | 29546  | 0           | 0        | #####| de/amidar/BitOperations                | Uint16ToInt32            | 0        |
-| #5494| #193| 0    | 1   | 4       | 1       | 7         | 29552  | 0           | 0        | #####| de/amidar/BitOperations                | Uint32ToInt64            | 0        |
-| #5495| #194| 0    | 2   | 4       | 2       | 13        | 29559  | 0           | 0        | #####| de/amidar/BitOperations                | CombineUint32ToLong      | 0        |
-| #5496| #195| 0    | 1   | 1       | 1       | 14        | 29680  | 0           | 0        | #####| java/lang/Boolean                      | valueOf                  | 0        |
-| #5497| #196| 0    | 1   | 2       | 1       | 20        | 29694  | 0           | 0        | #####| java/lang/Boolean                      | valueOf                  | 0        |
-| #5498| #197| 0    | 1   | 1       | 1       | 14        | 29714  | 0           | 0        | #####| java/lang/Boolean                      | toString                 | 0        |
-| #5499| #198| 0    | 1   | 2       | 1       | 27        | 29728  | 0           | 0        | #####| java/lang/Boolean                      | getBoolean               | 0        |
-| #5500| #199| 0    | 0   | 3       | 0       | 27        | 29755  | 0           | 0        | #####| java/lang/Boolean                      | <clinit>                 | 0        |
-| #5501| #200| 0    | 1   | 4       | 19      | 708       | 31691  | 1           | 21       | #####| gps/test/AcuisitionTest                | main                     | 0        |
-| #5502| #201| 0    | 1   | 5       | 4       | 50        | 32399  | 1           | 22       | #####| gps/test/AcuisitionTest                | readLine                 | 0        |
-| #5503| #202| 0    | 3   | 7       | 6       | 143       | 34104  | 0           | 0        | #####| java/lang/Long                         | toString                 | 0        |
-| #5504| #203| 0    | 2   | 3       | 2       | 6         | 34247  | 0           | 0        | #####| java/lang/Long                         | toHexString              | 0        |
-| #5505| #204| 0    | 2   | 3       | 2       | 6         | 34253  | 0           | 0        | #####| java/lang/Long                         | toOctalString            | 0        |
-| #5506| #205| 0    | 2   | 3       | 2       | 6         | 34259  | 0           | 0        | #####| java/lang/Long                         | toBinaryString           | 0        |
-| #5507| #206| 0    | 2   | 3       | 2       | 7         | 34265  | 0           | 0        | #####| java/lang/Long                         | toString                 | 0        |
-| #5508| #207| 0    | 2   | 3       | 2       | 7         | 34272  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
-| #5509| #208| 0    | 1   | 3       | 1       | 8         | 34279  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
-| #5510| #209| 0    | 2   | 5       | 2       | 14        | 34287  | 0           | 0        | #####| java/lang/Long                         | valueOf                  | 0        |
-| #5511| #210| 0    | 1   | 5       | 1       | 15        | 34301  | 0           | 0        | #####| java/lang/Long                         | valueOf                  | 0        |
-| #5512| #211| 0    | 1   | 5       | 1       | 15        | 34316  | 0           | 0        | #####| java/lang/Long                         | decode                   | 0        |
-| #5513| #212| 0    | 1   | 2       | 1       | 6         | 34331  | 0           | 0        | #####| java/lang/Long                         | getLong                  | 0        |
-| #5514| #213| 0    | 3   | 4       | 4       | 23        | 34337  | 0           | 0        | #####| java/lang/Long                         | getLong                  | 0        |
-| #5515| #214| 0    | 2   | 2       | 3       | 35        | 34360  | 1           | 24       | #####| java/lang/Long                         | getLong                  | 0        |
-| #5516| #215| 0    | 3   | 6       | 6       | 81        | 34395  | 0           | 0        | #####| java/lang/Long                         | toUnsignedString         | 0        |
-| #5517| #216| 0    | 3   | 4       | 11      | 296       | 34476  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
-| #5518| #217| 0    | 0   | 1       | 0       | 5         | 34772  | 0           | 0        | #####| java/lang/Long                         | <clinit>                 | 0        |
-| #5519| #218| 0    | 1   | 2       | 5       | 78        | 34827  | 0           | 0        | #####| java/lang/Character$UnicodeBlock       | of                       | 0        |
-| #5520| #219| 0    | 0   | 5       | 0       | 2210      | 34905  | 0           | 0        | #####| java/lang/Character$UnicodeBlock       | <clinit>                 | 0        |
-| #5521| #220| 0    | 2   | 2       | 2       | 22        | 37442  | 0           | 0        | #####| java/lang/StackTraceElement            | equals                   | 0        |
-| #5522| #221| 0    | 1   | 1       | 1       | 13        | 37464  | 0           | 0        | #####| java/lang/StackTraceElement            | hashCode                 | 0        |
-| #5523| #222| 0    | 1   | 2       | 1       | 6         | 40333  | 0           | 0        | #####| java/util/regex/Pattern                | compile                  | 0        |
-| #5524| #223| 0    | 2   | 4       | 2       | 26        | 40339  | 0           | 0        | #####| java/util/regex/Pattern                | compile                  | 0        |
-| #5525| #224| 0    | 2   | 2       | 2       | 12        | 40365  | 0           | 0        | #####| java/util/regex/Pattern                | matches                  | 0        |
-| #5526| #225| 0    | 0   | 1       | 0       | 2         | 40532  | 0           | 0        | #####| java/util/Locale                       | getDefault               | 0        |
-| #5527| #226| 0    | 0   | 2       | 0       | 20        | 40891  | 0           | 0        | #####| de/amidar/scheduler/Scheduler          | Instance                 | 0        |
-| #5528| #227| 0    | 1   | 2       | 2       | 49        | 40911  | 2           | 30       | #####| de/amidar/scheduler/Scheduler          | ThreadRunWrapper         | 0        |
-| #5529| #228| 0    | 0   | 1       | 0       | 5         | 40960  | 0           | 0        | #####| de/amidar/scheduler/Scheduler          | <clinit>                 | 0        |
-| #5530| #229| 0    | 0   | 3       | 1       | 540       | 41399  | 0           | 0        | #####| gnu/regexp/RESyntax                    | <clinit>                 | 0        |
-| #5531| #230| 0    | 0   | 1       | 0       | 4         | 48322  | 0           | 0        | #####| gnu/regexp/RE                          | version                  | 0        |
-| #5532| #231| 0    | 3   | 5       | 3       | 67        | 48326  | 0           | 0        | #####| gnu/regexp/RE                          | getCharUnit              | 0        |
-| #5533| #232| 0    | 4   | 6       | 4       | 32        | 48393  | 0           | 0        | #####| gnu/regexp/RE                          | setRepeated              | 0        |
-| #5534| #233| 0    | 3   | 3       | 4       | 48        | 48425  | 0           | 0        | #####| gnu/regexp/RE                          | getPosixSet              | 0        |
-| #5535| #234| 0    | 2   | 4       | 2       | 108       | 48473  | 0           | 0        | #####| gnu/regexp/RE                          | makeCharIndexed          | 0        |
-| #5536| #235| 0    | 1   | 2       | 1       | 24        | 50494  | 0           | 0        | #####| java/util/Collections                  | isSequential             | 0        |
-| #5537| #236| 0    | 3   | 3       | 3       | 26        | 50518  | 0           | 0        | #####| java/util/Collections                  | compare                  | 0        |
-| #5538| #237| 0    | 2   | 3       | 2       | 7         | 50544  | 0           | 0        | #####| java/util/Collections                  | binarySearch             | 0        |
-| #5539| #238| 0    | 3   | 3       | 11      | 247       | 50551  | 0           | 0        | #####| java/util/Collections                  | binarySearch             | 0        |
-| #5540| #239| 0    | 2   | 3       | 5       | 75        | 50798  | 0           | 0        | #####| java/util/Collections                  | copy                     | 0        |
-| #5541| #240| 0    | 1   | 3       | 2       | 16        | 50873  | 0           | 0        | #####| java/util/Collections                  | enumeration              | 0        |
-| #5542| #241| 0    | 2   | 2       | 4       | 41        | 50889  | 0           | 0        | #####| java/util/Collections                  | fill                     | 0        |
-| #5543| #242| 0    | 2   | 3       | 5       | 54        | 50930  | 0           | 0        | #####| java/util/Collections                  | indexOfSubList           | 0        |
-| #5544| #243| 0    | 2   | 3       | 5       | 54        | 50984  | 0           | 0        | #####| java/util/Collections                  | lastIndexOfSubList       | 0        |
-| #5545| #244| 0    | 1   | 2       | 2       | 33        | 51038  | 0           | 0        | #####| java/util/Collections                  | list                     | 0        |
-| #5546| #245| 0    | 1   | 2       | 1       | 6         | 51071  | 0           | 0        | #####| java/util/Collections                  | max                      | 0        |
-| #5547| #246| 0    | 2   | 3       | 7       | 61        | 51077  | 0           | 0        | #####| java/util/Collections                  | max                      | 0        |
-| #5548| #247| 0    | 1   | 2       | 1       | 6         | 51138  | 0           | 0        | #####| java/util/Collections                  | min                      | 0        |
-| #5549| #248| 0    | 2   | 3       | 7       | 61        | 51144  | 0           | 0        | #####| java/util/Collections                  | min                      | 0        |
-| #5550| #249| 0    | 2   | 4       | 2       | 10        | 51205  | 0           | 0        | #####| java/util/Collections                  | nCopies                  | 0        |
-| #5551| #250| 0    | 3   | 2       | 6       | 55        | 51215  | 0           | 0        | #####| java/util/Collections                  | replaceAll               | 0        |
-| #5552| #251| 0    | 1   | 2       | 6       | 70        | 51270  | 0           | 0        | #####| java/util/Collections                  | reverse                  | 0        |
-| #5553| #252| 0    | 0   | 1       | 0       | 4         | 51340  | 0           | 0        | #####| java/util/Collections                  | reverseOrder             | 0        |
-| #5554| #253| 0    | 2   | 3       | 8       | 166       | 51344  | 0           | 0        | #####| java/util/Collections                  | rotate                   | 0        |
-| #5555| #254| 0    | 1   | 2       | 1       | 30        | 51510  | 0           | 0        | #####| java/util/Collections                  | shuffle                  | 0        |
-| #5556| #255| 0    | 2   | 3       | 9       | 114       | 51540  | 0           | 0        | #####| java/util/Collections                  | shuffle                  | 0        |
-| #5557| #256| 0    | 1   | 3       | 1       | 9         | 51654  | 0           | 0        | #####| java/util/Collections                  | singleton                | 0        |
-| #5558| #257| 0    | 1   | 3       | 1       | 9         | 51663  | 0           | 0        | #####| java/util/Collections                  | singletonList            | 0        |
-| #5559| #258| 0    | 2   | 4       | 2       | 10        | 51672  | 0           | 0        | #####| java/util/Collections                  | singletonMap             | 0        |
-| #5560| #259| 0    | 1   | 2       | 1       | 6         | 51682  | 0           | 0        | #####| java/util/Collections                  | sort                     | 0        |
-| #5561| #260| 0    | 2   | 3       | 6       | 57        | 51688  | 0           | 0        | #####| java/util/Collections                  | sort                     | 0        |
-| #5562| #261| 0    | 3   | 6       | 3       | 23        | 51745  | 0           | 0        | #####| java/util/Collections                  | swap                     | 0        |
-| #5563| #262| 0    | 1   | 3       | 1       | 9         | 51768  | 0           | 0        | #####| java/util/Collections                  | synchronizedCollection   | 0        |
-| #5564| #263| 0    | 1   | 3       | 1       | 25        | 51777  | 0           | 0        | #####| java/util/Collections                  | synchronizedList         | 0        |
-| #5565| #264| 0    | 1   | 3       | 1       | 9         | 51802  | 0           | 0        | #####| java/util/Collections                  | synchronizedMap          | 0        |
-| #5566| #265| 0    | 1   | 3       | 1       | 9         | 51811  | 0           | 0        | #####| java/util/Collections                  | synchronizedSet          | 0        |
-| #5567| #266| 0    | 1   | 3       | 1       | 9         | 51820  | 0           | 0        | #####| java/util/Collections                  | synchronizedSortedMap    | 0        |
-| #5568| #267| 0    | 1   | 3       | 1       | 9         | 51829  | 0           | 0        | #####| java/util/Collections                  | synchronizedSortedSet    | 0        |
-| #5569| #268| 0    | 1   | 3       | 1       | 9         | 51838  | 0           | 0        | #####| java/util/Collections                  | unmodifiableCollection   | 0        |
-| #5570| #269| 0    | 1   | 3       | 1       | 25        | 51847  | 0           | 0        | #####| java/util/Collections                  | unmodifiableList         | 0        |
-| #5571| #270| 0    | 1   | 3       | 1       | 9         | 51872  | 0           | 0        | #####| java/util/Collections                  | unmodifiableMap          | 0        |
-| #5572| #271| 0    | 1   | 3       | 1       | 9         | 51881  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSet          | 0        |
-| #5573| #272| 0    | 1   | 3       | 1       | 9         | 51890  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSortedMap    | 0        |
-| #5574| #273| 0    | 1   | 3       | 1       | 9         | 51899  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSortedSet    | 0        |
-| #5575| #274| 0    | 0   | 2       | 0       | 45        | 51908  | 0           | 0        | #####| java/util/Collections                  | <clinit>                 | 0        |
-| #5576| #275| 0    | 2   | 2       | 2       | 109       | 53751  | 0           | 0        | #####| java/lang/reflect/Array                | newInstance              | 0        |
-| #5577| #276| 0    | 2   | 4       | 2       | 26        | 53860  | 0           | 0        | #####| java/lang/reflect/Array                | newInstance              | 0        |
-| #5578| #277| 0    | 1   | 2       | 1       | 164       | 53886  | 0           | 0        | #####| java/lang/reflect/Array                | getLength                | 0        |
-| #5579| #278| 0    | 2   | 4       | 2       | 234       | 54050  | 0           | 0        | #####| java/lang/reflect/Array                | get                      | 0        |
-| #5580| #279| 0    | 2   | 2       | 2       | 37        | 54284  | 0           | 0        | #####| java/lang/reflect/Array                | getBoolean               | 0        |
-| #5581| #280| 0    | 2   | 2       | 2       | 37        | 54321  | 0           | 0        | #####| java/lang/reflect/Array                | getByte                  | 0        |
-| #5582| #281| 0    | 2   | 2       | 2       | 37        | 54358  | 0           | 0        | #####| java/lang/reflect/Array                | getChar                  | 0        |
-| #5583| #282| 0    | 2   | 2       | 2       | 24        | 54395  | 0           | 0        | #####| java/lang/reflect/Array                | getShort                 | 0        |
-| #5584| #283| 0    | 2   | 2       | 2       | 40        | 54419  | 0           | 0        | #####| java/lang/reflect/Array                | getInt                   | 0        |
-| #5585| #284| 0    | 2   | 2       | 2       | 24        | 54459  | 0           | 0        | #####| java/lang/reflect/Array                | getLong                  | 0        |
-| #5586| #285| 0    | 2   | 2       | 2       | 24        | 54483  | 0           | 0        | #####| java/lang/reflect/Array                | getFloat                 | 0        |
-| #5587| #286| 0    | 2   | 2       | 2       | 24        | 54507  | 0           | 0        | #####| java/lang/reflect/Array                | getDouble                | 0        |
-| #5588| #287| 0    | 3   | 4       | 3       | 243       | 54531  | 0           | 0        | #####| java/lang/reflect/Array                | set                      | 0        |
-| #5589| #288| 0    | 3   | 3       | 3       | 41        | 54774  | 0           | 0        | #####| java/lang/reflect/Array                | setBoolean               | 0        |
-| #5590| #289| 0    | 3   | 3       | 3       | 28        | 54815  | 0           | 0        | #####| java/lang/reflect/Array                | setByte                  | 0        |
-| #5591| #290| 0    | 3   | 3       | 3       | 27        | 54843  | 0           | 0        | #####| java/lang/reflect/Array                | setChar                  | 0        |
-| #5592| #291| 0    | 3   | 3       | 3       | 27        | 54870  | 0           | 0        | #####| java/lang/reflect/Array                | setShort                 | 0        |
-| #5593| #292| 0    | 3   | 4       | 3       | 28        | 54897  | 0           | 0        | #####| java/lang/reflect/Array                | setInt                   | 0        |
-| #5594| #293| 0    | 4   | 4       | 4       | 28        | 54925  | 0           | 0        | #####| java/lang/reflect/Array                | setLong                  | 0        |
-| #5595| #294| 0    | 3   | 4       | 3       | 28        | 54953  | 0           | 0        | #####| java/lang/reflect/Array                | setFloat                 | 0        |
-| #5596| #295| 0    | 4   | 4       | 4       | 41        | 54981  | 0           | 0        | #####| java/lang/reflect/Array                | setDouble                | 0        |
-| #5597| #296| 0    | 3   | 6       | 7       | 86        | 55022  | 0           | 0        | #####| java/lang/reflect/Array                | createMultiArray         | 0        |
-| #5598| #297| 0    | 2   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/reflect/Array                | createObjectArray        | 0        |
-| #5599| #298| 0    | 1   | 6       | 7       | 313       | 55609  | 0           | 0        | #####| java/lang/Float                        | toString                 | 0        |
-| #5600| #299| 0    | 2   | 4       | 5       | 31        | 55922  | 0           | 0        | #####| java/lang/Float                        | pow                      | 0        |
-| #5601| #300| 0    | 1   | 4       | 5       | 131       | 55953  | 0           | 0        | #####| java/lang/Float                        | log10                    | 0        |
-| #5602| #301| 0    | 1   | 3       | 1       | 12        | 56084  | 0           | 0        | #####| java/lang/Float                        | valueOf                  | 0        |
-| #5603| #302| 0    | 1   | 5       | 7       | 170       | 56096  | 0           | 0        | #####| java/lang/Float                        | parseFloat               | 0        |
-| #5604| #303| 0    | 1   | 2       | 1       | 12        | 56266  | 0           | 0        | #####| java/lang/Float                        | isNaN                    | 0        |
-| #5605| #304| 0    | 1   | 2       | 1       | 22        | 56278  | 0           | 0        | #####| java/lang/Float                        | isInfinite               | 0        |
-| #5606| #305| 0    | 1   | 1       | 1       | 16        | 56300  | 0           | 0        | #####| java/lang/Float                        | floatToIntBits           | 0        |
-| #5607| #306| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/Float                        | floatToRawIntBits        | 0        |
-| #5608| #307| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/Float                        | intBitsToFloat           | 0        |
-| #5609| #308| 0    | 2   | 3       | 2       | 70        | 56316  | 0           | 0        | #####| java/lang/Float                        | compare                  | 0        |
-| #5610| #309| 0    | 0   | 1       | 0       | 5         | 56386  | 0           | 0        | #####| java/lang/Float                        | <clinit>                 | 0        |
-| #5611| #310| 0    | 1   | 1       | 1       | 5         | 59226  | 0           | 0        | #####| java/lang/Short                        | toString                 | 0        |
-| #5612| #311| 0    | 1   | 2       | 1       | 7         | 59231  | 0           | 0        | #####| java/lang/Short                        | parseShort               | 0        |
-| #5613| #312| 0    | 2   | 3       | 3       | 24        | 59238  | 0           | 0        | #####| java/lang/Short                        | parseShort               | 0        |
-| #5614| #313| 0    | 2   | 4       | 2       | 13        | 59262  | 0           | 0        | #####| java/lang/Short                        | valueOf                  | 0        |
-| #5615| #314| 0    | 1   | 4       | 1       | 14        | 59275  | 0           | 0        | #####| java/lang/Short                        | valueOf                  | 0        |
-| #5616| #315| 0    | 1   | 3       | 2       | 32        | 59289  | 0           | 0        | #####| java/lang/Short                        | decode                   | 0        |
-| #5617| #316| 0    | 0   | 1       | 0       | 5         | 59321  | 0           | 0        | #####| java/lang/Short                        | <clinit>                 | 0        |
-| #5618| #317| 0    | 1   | 1       | 1       | 15        | 62338  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5619| #318| 0    | 1   | 3       | 1       | 8         | 62353  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5620| #319| 0    | 3   | 6       | 3       | 12        | 62361  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5621| #320| 0    | 3   | 6       | 3       | 12        | 62373  | 0           | 0        | #####| java/lang/String                       | copyValueOf              | 0        |
-| #5622| #321| 0    | 1   | 3       | 1       | 8         | 62385  | 0           | 0        | #####| java/lang/String                       | copyValueOf              | 0        |
-| #5623| #322| 0    | 1   | 1       | 1       | 14        | 62393  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5624| #323| 0    | 1   | 6       | 1       | 18        | 62407  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5625| #324| 0    | 1   | 2       | 1       | 7         | 62425  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5626| #325| 0    | 2   | 2       | 2       | 5         | 62432  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5627| #326| 0    | 1   | 1       | 1       | 5         | 62437  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5628| #327| 0    | 2   | 2       | 2       | 5         | 62442  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
-| #5629| #328| 0    | 1   | 3       | 1       | 14        | 62447  | 0           | 0        | #####| java/lang/String                       | upperCaseExpansion       | 0        |
-| #5630| #329| 0    | 1   | 3       | 5       | 73        | 62461  | 0           | 0        | #####| java/lang/String                       | upperCaseIndex           | 0        |
-| #5631| #330| 0    | 1   | 5       | 3       | 52        | 62534  | 0           | 0        | #####| java/lang/String                       | zeroBasedStringValue     | 0        |
-| #5632| #331| 0    | 0   | 2       | 0       | 29        | 62586  | 0           | 0        | #####| java/lang/String                       | <clinit>                 | 0        |
-| #5633| #332| 0    | 1   | 4       | 1       | 66        | 62714  | 0           | 0        | #####| java/lang/Character                    | readChar                 | 0        |
-| #5634| #333| 0    | 1   | 6       | 1       | 18        | 62780  | 0           | 0        | #####| java/lang/Character                    | toString                 | 0        |
-| #5635| #334| 0    | 1   | 2       | 1       | 14        | 62798  | 0           | 0        | #####| java/lang/Character                    | isLowerCase              | 0        |
-| #5636| #335| 0    | 1   | 2       | 1       | 14        | 62812  | 0           | 0        | #####| java/lang/Character                    | isUpperCase              | 0        |
-| #5637| #336| 0    | 1   | 2       | 1       | 14        | 62826  | 0           | 0        | #####| java/lang/Character                    | isTitleCase              | 0        |
-| #5638| #337| 0    | 1   | 2       | 1       | 15        | 62840  | 0           | 0        | #####| java/lang/Character                    | isDigit                  | 0        |
-| #5639| #338| 0    | 1   | 1       | 1       | 13        | 62855  | 0           | 0        | #####| java/lang/Character                    | isDefined                | 0        |
-| #5640| #339| 0    | 1   | 2       | 1       | 18        | 62868  | 0           | 0        | #####| java/lang/Character                    | isLetter                 | 0        |
-| #5641| #340| 0    | 1   | 2       | 1       | 19        | 62886  | 0           | 0        | #####| java/lang/Character                    | isLetterOrDigit          | 0        |
-| #5642| #341| 0    | 1   | 1       | 1       | 5         | 62905  | 0           | 0        | #####| java/lang/Character                    | isJavaLetter             | 0        |
-| #5643| #342| 0    | 1   | 1       | 1       | 2         | 62910  | 0           | 0        | #####| java/lang/Character                    | isJavaLetterOrDigit      | 0        |
-| #5644| #343| 0    | 1   | 2       | 1       | 19        | 62912  | 0           | 0        | #####| java/lang/Character                    | isJavaIdentifierStart    | 0        |
-| #5645| #344| 0    | 1   | 2       | 2       | 31        | 62931  | 0           | 0        | #####| java/lang/Character                    | isJavaIdentifierPart     | 0        |
-| #5646| #345| 0    | 1   | 2       | 1       | 19        | 62962  | 0           | 0        | #####| java/lang/Character                    | isUnicodeIdentifierStart | 0        |
-| #5647| #346| 0    | 1   | 2       | 2       | 34        | 62981  | 0           | 0        | #####| java/lang/Character                    | isUnicodeIdentifierPart  | 0        |
-| #5648| #347| 0    | 1   | 2       | 1       | 46        | 63015  | 0           | 0        | #####| java/lang/Character                    | isIdentifierIgnorable    | 0        |
-| #5649| #348| 0    | 1   | 4       | 1       | 15        | 63061  | 0           | 0        | #####| java/lang/Character                    | toLowerCase              | 0        |
-| #5650| #349| 0    | 1   | 4       | 1       | 15        | 63076  | 0           | 0        | #####| java/lang/Character                    | toUpperCase              | 0        |
-| #5651| #350| 0    | 1   | 3       | 2       | 39        | 63091  | 0           | 0        | #####| java/lang/Character                    | toTitleCase              | 0        |
-| #5652| #351| 0    | 2   | 3       | 4       | 53        | 63130  | 0           | 0        | #####| java/lang/Character                    | digit                    | 0        |
-| #5653| #352| 0    | 1   | 3       | 1       | 13        | 63183  | 0           | 0        | #####| java/lang/Character                    | getNumericValue          | 0        |
-| #5654| #353| 0    | 1   | 3       | 1       | 27        | 63196  | 0           | 0        | #####| java/lang/Character                    | isSpace                  | 0        |
-| #5655| #354| 0    | 1   | 2       | 1       | 19        | 63223  | 0           | 0        | #####| java/lang/Character                    | isSpaceChar              | 0        |
-| #5656| #355| 0    | 1   | 3       | 2       | 47        | 63242  | 0           | 0        | #####| java/lang/Character                    | isWhitespace             | 0        |
-| #5657| #356| 0    | 1   | 2       | 1       | 15        | 63289  | 0           | 0        | #####| java/lang/Character                    | isISOControl             | 0        |
-| #5658| #357| 0    | 1   | 2       | 1       | 8         | 63304  | 0           | 0        | #####| java/lang/Character                    | getType                  | 0        |
-| #5659| #358| 0    | 2   | 2       | 2       | 28        | 63312  | 0           | 0        | #####| java/lang/Character                    | forDigit                 | 0        |
-| #5660| #359| 0    | 1   | 3       | 1       | 15        | 63340  | 0           | 0        | #####| java/lang/Character                    | getDirectionality        | 0        |
-| #5661| #360| 0    | 1   | 2       | 1       | 16        | 63355  | 0           | 0        | #####| java/lang/Character                    | isMirrored               | 0        |
-| #5662| #361| 0    | 0   | 1       | 0       | 68        | 63371  | 0           | 0        | #####| java/lang/Character                    | <clinit>                 | 0        |
-| #5663| #362| 0    | 0   | 6       | 12      | 191       | 63444  | 0           | 0        | #####| de/amidar/AmidarSystem                 | SetupPeripherals         | 0        |
-| #5664| #363| 0    | 2   | 3       | 4       | 37        | 63635  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readPeriName             | 0        |
-| #5665| #364| 0    | 1   | 2       | 1       | 20        | 63672  | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetPeripherals           | 0        |
-| #5666| #365| 0    | 2   | 2       | 3       | 30        | 63692  | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetPeripheral            | 0        |
-| #5667| #366| 0    | 3   | 3       | 4       | 45        | 63722  | 0           | 0        | #####| de/amidar/AmidarSystem                 | writePeriTableEntry      | 0        |
-| #5668| #367| 0    | 1   | 3       | 6       | 52        | 63767  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readHandle               | 0        |
-| #5669| #368| 0    | 1   | 1       | 1       | 8         | 63819  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readHandle               | 0        |
-| #5670| #369| 0    | 1   | 5       | 8       | 110       | 63827  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readString               | 0        |
-| #5671| #370| 0    | 1   | 2       | 6       | 42        | 63937  | 0           | 0        | #####| de/amidar/AmidarSystem                 | ClearMem                 | 0        |
-| #5672| #371| 0    | 0   | 3       | 0       | 150       | 63979  | 0           | 0        | #####| de/amidar/AmidarSystem                 | UncheckedExceptionHandler| 0        |
-| #5673| #372| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | ReadAddress              | 0        |
-| #5674| #373| 0    | 2   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | WriteAddress             | 0        |
-| #5675| #374| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetMonitorId             | 0        |
-| #5676| #375| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | DisableScheduling        | 0        |
-| #5677| #376| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | ForceScheduling          | 0        |
-| #5678| #377| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | EnableScheduling         | 0        |
-| #5679| #378| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | IntToRef                 | 0        |
-| #5680| #379| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | RefToInt                 | 0        |
-| #5681| #380| 0    | 0   | 4       | 0       | 12        | 64899  | 0           | 0        | #####| java/io/PrintWriter                    | <clinit>                 | 0        |
-| #5682| #381| 0    | 1   | 1       | 1       | 11        | 65341  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
-| #5683| #382| 0    | 2   | 4       | 2       | 13        | 65352  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
-| #5684| #383| 0    | 1   | 2       | 1       | 14        | 65365  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
-| #5685| #384| 0    | 2   | 4       | 2       | 14        | 65379  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
-| #5686| #385| 0    | 2   | 2       | 2       | 11        | 65393  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
-| #5687| #386| 0    | 4   | 4       | 4       | 12        | 65404  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
-| #5688| #387| 0    | 2   | 2       | 2       | 38        | 65416  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
-| #5689| #388| 0    | 4   | 4       | 4       | 38        | 65454  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
-| #5690| #389| 0    | 2   | 2       | 2       | 11        | 65492  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
-| #5691| #390| 0    | 4   | 4       | 4       | 12        | 65503  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
-| #5692| #391| 0    | 2   | 2       | 2       | 37        | 65515  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
-| #5693| #392| 0    | 4   | 4       | 4       | 37        | 65552  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
-| #5694| #393| 0    | 2   | 2       | 2       | 5         | 65589  | 0           | 0        | #####| java/lang/Math                         | sin                      | 0        |
-| #5695| #394| 0    | 2   | 2       | 2       | 5         | 65594  | 0           | 0        | #####| java/lang/Math                         | cos                      | 0        |
-| #5696| #395| 0    | 2   | 2       | 2       | 5         | 65599  | 0           | 0        | #####| java/lang/Math                         | tan                      | 0        |
-| #5697| #396| 0    | 2   | 2       | 2       | 5         | 65604  | 0           | 0        | #####| java/lang/Math                         | asin                     | 0        |
-| #5698| #397| 0    | 2   | 2       | 2       | 5         | 65609  | 0           | 0        | #####| java/lang/Math                         | acos                     | 0        |
-| #5699| #398| 0    | 2   | 2       | 2       | 5         | 65614  | 0           | 0        | #####| java/lang/Math                         | atan                     | 0        |
-| #5700| #399| 0    | 4   | 4       | 4       | 6         | 65619  | 0           | 0        | #####| java/lang/Math                         | atan2                    | 0        |
-| #5701| #400| 0    | 2   | 2       | 2       | 5         | 65625  | 0           | 0        | #####| java/lang/Math                         | exp                      | 0        |
-| #5702| #401| 0    | 2   | 2       | 2       | 5         | 65630  | 0           | 0        | #####| java/lang/Math                         | log                      | 0        |
-| #5703| #402| 0    | 2   | 2       | 2       | 5         | 65635  | 0           | 0        | #####| java/lang/Math                         | sqrt                     | 0        |
-| #5704| #403| 0    | 4   | 4       | 4       | 6         | 65640  | 0           | 0        | #####| java/lang/Math                         | pow                      | 0        |
-| #5705| #404| 0    | 4   | 4       | 4       | 6         | 65646  | 0           | 0        | #####| java/lang/Math                         | IEEEremainder            | 0        |
-| #5706| #405| 0    | 2   | 2       | 2       | 5         | 65652  | 0           | 0        | #####| java/lang/Math                         | ceil                     | 0        |
-| #5707| #406| 0    | 2   | 2       | 2       | 5         | 65657  | 0           | 0        | #####| java/lang/Math                         | floor                    | 0        |
-| #5708| #407| 0    | 2   | 2       | 2       | 5         | 65662  | 0           | 0        | #####| java/lang/Math                         | rint                     | 0        |
-| #5709| #408| 0    | 1   | 2       | 1       | 19        | 65667  | 0           | 0        | #####| java/lang/Math                         | round                    | 0        |
-| #5710| #409| 0    | 2   | 4       | 2       | 18        | 65686  | 0           | 0        | #####| java/lang/Math                         | round                    | 0        |
-| #5711| #410| 0    | 0   | 2       | 0       | 54        | 65704  | 1           | 68       | #####| java/lang/Math                         | random                   | 0        |
-| #5712| #411| 0    | 2   | 4       | 2       | 10        | 65758  | 0           | 0        | #####| java/lang/Math                         | toRadians                | 0        |
-| #5713| #412| 0    | 2   | 4       | 2       | 10        | 65768  | 0           | 0        | #####| java/lang/Math                         | toDegrees                | 0        |
-| #5714| #413| 0    | 1   | 1       | 1       | 5         | 65896  | 0           | 0        | #####| java/lang/Byte                         | toString                 | 0        |
-| #5715| #414| 0    | 1   | 2       | 1       | 7         | 65901  | 0           | 0        | #####| java/lang/Byte                         | parseByte                | 0        |
-| #5716| #415| 0    | 2   | 3       | 3       | 24        | 65908  | 0           | 0        | #####| java/lang/Byte                         | parseByte                | 0        |
-| #5717| #416| 0    | 2   | 4       | 2       | 13        | 65932  | 0           | 0        | #####| java/lang/Byte                         | valueOf                  | 0        |
-| #5718| #417| 0    | 1   | 4       | 1       | 14        | 65945  | 0           | 0        | #####| java/lang/Byte                         | valueOf                  | 0        |
-| #5719| #418| 0    | 1   | 3       | 2       | 32        | 65959  | 0           | 0        | #####| java/lang/Byte                         | decode                   | 0        |
-| #5720| #419| 0    | 0   | 1       | 0       | 5         | 65991  | 0           | 0        | #####| java/lang/Byte                         | <clinit>                 | 0        |
-| #5721| #420| 0    | 1   | 4       | 2       | 81        | 66495  | 0           | 0        | #####| java/lang/Class                        | forName                  | 0        |
-| #5722| #421| 0    | 1   | 2       | 1       | 20        | 66576  | 0           | 0        | #####| java/lang/Class                        | forCti                   | 0        |
-| #5723| #422| 0    | 0   | 1       | 1       | 6         | 66596  | 0           | 0        | #####| java/lang/Class                        | <clinit>                 | 0        |
+| #5312| #0  | 0    | 2   | 2       | 2       | 22        | 1156   | 0           | 0        | #####| java/util/AbstractCollection           | equals                   | 0        |
+| #5313| #1  | 0    | 1   | 1       | 1       | 13        | 1178   | 0           | 0        | #####| java/util/AbstractCollection           | hashCode                 | 0        |
+| #5314| #2  | 0    | 0   | 4       | 0       | 218       | 1477   | 0           | 0        | #####| java/lang/Number                       | <clinit>                 | 0        |
+| #5315| #3  | 0    | 2   | 6       | 5       | 109       | 1835   | 0           | 0        | #####| java/lang/Integer                      | toString                 | 0        |
+| #5316| #4  | 0    | 1   | 2       | 1       | 6         | 1944   | 0           | 0        | #####| java/lang/Integer                      | toHexString              | 0        |
+| #5317| #5  | 0    | 1   | 2       | 1       | 6         | 1950   | 0           | 0        | #####| java/lang/Integer                      | toOctalString            | 0        |
+| #5318| #6  | 0    | 1   | 2       | 1       | 6         | 1956   | 0           | 0        | #####| java/lang/Integer                      | toBinaryString           | 0        |
+| #5319| #7  | 0    | 1   | 2       | 1       | 7         | 1962   | 0           | 0        | #####| java/lang/Integer                      | toString                 | 0        |
+| #5320| #8  | 0    | 2   | 3       | 2       | 7         | 1969   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
+| #5321| #9  | 0    | 1   | 3       | 1       | 8         | 1976   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
+| #5322| #10 | 0    | 2   | 5       | 2       | 14        | 1984   | 0           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
+| #5323| #11 | 0    | 1   | 5       | 1       | 15        | 1998   | 0           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
+| #5324| #12 | 0    | 1   | 5       | 3       | 88        | 2013   | 2           | 0        | #####| java/lang/Integer                      | valueOf                  | 0        |
+| #5325| #13 | 0    | 1   | 2       | 1       | 6         | 2101   | 0           | 0        | #####| java/lang/Integer                      | getInteger               | 0        |
+| #5326| #14 | 0    | 2   | 3       | 3       | 23        | 2107   | 0           | 0        | #####| java/lang/Integer                      | getInteger               | 0        |
+| #5327| #15 | 0    | 2   | 2       | 3       | 35        | 2130   | 1           | 2        | #####| java/lang/Integer                      | getInteger               | 0        |
+| #5328| #16 | 0    | 1   | 5       | 1       | 15        | 2165   | 0           | 0        | #####| java/lang/Integer                      | decode                   | 0        |
+| #5329| #17 | 0    | 2   | 6       | 5       | 54        | 2180   | 0           | 0        | #####| java/lang/Integer                      | toUnsignedString         | 0        |
+| #5330| #18 | 0    | 3   | 4       | 10      | 497       | 2234   | 0           | 0        | #####| java/lang/Integer                      | parseInt                 | 0        |
+| #5331| #19 | 0    | 1   | 3       | 4       | 41        | 2731   | 0           | 0        | #####| java/lang/Integer                      | stringSize               | 0        |
+| #5332| #20 | 0    | 3   | 4       | 7       | 133       | 2772   | 0           | 0        | #####| java/lang/Integer                      | getChars                 | 0        |
+| #5333| #21 | 0    | 0   | 4       | 0       | 1285      | 2905   | 0           | 0        | #####| java/lang/Integer                      | <clinit>                 | 0        |
+| #5334| #22 | 0    | 4   | 3       | 6       | 137       | 4669   | 0           | 0        | #####| java/lang/Throwable                    | stackTraceStringBuffer   | 0        |
+| #5335| #23 | 0    | 1   | 1       | 1       | 5         | 6884   | 0           | 0        | #####| java/util/AbstractMap$2                | access$100               | 0        |
+| #5336| #24 | 0    | 1   | 1       | 1       | 5         | 7992   | 0           | 0        | #####| java/util/AbstractMap$1                | access$000               | 0        |
+| #5337| #25 | 0    | 1   | 2       | 2       | 32        | 9677   | 0           | 0        | #####| gnu/regexp/RETokenPOSIX                | intValue                 | 0        |
+| #5338| #26 | 0    | 0   | 4       | 0       | 87        | 9709   | 0           | 0        | #####| gnu/regexp/RETokenPOSIX                | <clinit>                 | 0        |
+| #5339| #27 | 0    | 2   | 2       | 6       | 66        | 9801   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5340| #28 | 0    | 2   | 2       | 6       | 66        | 9867   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5341| #29 | 0    | 2   | 2       | 6       | 66        | 9933   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5342| #30 | 0    | 2   | 2       | 6       | 66        | 9999   | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5343| #31 | 0    | 3   | 4       | 8       | 72        | 10065  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5344| #32 | 0    | 2   | 2       | 6       | 68        | 10137  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5345| #33 | 0    | 3   | 4       | 7       | 72        | 10205  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5346| #34 | 0    | 2   | 3       | 2       | 7         | 10277  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5347| #35 | 0    | 3   | 3       | 7       | 73        | 10284  | 0           | 0        | #####| java/util/Arrays                       | binarySearch             | 0        |
+| #5348| #36 | 0    | 2   | 3       | 3       | 51        | 10357  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5349| #37 | 0    | 2   | 3       | 3       | 51        | 10408  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5350| #38 | 0    | 2   | 3       | 3       | 51        | 10459  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5351| #39 | 0    | 2   | 3       | 3       | 51        | 10510  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5352| #40 | 0    | 2   | 3       | 3       | 51        | 10561  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5353| #41 | 0    | 2   | 4       | 3       | 52        | 10612  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5354| #42 | 0    | 2   | 3       | 3       | 54        | 10664  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5355| #43 | 0    | 2   | 4       | 3       | 54        | 10718  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5356| #44 | 0    | 2   | 3       | 3       | 54        | 10772  | 0           | 0        | #####| java/util/Arrays                       | equals                   | 0        |
+| #5357| #45 | 0    | 2   | 4       | 2       | 9         | 10826  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5358| #46 | 0    | 4   | 3       | 5       | 34        | 10835  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5359| #47 | 0    | 2   | 4       | 2       | 9         | 10869  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5360| #48 | 0    | 4   | 3       | 5       | 34        | 10878  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5361| #49 | 0    | 2   | 4       | 2       | 9         | 10912  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5362| #50 | 0    | 4   | 3       | 5       | 34        | 10921  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5363| #51 | 0    | 2   | 4       | 2       | 9         | 10955  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5364| #52 | 0    | 4   | 3       | 5       | 34        | 10964  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5365| #53 | 0    | 2   | 4       | 2       | 9         | 10998  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5366| #54 | 0    | 4   | 3       | 5       | 34        | 11007  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5367| #55 | 0    | 3   | 5       | 3       | 9         | 11041  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5368| #56 | 0    | 5   | 4       | 6       | 34        | 11050  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5369| #57 | 0    | 2   | 4       | 2       | 9         | 11084  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5370| #58 | 0    | 4   | 3       | 5       | 34        | 11093  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5371| #59 | 0    | 3   | 5       | 3       | 9         | 11127  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5372| #60 | 0    | 5   | 4       | 6       | 34        | 11136  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5373| #61 | 0    | 2   | 4       | 2       | 9         | 11170  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5374| #62 | 0    | 4   | 3       | 5       | 34        | 11179  | 0           | 0        | #####| java/util/Arrays                       | fill                     | 0        |
+| #5375| #63 | 0    | 1   | 3       | 1       | 8         | 11213  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5376| #64 | 0    | 3   | 4       | 3       | 34        | 11221  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5377| #65 | 0    | 4   | 3       | 4       | 67        | 11255  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5378| #66 | 0    | 3   | 4       | 4       | 15        | 11322  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5379| #67 | 0    | 4   | 3       | 4       | 23        | 11337  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5380| #68 | 0    | 3   | 5       | 12      | 393       | 11360  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5381| #69 | 0    | 1   | 3       | 1       | 8         | 11753  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5382| #70 | 0    | 3   | 4       | 3       | 34        | 11761  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5383| #71 | 0    | 4   | 3       | 4       | 67        | 11795  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5384| #72 | 0    | 3   | 4       | 4       | 15        | 11862  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5385| #73 | 0    | 4   | 3       | 4       | 23        | 11877  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5386| #74 | 0    | 3   | 5       | 12      | 393       | 11900  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5387| #75 | 0    | 1   | 3       | 1       | 8         | 12293  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5388| #76 | 0    | 3   | 4       | 3       | 34        | 12301  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5389| #77 | 0    | 4   | 3       | 4       | 67        | 12335  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5390| #78 | 0    | 3   | 4       | 4       | 15        | 12402  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5391| #79 | 0    | 4   | 3       | 4       | 23        | 12417  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5392| #80 | 0    | 3   | 5       | 12      | 393       | 12440  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5393| #81 | 0    | 1   | 3       | 1       | 8         | 12833  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5394| #82 | 0    | 3   | 4       | 3       | 34        | 12841  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5395| #83 | 0    | 4   | 3       | 4       | 67        | 12875  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5396| #84 | 0    | 3   | 4       | 4       | 15        | 12942  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5397| #85 | 0    | 4   | 3       | 4       | 23        | 12957  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5398| #86 | 0    | 2   | 2       | 2       | 20        | 12980  | 0           | 0        | #####| java/util/Arrays                       | compare                  | 0        |
+| #5399| #87 | 0    | 3   | 5       | 12      | 397       | 13000  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5400| #88 | 0    | 1   | 3       | 1       | 8         | 13397  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5401| #89 | 0    | 3   | 4       | 3       | 34        | 13405  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5402| #90 | 0    | 4   | 4       | 4       | 72        | 13439  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5403| #91 | 0    | 3   | 4       | 5       | 15        | 13511  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5404| #92 | 0    | 4   | 3       | 4       | 23        | 13526  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5405| #93 | 0    | 4   | 4       | 4       | 22        | 13549  | 0           | 0        | #####| java/util/Arrays                       | compare                  | 0        |
+| #5406| #94 | 0    | 3   | 5       | 12      | 398       | 13571  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5407| #95 | 0    | 1   | 3       | 1       | 8         | 13969  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5408| #96 | 0    | 3   | 4       | 3       | 34        | 13977  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5409| #97 | 0    | 4   | 3       | 4       | 82        | 14011  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5410| #98 | 0    | 3   | 4       | 4       | 15        | 14093  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5411| #99 | 0    | 4   | 3       | 4       | 23        | 14108  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5412| #100| 0    | 3   | 5       | 12      | 400       | 14131  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5413| #101| 0    | 1   | 3       | 1       | 8         | 14531  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5414| #102| 0    | 3   | 4       | 3       | 34        | 14539  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5415| #103| 0    | 4   | 4       | 4       | 82        | 14573  | 0           | 0        | #####| java/util/Arrays                       | med3                     | 0        |
+| #5416| #104| 0    | 3   | 4       | 5       | 15        | 14655  | 0           | 0        | #####| java/util/Arrays                       | swap                     | 0        |
+| #5417| #105| 0    | 4   | 3       | 4       | 23        | 14670  | 0           | 0        | #####| java/util/Arrays                       | vecswap                  | 0        |
+| #5418| #106| 0    | 3   | 5       | 12      | 400       | 14693  | 0           | 0        | #####| java/util/Arrays                       | qsort                    | 0        |
+| #5419| #107| 0    | 1   | 4       | 1       | 9         | 15093  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5420| #108| 0    | 2   | 4       | 2       | 9         | 15102  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5421| #109| 0    | 3   | 4       | 3       | 8         | 15111  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5422| #110| 0    | 4   | 6       | 16      | 524       | 15119  | 0           | 0        | #####| java/util/Arrays                       | sort                     | 0        |
+| #5423| #111| 0    | 1   | 3       | 1       | 9         | 15643  | 0           | 0        | #####| java/util/Arrays                       | asList                   | 0        |
+| #5424| #112| 0    | 1   | 4       | 3       | 102       | 15652  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5425| #113| 0    | 1   | 4       | 3       | 102       | 15754  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5426| #114| 0    | 1   | 4       | 3       | 102       | 15856  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5427| #115| 0    | 1   | 4       | 3       | 102       | 15958  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5428| #116| 0    | 1   | 4       | 3       | 102       | 16060  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5429| #117| 0    | 1   | 4       | 3       | 102       | 16162  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5430| #118| 0    | 1   | 4       | 3       | 102       | 16264  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5431| #119| 0    | 1   | 4       | 3       | 102       | 16366  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5432| #120| 0    | 1   | 4       | 3       | 102       | 16468  | 0           | 0        | #####| java/util/Arrays                       | toString                 | 0        |
+| #5433| #121| 0    | 2   | 4       | 5       | 40        | 16570  | 0           | 0        | #####| java/util/Arrays                       | copyOf                   | 0        |
+| #5434| #122| 0    | 1   | 1       | 1       | 5         | 17081  | 0           | 0        | #####| java/util/Collections$SynchronizedMap$1| access$000               | 0        |
+| #5435| #123| 0    | 2   | 2       | 2       | 23        | 17637  | 0           | 0        | #####| java/util/AbstractMap                  | equals                   | 0        |
+| #5436| #124| 0    | 1   | 1       | 1       | 13        | 17660  | 0           | 0        | #####| java/util/AbstractMap                  | hashCode                 | 0        |
+| #5437| #125| 0    | 0   | 1       | 0       | 23        | 18606  | 0           | 0        | #####| java/io/File                           | <clinit>                 | 0        |
+| #5438| #126| 0    | 2   | 3       | 2       | 6         | 18635  | 0           | 0        | #####| java/lang/Thread                       | sleep                    | 0        |
+| #5439| #127| 0    | 3   | 0       | 3       | 1         | 18641  | 0           | 0        | #####| java/lang/Thread                       | sleep                    | 0        |
+| #5440| #128| 0    | 1   | 3       | 2       | 20        | 19955  | 0           | 0        | #####| cgra/pe/PETrigonometry                 | cos                      | 0        |
+| #5441| #129| 0    | 1   | 3       | 2       | 20        | 19975  | 0           | 0        | #####| cgra/pe/PETrigonometry                 | sin                      | 0        |
+| #5442| #130| 0    | 2   | 4       | 3       | 20        | 19995  | 0           | 0        | #####| cgra/pe/PETrigonometry                 | cos                      | 0        |
+| #5443| #131| 0    | 2   | 4       | 3       | 20        | 20015  | 0           | 0        | #####| cgra/pe/PETrigonometry                 | sin                      | 0        |
+| #5444| #132| 0    | 1   | 2       | 1       | 13        | 20035  | 0           | 0        | #####| cgra/pe/PETrigonometry                 | main                     | 0        |
+| #5445| #133| 0    | 1   | 1       | 1       | 11        | 20053  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
+| #5446| #134| 0    | 2   | 4       | 2       | 13        | 20064  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
+| #5447| #135| 0    | 1   | 2       | 1       | 14        | 20077  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
+| #5448| #136| 0    | 2   | 4       | 2       | 14        | 20091  | 0           | 0        | #####| java/lang/StrictMath                   | abs                      | 0        |
+| #5449| #137| 0    | 2   | 2       | 2       | 11        | 20105  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
+| #5450| #138| 0    | 4   | 4       | 4       | 12        | 20116  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
+| #5451| #139| 0    | 2   | 2       | 2       | 38        | 20128  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
+| #5452| #140| 0    | 4   | 4       | 4       | 38        | 20166  | 0           | 0        | #####| java/lang/StrictMath                   | min                      | 0        |
+| #5453| #141| 0    | 2   | 2       | 2       | 11        | 20204  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
+| #5454| #142| 0    | 4   | 4       | 4       | 12        | 20215  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
+| #5455| #143| 0    | 2   | 2       | 2       | 37        | 20227  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
+| #5456| #144| 0    | 4   | 4       | 4       | 37        | 20264  | 0           | 0        | #####| java/lang/StrictMath                   | max                      | 0        |
+| #5457| #145| 0    | 2   | 4       | 5       | 115       | 20301  | 0           | 0        | #####| java/lang/StrictMath                   | sin                      | 0        |
+| #5458| #146| 0    | 2   | 4       | 5       | 115       | 20416  | 0           | 0        | #####| java/lang/StrictMath                   | cos                      | 0        |
+| #5459| #147| 0    | 2   | 6       | 4       | 70        | 20531  | 0           | 0        | #####| java/lang/StrictMath                   | tan                      | 0        |
+| #5460| #148| 0    | 2   | 24      | 15      | 379       | 20601  | 0           | 0        | #####| java/lang/StrictMath                   | asin                     | 0        |
+| #5461| #149| 0    | 2   | 24      | 17      | 402       | 20980  | 0           | 0        | #####| java/lang/StrictMath                   | acos                     | 0        |
+| #5462| #150| 0    | 2   | 24      | 15      | 346       | 21382  | 0           | 0        | #####| java/lang/StrictMath                   | atan                     | 0        |
+| #5463| #151| 0    | 4   | 6       | 6       | 299       | 21728  | 0           | 0        | #####| java/lang/StrictMath                   | atan2                    | 0        |
+| #5464| #152| 0    | 2   | 22      | 13      | 244       | 22027  | 0           | 0        | #####| java/lang/StrictMath                   | exp                      | 0        |
+| #5465| #153| 0    | 2   | 16      | 19      | 385       | 22271  | 0           | 0        | #####| java/lang/StrictMath                   | log                      | 0        |
+| #5466| #154| 0    | 2   | 6       | 13      | 200       | 22656  | 0           | 0        | #####| java/lang/StrictMath                   | sqrt                     | 0        |
+| #5467| #155| 0    | 4   | 26      | 47      | 1182      | 22856  | 0           | 0        | #####| java/lang/StrictMath                   | pow                      | 0        |
+| #5468| #156| 0    | 4   | 6       | 5       | 158       | 24038  | 0           | 0        | #####| java/lang/StrictMath                   | IEEEremainder            | 0        |
+| #5469| #157| 0    | 2   | 2       | 2       | 7         | 24196  | 0           | 0        | #####| java/lang/StrictMath                   | ceil                     | 0        |
+| #5470| #158| 0    | 2   | 4       | 4       | 63        | 24203  | 0           | 0        | #####| java/lang/StrictMath                   | floor                    | 0        |
+| #5471| #159| 0    | 2   | 6       | 4       | 63        | 24266  | 0           | 0        | #####| java/lang/StrictMath                   | rint                     | 0        |
+| #5472| #160| 0    | 1   | 2       | 1       | 11        | 24329  | 0           | 0        | #####| java/lang/StrictMath                   | round                    | 0        |
+| #5473| #161| 0    | 2   | 4       | 2       | 10        | 24340  | 0           | 0        | #####| java/lang/StrictMath                   | round                    | 0        |
+| #5474| #162| 0    | 0   | 2       | 0       | 54        | 24350  | 1           | 12       | #####| java/lang/StrictMath                   | random                   | 0        |
+| #5475| #163| 0    | 2   | 4       | 2       | 10        | 24404  | 0           | 0        | #####| java/lang/StrictMath                   | toRadians                | 0        |
+| #5476| #164| 0    | 2   | 4       | 2       | 10        | 24414  | 0           | 0        | #####| java/lang/StrictMath                   | toDegrees                | 0        |
+| #5477| #165| 0    | 3   | 6       | 11      | 425       | 24424  | 0           | 0        | #####| java/lang/StrictMath                   | remPiOver2               | 0        |
+| #5478| #166| 0    | 4   | 8       | 24      | 1000      | 24849  | 0           | 0        | #####| java/lang/StrictMath                   | remPiOver2               | 0        |
+| #5479| #167| 0    | 3   | 5       | 6       | 149       | 25849  | 0           | 0        | #####| java/lang/StrictMath                   | scale                    | 0        |
+| #5480| #168| 0    | 4   | 18      | 10      | 104       | 25998  | 0           | 0        | #####| java/lang/StrictMath                   | sin                      | 0        |
+| #5481| #169| 0    | 4   | 24      | 10      | 136       | 26102  | 0           | 0        | #####| java/lang/StrictMath                   | cos                      | 0        |
+| #5482| #170| 0    | 5   | 24      | 21      | 348       | 26238  | 0           | 0        | #####| java/lang/StrictMath                   | tan                      | 0        |
+| #5483| #171| 0    | 0   | 5       | 0       | 521       | 26586  | 0           | 0        | #####| java/lang/StrictMath                   | <clinit>                 | 0        |
+| #5484| #172| 0    | 2   | 4       | 3       | 111       | 29615  | 0           | 0        | #####| java/lang/Double                       | toString                 | 0        |
+| #5485| #173| 0    | 1   | 4       | 1       | 12        | 29726  | 0           | 0        | #####| java/lang/Double                       | valueOf                  | 0        |
+| #5486| #174| 0    | 1   | 2       | 1       | 8         | 29738  | 0           | 0        | #####| java/lang/Double                       | parseDouble              | 0        |
+| #5487| #175| 0    | 2   | 4       | 2       | 12        | 29746  | 0           | 0        | #####| java/lang/Double                       | isNaN                    | 0        |
+| #5488| #176| 0    | 2   | 4       | 2       | 22        | 29758  | 0           | 0        | #####| java/lang/Double                       | isInfinite               | 0        |
+| #5489| #177| 0    | 2   | 2       | 2       | 16        | 29780  | 0           | 0        | #####| java/lang/Double                       | doubleToLongBits         | 0        |
+| #5490| #178| 0    | 2   | 2       | 2       | 11        | 29796  | 0           | 0        | #####| java/lang/Double                       | doubleToRawLongBits      | 0        |
+| #5491| #179| 0    | 2   | 2       | 2       | 11        | 29807  | 0           | 0        | #####| java/lang/Double                       | longBitsToDouble         | 0        |
+| #5492| #180| 0    | 4   | 6       | 4       | 70        | 29818  | 0           | 0        | #####| java/lang/Double                       | compare                  | 0        |
+| #5493| #181| 0    | 0   | 1       | 0       | 5         | 29888  | 0           | 0        | #####| java/lang/Double                       | <clinit>                 | 0        |
+| #5494| #182| 0    | 5   | 5       | 5       | 10        | 29974  | 0           | 0        | #####| java/lang/System                       | arraycopy                | 0        |
+| #5495| #183| 0    | 5   | 2       | 5       | 10        | 29984  | 0           | 0        | #####| java/lang/System                       | arraycopyN               | 0        |
+| #5496| #184| 0    | 0   | 2       | 0       | 4         | 29994  | 0           | 0        | #####| java/lang/System                       | currentTimeMillis        | 0        |
+| #5497| #185| 0    | 1   | 2       | 1       | 8         | 29998  | 0           | 0        | #####| java/lang/System                       | exit                     | 0        |
+| #5498| #186| 0    | 0   | 0       | 0       | 1         | 30006  | 0           | 0        | #####| java/lang/System                       | gc                       | 0        |
+| #5499| #187| 0    | 1   | 2       | 1       | 8         | 30007  | 0           | 0        | #####| java/lang/System                       | getenv                   | 0        |
+| #5500| #188| 0    | 0   | 2       | 0       | 8         | 30015  | 0           | 0        | #####| java/lang/System                       | getProperties            | 0        |
+| #5501| #189| 0    | 1   | 2       | 1       | 22        | 30023  | 0           | 0        | #####| java/lang/System                       | getProperty              | 0        |
+| #5502| #190| 0    | 1   | 1       | 1       | 5         | 30045  | 0           | 0        | #####| java/lang/System                       | identityHashCode         | 0        |
+| #5503| #191| 0    | 1   | 0       | 1       | 1         | 30050  | 0           | 0        | #####| java/lang/System                       | setIn                    | 0        |
+| #5504| #192| 0    | 1   | 2       | 1       | 22        | 30051  | 0           | 0        | #####| java/lang/System                       | setOut                   | 0        |
+| #5505| #193| 0    | 1   | 2       | 1       | 22        | 30073  | 0           | 0        | #####| java/lang/System                       | setErr                   | 0        |
+| #5506| #194| 0    | 0   | 2       | 0       | 10        | 30095  | 0           | 0        | #####| java/lang/System                       | runFinalization          | 0        |
+| #5507| #195| 0    | 0   | 3       | 0       | 39        | 30105  | 0           | 0        | #####| java/lang/System                       | <clinit>                 | 0        |
+| #5508| #196| 0    | 1   | 2       | 1       | 6         | 30812  | 0           | 0        | #####| de/amidar/BitOperations                | Uint8ToInt32             | 0        |
+| #5509| #197| 0    | 1   | 2       | 1       | 6         | 30818  | 0           | 0        | #####| de/amidar/BitOperations                | Uint16ToInt32            | 0        |
+| #5510| #198| 0    | 1   | 4       | 1       | 7         | 30824  | 0           | 0        | #####| de/amidar/BitOperations                | Uint32ToInt64            | 0        |
+| #5511| #199| 0    | 2   | 4       | 2       | 13        | 30831  | 0           | 0        | #####| de/amidar/BitOperations                | CombineUint32ToLong      | 0        |
+| #5512| #200| 0    | 1   | 1       | 1       | 14        | 30952  | 0           | 0        | #####| java/lang/Boolean                      | valueOf                  | 0        |
+| #5513| #201| 0    | 1   | 2       | 1       | 20        | 30966  | 0           | 0        | #####| java/lang/Boolean                      | valueOf                  | 0        |
+| #5514| #202| 0    | 1   | 1       | 1       | 14        | 30986  | 0           | 0        | #####| java/lang/Boolean                      | toString                 | 0        |
+| #5515| #203| 0    | 1   | 2       | 1       | 27        | 31000  | 0           | 0        | #####| java/lang/Boolean                      | getBoolean               | 0        |
+| #5516| #204| 0    | 0   | 3       | 0       | 27        | 31027  | 0           | 0        | #####| java/lang/Boolean                      | <clinit>                 | 0        |
+| #5517| #205| 0    | 1   | 4       | 19      | 708       | 32963  | 1           | 21       | #####| gps/test/AcuisitionTest                | main                     | 0        |
+| #5518| #206| 0    | 1   | 5       | 4       | 50        | 33671  | 1           | 22       | #####| gps/test/AcuisitionTest                | readLine                 | 0        |
+| #5519| #207| 0    | 3   | 7       | 6       | 143       | 35376  | 0           | 0        | #####| java/lang/Long                         | toString                 | 0        |
+| #5520| #208| 0    | 2   | 3       | 2       | 6         | 35519  | 0           | 0        | #####| java/lang/Long                         | toHexString              | 0        |
+| #5521| #209| 0    | 2   | 3       | 2       | 6         | 35525  | 0           | 0        | #####| java/lang/Long                         | toOctalString            | 0        |
+| #5522| #210| 0    | 2   | 3       | 2       | 6         | 35531  | 0           | 0        | #####| java/lang/Long                         | toBinaryString           | 0        |
+| #5523| #211| 0    | 2   | 3       | 2       | 7         | 35537  | 0           | 0        | #####| java/lang/Long                         | toString                 | 0        |
+| #5524| #212| 0    | 2   | 3       | 2       | 7         | 35544  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
+| #5525| #213| 0    | 1   | 3       | 1       | 8         | 35551  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
+| #5526| #214| 0    | 2   | 5       | 2       | 14        | 35559  | 0           | 0        | #####| java/lang/Long                         | valueOf                  | 0        |
+| #5527| #215| 0    | 1   | 5       | 1       | 15        | 35573  | 0           | 0        | #####| java/lang/Long                         | valueOf                  | 0        |
+| #5528| #216| 0    | 1   | 5       | 1       | 15        | 35588  | 0           | 0        | #####| java/lang/Long                         | decode                   | 0        |
+| #5529| #217| 0    | 1   | 2       | 1       | 6         | 35603  | 0           | 0        | #####| java/lang/Long                         | getLong                  | 0        |
+| #5530| #218| 0    | 3   | 4       | 4       | 23        | 35609  | 0           | 0        | #####| java/lang/Long                         | getLong                  | 0        |
+| #5531| #219| 0    | 2   | 2       | 3       | 35        | 35632  | 1           | 24       | #####| java/lang/Long                         | getLong                  | 0        |
+| #5532| #220| 0    | 3   | 6       | 6       | 81        | 35667  | 0           | 0        | #####| java/lang/Long                         | toUnsignedString         | 0        |
+| #5533| #221| 0    | 3   | 4       | 11      | 296       | 35748  | 0           | 0        | #####| java/lang/Long                         | parseLong                | 0        |
+| #5534| #222| 0    | 0   | 1       | 0       | 5         | 36044  | 0           | 0        | #####| java/lang/Long                         | <clinit>                 | 0        |
+| #5535| #223| 0    | 1   | 2       | 5       | 78        | 36099  | 0           | 0        | #####| java/lang/Character$UnicodeBlock       | of                       | 0        |
+| #5536| #224| 0    | 0   | 5       | 0       | 2210      | 36177  | 0           | 0        | #####| java/lang/Character$UnicodeBlock       | <clinit>                 | 0        |
+| #5537| #225| 0    | 2   | 2       | 2       | 22        | 38714  | 0           | 0        | #####| java/lang/StackTraceElement            | equals                   | 0        |
+| #5538| #226| 0    | 1   | 1       | 1       | 13        | 38736  | 0           | 0        | #####| java/lang/StackTraceElement            | hashCode                 | 0        |
+| #5539| #227| 0    | 1   | 2       | 1       | 6         | 41605  | 0           | 0        | #####| java/util/regex/Pattern                | compile                  | 0        |
+| #5540| #228| 0    | 2   | 4       | 2       | 26        | 41611  | 0           | 0        | #####| java/util/regex/Pattern                | compile                  | 0        |
+| #5541| #229| 0    | 2   | 2       | 2       | 12        | 41637  | 0           | 0        | #####| java/util/regex/Pattern                | matches                  | 0        |
+| #5542| #230| 0    | 0   | 1       | 0       | 2         | 41804  | 0           | 0        | #####| java/util/Locale                       | getDefault               | 0        |
+| #5543| #231| 0    | 0   | 2       | 0       | 20        | 42163  | 0           | 0        | #####| de/amidar/scheduler/Scheduler          | Instance                 | 0        |
+| #5544| #232| 0    | 1   | 2       | 2       | 49        | 42183  | 2           | 30       | #####| de/amidar/scheduler/Scheduler          | ThreadRunWrapper         | 0        |
+| #5545| #233| 0    | 0   | 1       | 0       | 5         | 42232  | 0           | 0        | #####| de/amidar/scheduler/Scheduler          | <clinit>                 | 0        |
+| #5546| #234| 0    | 0   | 3       | 1       | 540       | 42671  | 0           | 0        | #####| gnu/regexp/RESyntax                    | <clinit>                 | 0        |
+| #5547| #235| 0    | 0   | 1       | 0       | 4         | 49562  | 0           | 0        | #####| gnu/regexp/RE                          | version                  | 0        |
+| #5548| #236| 0    | 3   | 5       | 3       | 67        | 49566  | 0           | 0        | #####| gnu/regexp/RE                          | getCharUnit              | 0        |
+| #5549| #237| 0    | 4   | 6       | 4       | 32        | 49633  | 0           | 0        | #####| gnu/regexp/RE                          | setRepeated              | 0        |
+| #5550| #238| 0    | 3   | 3       | 4       | 48        | 49665  | 0           | 0        | #####| gnu/regexp/RE                          | getPosixSet              | 0        |
+| #5551| #239| 0    | 2   | 4       | 2       | 108       | 49713  | 0           | 0        | #####| gnu/regexp/RE                          | makeCharIndexed          | 0        |
+| #5552| #240| 0    | 1   | 2       | 1       | 24        | 51734  | 0           | 0        | #####| java/util/Collections                  | isSequential             | 0        |
+| #5553| #241| 0    | 3   | 3       | 3       | 26        | 51758  | 0           | 0        | #####| java/util/Collections                  | compare                  | 0        |
+| #5554| #242| 0    | 2   | 3       | 2       | 7         | 51784  | 0           | 0        | #####| java/util/Collections                  | binarySearch             | 0        |
+| #5555| #243| 0    | 3   | 3       | 11      | 247       | 51791  | 0           | 0        | #####| java/util/Collections                  | binarySearch             | 0        |
+| #5556| #244| 0    | 2   | 3       | 5       | 75        | 52038  | 0           | 0        | #####| java/util/Collections                  | copy                     | 0        |
+| #5557| #245| 0    | 1   | 3       | 2       | 16        | 52113  | 0           | 0        | #####| java/util/Collections                  | enumeration              | 0        |
+| #5558| #246| 0    | 2   | 2       | 4       | 41        | 52129  | 0           | 0        | #####| java/util/Collections                  | fill                     | 0        |
+| #5559| #247| 0    | 2   | 3       | 5       | 54        | 52170  | 0           | 0        | #####| java/util/Collections                  | indexOfSubList           | 0        |
+| #5560| #248| 0    | 2   | 3       | 5       | 54        | 52224  | 0           | 0        | #####| java/util/Collections                  | lastIndexOfSubList       | 0        |
+| #5561| #249| 0    | 1   | 2       | 2       | 33        | 52278  | 0           | 0        | #####| java/util/Collections                  | list                     | 0        |
+| #5562| #250| 0    | 1   | 2       | 1       | 6         | 52311  | 0           | 0        | #####| java/util/Collections                  | max                      | 0        |
+| #5563| #251| 0    | 2   | 3       | 7       | 61        | 52317  | 0           | 0        | #####| java/util/Collections                  | max                      | 0        |
+| #5564| #252| 0    | 1   | 2       | 1       | 6         | 52378  | 0           | 0        | #####| java/util/Collections                  | min                      | 0        |
+| #5565| #253| 0    | 2   | 3       | 7       | 61        | 52384  | 0           | 0        | #####| java/util/Collections                  | min                      | 0        |
+| #5566| #254| 0    | 2   | 4       | 2       | 10        | 52445  | 0           | 0        | #####| java/util/Collections                  | nCopies                  | 0        |
+| #5567| #255| 0    | 3   | 2       | 6       | 55        | 52455  | 0           | 0        | #####| java/util/Collections                  | replaceAll               | 0        |
+| #5568| #256| 0    | 1   | 2       | 6       | 70        | 52510  | 0           | 0        | #####| java/util/Collections                  | reverse                  | 0        |
+| #5569| #257| 0    | 0   | 1       | 0       | 4         | 52580  | 0           | 0        | #####| java/util/Collections                  | reverseOrder             | 0        |
+| #5570| #258| 0    | 2   | 3       | 8       | 166       | 52584  | 0           | 0        | #####| java/util/Collections                  | rotate                   | 0        |
+| #5571| #259| 0    | 1   | 2       | 1       | 30        | 52750  | 0           | 0        | #####| java/util/Collections                  | shuffle                  | 0        |
+| #5572| #260| 0    | 2   | 3       | 9       | 114       | 52780  | 0           | 0        | #####| java/util/Collections                  | shuffle                  | 0        |
+| #5573| #261| 0    | 1   | 3       | 1       | 9         | 52894  | 0           | 0        | #####| java/util/Collections                  | singleton                | 0        |
+| #5574| #262| 0    | 1   | 3       | 1       | 9         | 52903  | 0           | 0        | #####| java/util/Collections                  | singletonList            | 0        |
+| #5575| #263| 0    | 2   | 4       | 2       | 10        | 52912  | 0           | 0        | #####| java/util/Collections                  | singletonMap             | 0        |
+| #5576| #264| 0    | 1   | 2       | 1       | 6         | 52922  | 0           | 0        | #####| java/util/Collections                  | sort                     | 0        |
+| #5577| #265| 0    | 2   | 3       | 6       | 57        | 52928  | 0           | 0        | #####| java/util/Collections                  | sort                     | 0        |
+| #5578| #266| 0    | 3   | 6       | 3       | 23        | 52985  | 0           | 0        | #####| java/util/Collections                  | swap                     | 0        |
+| #5579| #267| 0    | 1   | 3       | 1       | 9         | 53008  | 0           | 0        | #####| java/util/Collections                  | synchronizedCollection   | 0        |
+| #5580| #268| 0    | 1   | 3       | 1       | 25        | 53017  | 0           | 0        | #####| java/util/Collections                  | synchronizedList         | 0        |
+| #5581| #269| 0    | 1   | 3       | 1       | 9         | 53042  | 0           | 0        | #####| java/util/Collections                  | synchronizedMap          | 0        |
+| #5582| #270| 0    | 1   | 3       | 1       | 9         | 53051  | 0           | 0        | #####| java/util/Collections                  | synchronizedSet          | 0        |
+| #5583| #271| 0    | 1   | 3       | 1       | 9         | 53060  | 0           | 0        | #####| java/util/Collections                  | synchronizedSortedMap    | 0        |
+| #5584| #272| 0    | 1   | 3       | 1       | 9         | 53069  | 0           | 0        | #####| java/util/Collections                  | synchronizedSortedSet    | 0        |
+| #5585| #273| 0    | 1   | 3       | 1       | 9         | 53078  | 0           | 0        | #####| java/util/Collections                  | unmodifiableCollection   | 0        |
+| #5586| #274| 0    | 1   | 3       | 1       | 25        | 53087  | 0           | 0        | #####| java/util/Collections                  | unmodifiableList         | 0        |
+| #5587| #275| 0    | 1   | 3       | 1       | 9         | 53112  | 0           | 0        | #####| java/util/Collections                  | unmodifiableMap          | 0        |
+| #5588| #276| 0    | 1   | 3       | 1       | 9         | 53121  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSet          | 0        |
+| #5589| #277| 0    | 1   | 3       | 1       | 9         | 53130  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSortedMap    | 0        |
+| #5590| #278| 0    | 1   | 3       | 1       | 9         | 53139  | 0           | 0        | #####| java/util/Collections                  | unmodifiableSortedSet    | 0        |
+| #5591| #279| 0    | 0   | 2       | 0       | 45        | 53148  | 0           | 0        | #####| java/util/Collections                  | <clinit>                 | 0        |
+| #5592| #280| 0    | 2   | 2       | 2       | 109       | 54991  | 0           | 0        | #####| java/lang/reflect/Array                | newInstance              | 0        |
+| #5593| #281| 0    | 2   | 4       | 2       | 26        | 55100  | 0           | 0        | #####| java/lang/reflect/Array                | newInstance              | 0        |
+| #5594| #282| 0    | 1   | 2       | 1       | 164       | 55126  | 0           | 0        | #####| java/lang/reflect/Array                | getLength                | 0        |
+| #5595| #283| 0    | 2   | 4       | 2       | 234       | 55290  | 0           | 0        | #####| java/lang/reflect/Array                | get                      | 0        |
+| #5596| #284| 0    | 2   | 2       | 2       | 37        | 55524  | 0           | 0        | #####| java/lang/reflect/Array                | getBoolean               | 0        |
+| #5597| #285| 0    | 2   | 2       | 2       | 37        | 55561  | 0           | 0        | #####| java/lang/reflect/Array                | getByte                  | 0        |
+| #5598| #286| 0    | 2   | 2       | 2       | 37        | 55598  | 0           | 0        | #####| java/lang/reflect/Array                | getChar                  | 0        |
+| #5599| #287| 0    | 2   | 2       | 2       | 24        | 55635  | 0           | 0        | #####| java/lang/reflect/Array                | getShort                 | 0        |
+| #5600| #288| 0    | 2   | 2       | 2       | 40        | 55659  | 0           | 0        | #####| java/lang/reflect/Array                | getInt                   | 0        |
+| #5601| #289| 0    | 2   | 2       | 2       | 24        | 55699  | 0           | 0        | #####| java/lang/reflect/Array                | getLong                  | 0        |
+| #5602| #290| 0    | 2   | 2       | 2       | 24        | 55723  | 0           | 0        | #####| java/lang/reflect/Array                | getFloat                 | 0        |
+| #5603| #291| 0    | 2   | 2       | 2       | 24        | 55747  | 0           | 0        | #####| java/lang/reflect/Array                | getDouble                | 0        |
+| #5604| #292| 0    | 3   | 4       | 3       | 243       | 55771  | 0           | 0        | #####| java/lang/reflect/Array                | set                      | 0        |
+| #5605| #293| 0    | 3   | 3       | 3       | 41        | 56014  | 0           | 0        | #####| java/lang/reflect/Array                | setBoolean               | 0        |
+| #5606| #294| 0    | 3   | 3       | 3       | 28        | 56055  | 0           | 0        | #####| java/lang/reflect/Array                | setByte                  | 0        |
+| #5607| #295| 0    | 3   | 3       | 3       | 27        | 56083  | 0           | 0        | #####| java/lang/reflect/Array                | setChar                  | 0        |
+| #5608| #296| 0    | 3   | 3       | 3       | 27        | 56110  | 0           | 0        | #####| java/lang/reflect/Array                | setShort                 | 0        |
+| #5609| #297| 0    | 3   | 4       | 3       | 28        | 56137  | 0           | 0        | #####| java/lang/reflect/Array                | setInt                   | 0        |
+| #5610| #298| 0    | 4   | 4       | 4       | 28        | 56165  | 0           | 0        | #####| java/lang/reflect/Array                | setLong                  | 0        |
+| #5611| #299| 0    | 3   | 4       | 3       | 28        | 56193  | 0           | 0        | #####| java/lang/reflect/Array                | setFloat                 | 0        |
+| #5612| #300| 0    | 4   | 4       | 4       | 41        | 56221  | 0           | 0        | #####| java/lang/reflect/Array                | setDouble                | 0        |
+| #5613| #301| 0    | 3   | 6       | 7       | 86        | 56262  | 0           | 0        | #####| java/lang/reflect/Array                | createMultiArray         | 0        |
+| #5614| #302| 0    | 2   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/reflect/Array                | createObjectArray        | 0        |
+| #5615| #303| 0    | 1   | 6       | 7       | 313       | 56849  | 0           | 0        | #####| java/lang/Float                        | toString                 | 0        |
+| #5616| #304| 0    | 2   | 4       | 5       | 31        | 57162  | 0           | 0        | #####| java/lang/Float                        | pow                      | 0        |
+| #5617| #305| 0    | 1   | 4       | 5       | 131       | 57193  | 0           | 0        | #####| java/lang/Float                        | log10                    | 0        |
+| #5618| #306| 0    | 1   | 3       | 1       | 12        | 57324  | 0           | 0        | #####| java/lang/Float                        | valueOf                  | 0        |
+| #5619| #307| 0    | 1   | 5       | 7       | 170       | 57336  | 0           | 0        | #####| java/lang/Float                        | parseFloat               | 0        |
+| #5620| #308| 0    | 1   | 2       | 1       | 12        | 57506  | 0           | 0        | #####| java/lang/Float                        | isNaN                    | 0        |
+| #5621| #309| 0    | 1   | 2       | 1       | 22        | 57518  | 0           | 0        | #####| java/lang/Float                        | isInfinite               | 0        |
+| #5622| #310| 0    | 1   | 1       | 1       | 16        | 57540  | 0           | 0        | #####| java/lang/Float                        | floatToIntBits           | 0        |
+| #5623| #311| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/Float                        | floatToRawIntBits        | 0        |
+| #5624| #312| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| java/lang/Float                        | intBitsToFloat           | 0        |
+| #5625| #313| 0    | 2   | 3       | 2       | 70        | 57556  | 0           | 0        | #####| java/lang/Float                        | compare                  | 0        |
+| #5626| #314| 0    | 0   | 1       | 0       | 5         | 57626  | 0           | 0        | #####| java/lang/Float                        | <clinit>                 | 0        |
+| #5627| #315| 0    | 1   | 1       | 1       | 5         | 60466  | 0           | 0        | #####| java/lang/Short                        | toString                 | 0        |
+| #5628| #316| 0    | 1   | 2       | 1       | 7         | 60471  | 0           | 0        | #####| java/lang/Short                        | parseShort               | 0        |
+| #5629| #317| 0    | 2   | 3       | 3       | 24        | 60478  | 0           | 0        | #####| java/lang/Short                        | parseShort               | 0        |
+| #5630| #318| 0    | 2   | 4       | 2       | 13        | 60502  | 0           | 0        | #####| java/lang/Short                        | valueOf                  | 0        |
+| #5631| #319| 0    | 1   | 4       | 1       | 14        | 60515  | 0           | 0        | #####| java/lang/Short                        | valueOf                  | 0        |
+| #5632| #320| 0    | 1   | 3       | 2       | 32        | 60529  | 0           | 0        | #####| java/lang/Short                        | decode                   | 0        |
+| #5633| #321| 0    | 0   | 1       | 0       | 5         | 60561  | 0           | 0        | #####| java/lang/Short                        | <clinit>                 | 0        |
+| #5634| #322| 0    | 1   | 1       | 1       | 15        | 63578  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5635| #323| 0    | 1   | 3       | 1       | 8         | 63593  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5636| #324| 0    | 3   | 6       | 3       | 12        | 63601  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5637| #325| 0    | 3   | 6       | 3       | 12        | 63613  | 0           | 0        | #####| java/lang/String                       | copyValueOf              | 0        |
+| #5638| #326| 0    | 1   | 3       | 1       | 8         | 63625  | 0           | 0        | #####| java/lang/String                       | copyValueOf              | 0        |
+| #5639| #327| 0    | 1   | 1       | 1       | 14        | 63633  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5640| #328| 0    | 1   | 6       | 1       | 18        | 63647  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5641| #329| 0    | 1   | 2       | 1       | 7         | 63665  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5642| #330| 0    | 2   | 2       | 2       | 5         | 63672  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5643| #331| 0    | 1   | 1       | 1       | 5         | 63677  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5644| #332| 0    | 2   | 2       | 2       | 5         | 63682  | 0           | 0        | #####| java/lang/String                       | valueOf                  | 0        |
+| #5645| #333| 0    | 1   | 3       | 1       | 14        | 63687  | 0           | 0        | #####| java/lang/String                       | upperCaseExpansion       | 0        |
+| #5646| #334| 0    | 1   | 3       | 5       | 73        | 63701  | 0           | 0        | #####| java/lang/String                       | upperCaseIndex           | 0        |
+| #5647| #335| 0    | 1   | 5       | 3       | 52        | 63774  | 0           | 0        | #####| java/lang/String                       | zeroBasedStringValue     | 0        |
+| #5648| #336| 0    | 0   | 2       | 0       | 29        | 63826  | 0           | 0        | #####| java/lang/String                       | <clinit>                 | 0        |
+| #5649| #337| 0    | 1   | 4       | 1       | 66        | 63954  | 0           | 0        | #####| java/lang/Character                    | readChar                 | 0        |
+| #5650| #338| 0    | 1   | 6       | 1       | 18        | 64020  | 0           | 0        | #####| java/lang/Character                    | toString                 | 0        |
+| #5651| #339| 0    | 1   | 2       | 1       | 14        | 64038  | 0           | 0        | #####| java/lang/Character                    | isLowerCase              | 0        |
+| #5652| #340| 0    | 1   | 2       | 1       | 14        | 64052  | 0           | 0        | #####| java/lang/Character                    | isUpperCase              | 0        |
+| #5653| #341| 0    | 1   | 2       | 1       | 14        | 64066  | 0           | 0        | #####| java/lang/Character                    | isTitleCase              | 0        |
+| #5654| #342| 0    | 1   | 2       | 1       | 15        | 64080  | 0           | 0        | #####| java/lang/Character                    | isDigit                  | 0        |
+| #5655| #343| 0    | 1   | 1       | 1       | 13        | 64095  | 0           | 0        | #####| java/lang/Character                    | isDefined                | 0        |
+| #5656| #344| 0    | 1   | 2       | 1       | 18        | 64108  | 0           | 0        | #####| java/lang/Character                    | isLetter                 | 0        |
+| #5657| #345| 0    | 1   | 2       | 1       | 19        | 64126  | 0           | 0        | #####| java/lang/Character                    | isLetterOrDigit          | 0        |
+| #5658| #346| 0    | 1   | 1       | 1       | 5         | 64145  | 0           | 0        | #####| java/lang/Character                    | isJavaLetter             | 0        |
+| #5659| #347| 0    | 1   | 1       | 1       | 2         | 64150  | 0           | 0        | #####| java/lang/Character                    | isJavaLetterOrDigit      | 0        |
+| #5660| #348| 0    | 1   | 2       | 1       | 19        | 64152  | 0           | 0        | #####| java/lang/Character                    | isJavaIdentifierStart    | 0        |
+| #5661| #349| 0    | 1   | 2       | 2       | 31        | 64171  | 0           | 0        | #####| java/lang/Character                    | isJavaIdentifierPart     | 0        |
+| #5662| #350| 0    | 1   | 2       | 1       | 19        | 64202  | 0           | 0        | #####| java/lang/Character                    | isUnicodeIdentifierStart | 0        |
+| #5663| #351| 0    | 1   | 2       | 2       | 34        | 64221  | 0           | 0        | #####| java/lang/Character                    | isUnicodeIdentifierPart  | 0        |
+| #5664| #352| 0    | 1   | 2       | 1       | 46        | 64255  | 0           | 0        | #####| java/lang/Character                    | isIdentifierIgnorable    | 0        |
+| #5665| #353| 0    | 1   | 4       | 1       | 15        | 64301  | 0           | 0        | #####| java/lang/Character                    | toLowerCase              | 0        |
+| #5666| #354| 0    | 1   | 4       | 1       | 15        | 64316  | 0           | 0        | #####| java/lang/Character                    | toUpperCase              | 0        |
+| #5667| #355| 0    | 1   | 3       | 2       | 39        | 64331  | 0           | 0        | #####| java/lang/Character                    | toTitleCase              | 0        |
+| #5668| #356| 0    | 2   | 3       | 4       | 53        | 64370  | 0           | 0        | #####| java/lang/Character                    | digit                    | 0        |
+| #5669| #357| 0    | 1   | 3       | 1       | 13        | 64423  | 0           | 0        | #####| java/lang/Character                    | getNumericValue          | 0        |
+| #5670| #358| 0    | 1   | 3       | 1       | 27        | 64436  | 0           | 0        | #####| java/lang/Character                    | isSpace                  | 0        |
+| #5671| #359| 0    | 1   | 2       | 1       | 19        | 64463  | 0           | 0        | #####| java/lang/Character                    | isSpaceChar              | 0        |
+| #5672| #360| 0    | 1   | 3       | 2       | 47        | 64482  | 0           | 0        | #####| java/lang/Character                    | isWhitespace             | 0        |
+| #5673| #361| 0    | 1   | 2       | 1       | 15        | 64529  | 0           | 0        | #####| java/lang/Character                    | isISOControl             | 0        |
+| #5674| #362| 0    | 1   | 2       | 1       | 8         | 64544  | 0           | 0        | #####| java/lang/Character                    | getType                  | 0        |
+| #5675| #363| 0    | 2   | 2       | 2       | 28        | 64552  | 0           | 0        | #####| java/lang/Character                    | forDigit                 | 0        |
+| #5676| #364| 0    | 1   | 3       | 1       | 15        | 64580  | 0           | 0        | #####| java/lang/Character                    | getDirectionality        | 0        |
+| #5677| #365| 0    | 1   | 2       | 1       | 16        | 64595  | 0           | 0        | #####| java/lang/Character                    | isMirrored               | 0        |
+| #5678| #366| 0    | 0   | 1       | 0       | 68        | 64611  | 0           | 0        | #####| java/lang/Character                    | <clinit>                 | 0        |
+| #5679| #367| 0    | 0   | 6       | 12      | 191       | 64684  | 0           | 0        | #####| de/amidar/AmidarSystem                 | SetupPeripherals         | 0        |
+| #5680| #368| 0    | 2   | 3       | 4       | 37        | 64875  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readPeriName             | 0        |
+| #5681| #369| 0    | 1   | 2       | 1       | 20        | 64912  | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetPeripherals           | 0        |
+| #5682| #370| 0    | 2   | 2       | 3       | 30        | 64932  | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetPeripheral            | 0        |
+| #5683| #371| 0    | 3   | 3       | 4       | 45        | 64962  | 0           | 0        | #####| de/amidar/AmidarSystem                 | writePeriTableEntry      | 0        |
+| #5684| #372| 0    | 1   | 3       | 6       | 52        | 65007  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readHandle               | 0        |
+| #5685| #373| 0    | 1   | 1       | 1       | 8         | 65059  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readHandle               | 0        |
+| #5686| #374| 0    | 1   | 5       | 8       | 110       | 65067  | 0           | 0        | #####| de/amidar/AmidarSystem                 | readString               | 0        |
+| #5687| #375| 0    | 1   | 2       | 6       | 42        | 65177  | 0           | 0        | #####| de/amidar/AmidarSystem                 | ClearMem                 | 0        |
+| #5688| #376| 0    | 0   | 3       | 0       | 150       | 65219  | 0           | 0        | #####| de/amidar/AmidarSystem                 | UncheckedExceptionHandler| 0        |
+| #5689| #377| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | ReadAddress              | 0        |
+| #5690| #378| 0    | 2   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | WriteAddress             | 0        |
+| #5691| #379| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | GetMonitorId             | 0        |
+| #5692| #380| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | DisableScheduling        | 0        |
+| #5693| #381| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | ForceScheduling          | 0        |
+| #5694| #382| 0    | 0   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | EnableScheduling         | 0        |
+| #5695| #383| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | IntToRef                 | 0        |
+| #5696| #384| 0    | 1   | 0       | 0       | 0         | 0      | 0           | 0        | #####| de/amidar/AmidarSystem                 | RefToInt                 | 0        |
+| #5697| #385| 0    | 0   | 4       | 0       | 12        | 66139  | 0           | 0        | #####| java/io/PrintWriter                    | <clinit>                 | 0        |
+| #5698| #386| 0    | 1   | 1       | 1       | 11        | 66581  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
+| #5699| #387| 0    | 2   | 4       | 2       | 13        | 66592  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
+| #5700| #388| 0    | 1   | 2       | 1       | 14        | 66605  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
+| #5701| #389| 0    | 2   | 4       | 2       | 14        | 66619  | 0           | 0        | #####| java/lang/Math                         | abs                      | 0        |
+| #5702| #390| 0    | 2   | 2       | 2       | 11        | 66633  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
+| #5703| #391| 0    | 4   | 4       | 4       | 12        | 66644  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
+| #5704| #392| 0    | 2   | 2       | 2       | 38        | 66656  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
+| #5705| #393| 0    | 4   | 4       | 4       | 38        | 66694  | 0           | 0        | #####| java/lang/Math                         | min                      | 0        |
+| #5706| #394| 0    | 2   | 2       | 2       | 11        | 66732  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
+| #5707| #395| 0    | 4   | 4       | 4       | 12        | 66743  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
+| #5708| #396| 0    | 2   | 2       | 2       | 37        | 66755  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
+| #5709| #397| 0    | 4   | 4       | 4       | 37        | 66792  | 0           | 0        | #####| java/lang/Math                         | max                      | 0        |
+| #5710| #398| 0    | 2   | 2       | 2       | 5         | 66829  | 0           | 0        | #####| java/lang/Math                         | sin                      | 0        |
+| #5711| #399| 0    | 2   | 2       | 2       | 5         | 66834  | 0           | 0        | #####| java/lang/Math                         | cos                      | 0        |
+| #5712| #400| 0    | 2   | 2       | 2       | 5         | 66839  | 0           | 0        | #####| java/lang/Math                         | tan                      | 0        |
+| #5713| #401| 0    | 2   | 2       | 2       | 5         | 66844  | 0           | 0        | #####| java/lang/Math                         | asin                     | 0        |
+| #5714| #402| 0    | 2   | 2       | 2       | 5         | 66849  | 0           | 0        | #####| java/lang/Math                         | acos                     | 0        |
+| #5715| #403| 0    | 2   | 2       | 2       | 5         | 66854  | 0           | 0        | #####| java/lang/Math                         | atan                     | 0        |
+| #5716| #404| 0    | 4   | 4       | 4       | 6         | 66859  | 0           | 0        | #####| java/lang/Math                         | atan2                    | 0        |
+| #5717| #405| 0    | 2   | 2       | 2       | 5         | 66865  | 0           | 0        | #####| java/lang/Math                         | exp                      | 0        |
+| #5718| #406| 0    | 2   | 2       | 2       | 5         | 66870  | 0           | 0        | #####| java/lang/Math                         | log                      | 0        |
+| #5719| #407| 0    | 2   | 2       | 2       | 5         | 66875  | 0           | 0        | #####| java/lang/Math                         | sqrt                     | 0        |
+| #5720| #408| 0    | 4   | 4       | 4       | 6         | 66880  | 0           | 0        | #####| java/lang/Math                         | pow                      | 0        |
+| #5721| #409| 0    | 4   | 4       | 4       | 6         | 66886  | 0           | 0        | #####| java/lang/Math                         | IEEEremainder            | 0        |
+| #5722| #410| 0    | 2   | 2       | 2       | 5         | 66892  | 0           | 0        | #####| java/lang/Math                         | ceil                     | 0        |
+| #5723| #411| 0    | 2   | 2       | 2       | 5         | 66897  | 0           | 0        | #####| java/lang/Math                         | floor                    | 0        |
+| #5724| #412| 0    | 2   | 2       | 2       | 5         | 66902  | 0           | 0        | #####| java/lang/Math                         | rint                     | 0        |
+| #5725| #413| 0    | 1   | 2       | 1       | 19        | 66907  | 0           | 0        | #####| java/lang/Math                         | round                    | 0        |
+| #5726| #414| 0    | 2   | 4       | 2       | 18        | 66926  | 0           | 0        | #####| java/lang/Math                         | round                    | 0        |
+| #5727| #415| 0    | 0   | 2       | 0       | 54        | 66944  | 1           | 68       | #####| java/lang/Math                         | random                   | 0        |
+| #5728| #416| 0    | 2   | 4       | 2       | 10        | 66998  | 0           | 0        | #####| java/lang/Math                         | toRadians                | 0        |
+| #5729| #417| 0    | 2   | 4       | 2       | 10        | 67008  | 0           | 0        | #####| java/lang/Math                         | toDegrees                | 0        |
+| #5730| #418| 0    | 1   | 1       | 1       | 5         | 67136  | 0           | 0        | #####| java/lang/Byte                         | toString                 | 0        |
+| #5731| #419| 0    | 1   | 2       | 1       | 7         | 67141  | 0           | 0        | #####| java/lang/Byte                         | parseByte                | 0        |
+| #5732| #420| 0    | 2   | 3       | 3       | 24        | 67148  | 0           | 0        | #####| java/lang/Byte                         | parseByte                | 0        |
+| #5733| #421| 0    | 2   | 4       | 2       | 13        | 67172  | 0           | 0        | #####| java/lang/Byte                         | valueOf                  | 0        |
+| #5734| #422| 0    | 1   | 4       | 1       | 14        | 67185  | 0           | 0        | #####| java/lang/Byte                         | valueOf                  | 0        |
+| #5735| #423| 0    | 1   | 3       | 2       | 32        | 67199  | 0           | 0        | #####| java/lang/Byte                         | decode                   | 0        |
+| #5736| #424| 0    | 0   | 1       | 0       | 5         | 67231  | 0           | 0        | #####| java/lang/Byte                         | <clinit>                 | 0        |
+| #5737| #425| 0    | 1   | 4       | 2       | 81        | 67735  | 0           | 0        | #####| java/lang/Class                        | forName                  | 0        |
+| #5738| #426| 0    | 1   | 2       | 1       | 20        | 67816  | 0           | 0        | #####| java/lang/Class                        | forCti                   | 0        |
+| #5739| #427| 0    | 0   | 1       | 1       | 6         | 67836  | 0           | 0        | #####| java/lang/Class                        | <clinit>                 | 0        |

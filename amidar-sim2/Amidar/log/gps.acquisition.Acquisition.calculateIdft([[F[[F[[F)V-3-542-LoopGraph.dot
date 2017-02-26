@@ -1,0 +1,5 @@
+digraph depgraph {
+"3-542-9:IFGE"
+"3-542-9:IFGE" -> "15-536-21:IFGE"
+"15-536-21:IFGE" -> "33-492-39:IFGE"
+}
